@@ -133,7 +133,49 @@ body {
   }
   
 
+ 
+
+  /* Content Film oleh Ahmad Faiz */
+  /* Branch: FILM */
+  /* Penanggung Jawab Branch: Ahmad Faiz */
   
+
+
+
+
+
+
+
+
+  /* Content Music oleh Siswo Adi Nugroho */
+  /* Branch: MUSIC */
+  /* Penanggung Jawab Branch: Siswo Adi Nugroho */
+  
+
+
+
+
+
+
+
+
+  /* Content TV Show oleh Haikal Ihza */
+  /* Branch: TV */
+  /* Penanggung Jawab Branch: Haikal Ihza */
+  
+  
+ 
+  
+
+
+
+
+
+  /* Content Gabungsn */
+  /* Branch: CSS */
+  /* Penanggung Jawab Branch: Stellar Team */
+  
+   
   /* Media query untuk mode desktop */
   @media only screen and (min-width: 768px) {
     .sidebar {
@@ -172,36 +214,3 @@ body {
     color: rgb(253, 250, 250);
     background-color: rgb(115, 17, 17);
   }
-
-  
-  /* Content Film oleh Ahmad Faiz */
-  /* Branch: FILM */
-  /* Penanggung Jawab Branch: Ahmad Faiz */
-  
-
-
-
-
-
-
-
-
-  /* Content Music oleh Siswo Adi Nugroho */
-  /* Branch: MUSIC */
-  /* Penanggung Jawab Branch: Siswo Adi Nugroho */
-  
-
-
-
-
-
-
-
-
-  /* Content TV Show oleh Haikal Ihza */
-  /* Branch: TV */
-  /* Penanggung Jawab Branch: Haikal Ihza */
-  
-  
- 
-  
