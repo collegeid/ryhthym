@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rhythm Movie TV</title>
+ 
+  <link rel="stylesheet" href="assets/main.css">
+</head>
+<!--- ================ BASE LAYOUT - FEBRI =====================
+
+BRANCH : BASE
+PENANGGUNG JAWAB BRANCH: Febri
+FLOW: (CENTANG ✓ JIKA SUDAH, DAN UPLOAD PADA BRANCH MASING MASING)
+
+1. MENERAPKAN KONSEP LAYOUTING (✓) 
+2. MENAMBAHKAN WARNA DASAR HITAM DAN PUTIH (✓)
+3. PENEMPATAN INPUT SEARCH (✓)
+4. RESPONSIVE CONTENT (✓) 
+
+-->
+<body>
+
+<!--- ================ SIDEBAR - FEBRI =====================
+
+BRANCH : SIDEBAR
+PENANGGUNG JAWAB BRANCH: FEBRI
+FLOW: (CENTANG JIKA SUDAH, DAN UPLOAD PADA BRANCH MASING MASING)
+
+1. MENAMBAHKAN JUDUL PADA SIDEBAR (✓)
+2. MENAMBAHKAN KONTEN SIDEBAR SEBANYAK 5 KONTEN DENGAN A TAG DAN MASING MASING ID BERNAMA KONTEN TERSEBUT (✓)
+3. RESPONSIVE SIDEBAR & TOGGLE MOBILE & DESKTOP (✓) 
+
+-->
+
+  <div class="sidebar">
+    <h3 class="header-title">Rhythm Movie TV</h3>
+    <a href="#" id="menu1">Menu 1</a>
+    <a href="#" id="menu2">Menu 2</a>
+    <a href="#" id="menu3">Menu 3</a>
+    <a href="#" id="menu4">Menu 4</a>
+    <a href="#" id="menu5">Menu 5</a>
+  </div>
+
+<!---- ============  END SIDEBAR BY FEBRI =============== -->
+
+
+
+  <div class="main-content">
+    <div class="header">
+
+<!--- ================ SEARCH - FEBRI =====================
+BRANCH : SEARCH
+PENANGGUNG JAWAB BRANCH: FEBRI
+FLOW: (CENTANG JIKA SUDAH, DAN UPLOAD PADA BRANCH MASING MASING)
+
+1. MENAMBAHKAN SEARCH PADA SIDEBAR (✓)
+2. KONFIGURASI SEARCH DENGAN JAVASCRIPT
+
+-->
+    <p>
+      <input type="text" placeholder="Search/Filter">
+    </p>
+<!---- ============  END SEARCH BY FEBRI =============== -->
+
+    
+      <button class="navbar-toggle" id="toggle-menu-mobile" onclick="toggleSidebar()">Menu</button>
+      <button class="navbar-toggle-desktop" id="toggle-menu-desktop" onclick="toggleSidebar()">Menu</button>
+      
+    </div>
+    
+
+
+<!--- ============= TRENDING CONTAINER - JARWO =============
+
+BRANCH : TRENDING
+PENANGGUNG JAWAB BRANCH: Jarwo
+FLOW: (CENTANG ✓ JIKA SUDAH, DAN UPLOAD PADA BRANCH MASING MASING)
+
+1. MEMBUAT WRAPPER GAMBAR DENGAN TAMPILAN AWAL 3 GAMBAR, DAN HANYA TAMPILKAN 3 GAMBAR, SELEBIHNYA HARUS DI GESER
+2. MENGGESER GAMBAR DENGAN TOMBOL SLIDER KE KANAN ATAU KE KIRI
+3. MENAMBAHKAN KONTEN SLIDER SEBANYAK 5 KONTEN DENGAN A TAG DAN MASING MASING ID BERNAMA KONTEN TERSEBUT
+4. TAMBAHKAN DIV UNTUK (JUDUL)
+HINTS: SELAMA KONTEN GAMBAR BISA DI GESER, BERARTI SUKSES
+
+-->
+
+    <div class="trending-banner">
+      Trending Banner
+    </div>
+
+<!---- ================ END TRENDING BY JARWO ================  --->
+
+    <div class="content">
+      <div class="content-section">
+
+      
+<!--- ============= CONTENT FILM - AHMAD FAIZ =============
+
+BRANCH : FILM
+PENANGGUNG JAWAB BRANCH: Ahmad Faiz
+FLOW: (CENTANG ✓ JIKA SUDAH, DAN UPLOAD PADA BRANCH MASING MASING)
+
+1. MEMBUAT WRAPPER GAMBAR DENGAN TAMPILAN AWAL 2 GAMBAR, DAN HANYA TAMPILKAN 2 GAMBAR, SELEBIHNYA HARUS DI GESER
+2. MENGGESER GAMBAR DENGAN TOMBOL SLIDER KE KANAN ATAU KE KIRI
+3. MENAMBAHKAN KONTEN SLIDER SEBANYAK 5 KONTEN DENGAN A TAG DAN MASING MASING ID BERNAMA KONTEN TERSEBUT
+4. TAMBAHKAN DIV UNTUK (JUDUL, TANGGAL, DESKRIPSI FILM )
+
+HINTS: SELAMA KONTEN GAMBAR BISA DI GESER, BERARTI SUKSES
+
+-->
+        <div class="content-block">
+          <h2>Film</h2>
+          <table>
+            <!-- Isi tabel film -->
+          </table>
+        </div>
+
+<!---- ================ END CONTENT FILM BY AHMAD FAIZ ================  --->
+
+
+
+
+
+<!--- ============= CONTENT MUSIC - SISWO =============
+
+BRANCH : MUSIC
+PENANGGUNG JAWAB BRANCH: Siswo Adi Nugroho
+FLOW: (CENTANG ✓ JIKA SUDAH, DAN UPLOAD PADA BRANCH MASING MASING)
+
+1. MEMBUAT WRAPPER GAMBAR DENGAN TAMPILAN AWAL 2 GAMBAR, DAN HANYA TAMPILKAN 2 GAMBAR, SELEBIHNYA HARUS DI GESER
+2. MENGGESER GAMBAR DENGAN TOMBOL SLIDER KE KANAN ATAU KE KIRI
+3. MENAMBAHKAN KONTEN SLIDER SEBANYAK 5 KONTEN DENGAN A TAG DAN MASING MASING ID BERNAMA KONTEN TERSEBUT
+4. TAMBAHKAN DIV UNTUK (JUDUL, TANGGAL, DESKRIPSI FILM )
+
+HINTS: SELAMA KONTEN GAMBAR BISA DI GESER, BERARTI SUKSES
+
+-->
+
+        <div class="content-block">
+          <h2>Music</h2>
+          <table>
+            <!-- Isi tabel musik -->
+          </table>
+        </div>
+
+<!---- ================ END CONTENT MUSIC BY SISWO ADI NUGROHO ================  --->
+
+
+
+<!--- ============= CONTENT TV SHOW - HAIKAL =============
+
+BRANCH : TV
+PENANGGUNG JAWAB BRANCH: Haikal Ihza
+FLOW: (CENTANG ✓ JIKA SUDAH, DAN UPLOAD PADA BRANCH MASING MASING)
+
+1. MEMBUAT WRAPPER GAMBAR (TEMPAT/POSISI GAMBAR AKAN DI LETAKAN) DENGAN TAMPILAN AWAL 2 GAMBAR, DAN HANYA TAMPILKAN 2 GAMBAR, SELEBIHNYA HARUS DI GESER
+2. MENGGESER GAMBAR DENGAN TOMBOL SLIDER KE KANAN ATAU KE KIRI
+3. MENAMBAHKAN KONTEN SLIDER SEBANYAK 5 KONTEN DENGAN A TAG DAN MASING MASING ID BERNAMA KONTEN TERSEBUT
+4. TAMBAHKAN DIV UNTUK (JUDUL, TANGGAL, DESKRIPSI FILM )
+
+HINTS: SELAMA KONTEN GAMBAR BISA DI GESER, BERARTI SUKSES
+
+-->
+        <div class="content-block">
+          <h2>TV Show</h2>
+          <table>
+            <!-- Isi tabel acara TV -->
+          </table>
+        </div>
+
+
+
+<!---- ================ END CONTENT TV SHOW BY HAIKAL ================  --->
+
+
+      </div>
+    </div>
+  </div>
+
+ <script type="text/javascript" src="assets/main.js"></script>
+
+</body>
+
+<!---- ============  END BASE LAYOUT BY FEBRI =============== -->
+
+</html>
