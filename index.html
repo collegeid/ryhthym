@@ -1,13 +1,17 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rhythm Movie TV</title>
- 
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="assets/main.css">
+  <title>Rhythm Movie TV</title>
 </head>
+<body>
+
 <!--- ================ BASE LAYOUT - FEBRI =====================
 
 BRANCH : BASE
@@ -20,7 +24,9 @@ FLOW: (CENTANG ✓ JIKA SUDAH, DAN UPLOAD PADA BRANCH MASING MASING)
 4. RESPONSIVE CONTENT (✓) 
 
 -->
-<body>
+
+  <div class="container-fluid">
+    <div class="row">
 
 <!--- ================ SIDEBAR - FEBRI =====================
 
@@ -34,21 +40,49 @@ FLOW: (CENTANG JIKA SUDAH, DAN UPLOAD PADA BRANCH MASING MASING)
 
 -->
 
-  <div class="sidebar">
-    <h3 class="header-title">Rhythm Movie TV</h3>
-    <a href="#" id="menu1">Menu 1</a>
-    <a href="#" id="menu2">Menu 2</a>
-    <a href="#" id="menu3">Menu 3</a>
-    <a href="#" id="menu4">Menu 4</a>
-    <a href="#" id="menu5">Menu 5</a>
-  </div>
+      <!-- Sidebar -->
+      <div class="col-12 col-md-3 col-lg-2 sidebar bg-dark text-white">
+        <br>
+        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+          <span class="fs-4"><i class="fa-solid fa-door-open"></i> Rhythm Movie TV</span>
+        </a>
+        <hr>
+        <ul class="nav nav-pills flex-column mb-auto">
+            <li class="nav-item">
+            
+                <a href="#" class="nav-link active" aria-current="page">
+                <i class="fa-solid fa-fire"></i>
+                   Trending
+                </a>
+              </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link text-white">
+            <i class="fa-solid fa-film"></i>
+               Movies
+            </a>
+          </li>
+          <li>
+            <a href="#" class="nav-link text-white">
+             <i class="fa-solid fa-tv"></i>
+               TV Show
+            </a>
+          </li>
+          <li>
+            <a href="#" class="nav-link text-white">
+            <i class="fa-solid fa-music"></i>
+               Music
+            </a>
+          </li>
+        </ul>
+      </div>
 
 <!---- ============  END SIDEBAR BY FEBRI =============== -->
 
+   
 
-
-  <div class="main-content">
-    <div class="header">
+      <br>
+      <!-- Page Content -->
+      <div class="col">
 
 <!--- ================ SEARCH - FEBRI =====================
 BRANCH : SEARCH
@@ -59,18 +93,17 @@ FLOW: (CENTANG JIKA SUDAH, DAN UPLOAD PADA BRANCH MASING MASING)
 2. KONFIGURASI SEARCH DENGAN JAVASCRIPT
 
 -->
-    <p>
-      <input type="text" placeholder="Search/Filter">
-    </p>
+        <!-- Search Bar -->
+        <div class="input-group mb-3 mt-3">
+          <input type="text" class="form-control" placeholder="Search/Filter" aria-label="Search/Filter" aria-describedby="button-addon2">
+          <button class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
+          <button class="btn btn-danger toggle-sidebar-mobile d-md-none" id="sidebarToggle"><i class="fa-solid fa-bars-staggered"></i></button>
+          <button class="btn btn-danger toggle-sidebar-desktop d-none d-md-block" id="sidebarToggleDesktop"><i class="fa-solid fa-bars-staggered"></i></button>
+        </div>
+        
 <!---- ============  END SEARCH BY FEBRI =============== -->
 
-    
-      <button class="navbar-toggle" id="toggle-menu-mobile" onclick="toggleSidebar()">Menu</button>
-      <button class="navbar-toggle-desktop" id="toggle-menu-desktop" onclick="toggleSidebar()">Menu</button>
-      
-    </div>
-    
-
+   
 
 <!--- ============= TRENDING CONTAINER - JARWO =============
 
@@ -86,14 +119,23 @@ HINTS: SELAMA KONTEN GAMBAR BISA DI GESER, BERARTI SUKSES
 
 -->
 
-    <div class="trending-banner">
-      Trending Banner
-    </div>
+  
+
+        <!-- Trending Banner -->
+        <div class="p-5 mb-4 bg-light rounded-3">
+          <div class="container-fluid py-5">
+            <h1 class="display-5 fw-bold">Trending Now</h1>
+            <button class="btn btn-primary btn-lg" type="button">Play</button>
+          </div>
+        </div>
+
 
 <!---- ================ END TRENDING BY JARWO ================  --->
 
-    <div class="content">
-      <div class="content-section">
+ 
+        <!-- Content Sections -->
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+
 
       
 <!--- ============= CONTENT FILM - AHMAD FAIZ =============
@@ -110,14 +152,23 @@ FLOW: (CENTANG ✓ JIKA SUDAH, DAN UPLOAD PADA BRANCH MASING MASING)
 HINTS: SELAMA KONTEN GAMBAR BISA DI GESER, BERARTI SUKSES
 
 -->
-        <div class="content-block">
-          <h2>Film</h2>
-          <table>
-            <!-- Isi tabel film -->
-          </table>
-        </div>
+    
+
+
+
+          <div class="col">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Film</h5>
+                <!-- Film Content Here -->
+              </div>
+            </div>
+          </div>
+
 
 <!---- ================ END CONTENT FILM BY AHMAD FAIZ ================  --->
+
+
 
 
 
@@ -137,13 +188,15 @@ FLOW: (CENTANG ✓ JIKA SUDAH, DAN UPLOAD PADA BRANCH MASING MASING)
 HINTS: SELAMA KONTEN GAMBAR BISA DI GESER, BERARTI SUKSES
 
 -->
+          <div class="col">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Music</h5>
+                <!-- Music Content Here -->
+              </div>
+            </div>
+          </div>
 
-        <div class="content-block">
-          <h2>Music</h2>
-          <table>
-            <!-- Isi tabel musik -->
-          </table>
-        </div>
 
 <!---- ================ END CONTENT MUSIC BY SISWO ADI NUGROHO ================  --->
 
@@ -163,26 +216,48 @@ FLOW: (CENTANG ✓ JIKA SUDAH, DAN UPLOAD PADA BRANCH MASING MASING)
 HINTS: SELAMA KONTEN GAMBAR BISA DI GESER, BERARTI SUKSES
 
 -->
-        <div class="content-block">
-          <h2>TV Show</h2>
-          <table>
-            <!-- Isi tabel acara TV -->
-          </table>
-        </div>
-
+          <div class="col">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">TV Show</h5>
+                <!-- TV Show Content Here -->
+              </div>
+            </div>
+          </div>
 
 
 <!---- ================ END CONTENT TV SHOW BY HAIKAL ================  --->
 
 
+
+
+        </div>
       </div>
     </div>
   </div>
 
- <script type="text/javascript" src="assets/main.js"></script>
+  <br>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <span>Rhythm Movie TV - All Rights Reserved</span>
+    </div>
+  </footer>
 
-</body>
+
+
 
 <!---- ============  END BASE LAYOUT BY FEBRI =============== -->
 
+
+
+  <!-- Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/35306b4d5d.js" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="assets/main.js"></script>
+
+  
+  
+
+</body>
 </html>
