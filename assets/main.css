@@ -125,14 +125,75 @@ body {
   /* Trending Banner oleh Jarwo */
   /* Branch: TRENDING */
   /* Penanggung Jawab Branch: Jarwo */
-  
+
   .trending-banner {
     background-color: #ddd;
     padding: 20px;
     text-align: center;
+    justify-content: center;
+    align-items: center;
   }
-  
-
+  html {
+    scroll-behavior: smooth;
+  }
+  .container {
+    background-position: center;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+  .slider {
+    margin-bottom: 5px;
+    position: relative;
+  }
+  .slider .owl-item.active.center .slider-card {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+  .slider-card {
+    background: #fff;
+    padding: 0px 0px;
+    margin: 30px 15px 40px 15px;
+    border-radius: 5px;
+    box-shadow: 0 15px 45px -30px rgb(0 0 0 / 73%);
+    transform: scale(0.9);
+    opacity: 0.5;
+    transition: all 0.3s;
+  }
+  .slider-card img {
+    border-radius: 5px 5px 5px 5px;
+  }
+  .owl-nav .owl-prev {
+    position: absolute;
+    top: calc(50% - 25px);
+    left: 0;
+    opacity: 1;
+    font-size: 30px !important;
+    z-index: 1;
+  }
+  .owl-nav .owl-next {
+    position: absolute;
+    top: calc(50% - 25px);
+    right: 0;
+    opacity: 1;
+    font-size: 30px !important;
+    z-index: 1;
+  }
+  .owl-dots {
+    text-align: center;
+  }
+  .owl-dots .owl-dot {
+    height: 10px;
+    width: 10px;
+    border-radius: 5px;
+    background: #ccc !important;
+    margin-left: 3px;
+    margin-right: 3px;
+    outline: none;
+  }
+  .owl-dots .owl-dot.active {
+    background: #2600ff !important;
+  }
  
 
   /* Content Film oleh Ahmad Faiz */
