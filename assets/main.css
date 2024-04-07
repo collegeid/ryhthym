@@ -3,177 +3,264 @@
 /* Base Layout oleh Febri */
 /* Branch: BASE */
 /* Penanggung Jawab Branch: Febri */
-
-body {
-    font-family: 'Gotham', sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
-  }
-  
-  .sidebar {
-    width: 200px;
-    background-color: #333;
-    height: 100vh;
-    padding: 10px;
-    transition: transform 0.3s ease; /* Hapus transition untuk visibility */
-    transform: translateX(-100%); /* Geser sidebar keluar layar secara default */
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 999; /* Pastikan sidebar berada di atas konten */
-  }
-  
-  .sidebar a {
-    text-decoration: none;
-    color: white;
-    display: block;
-    padding: 10px;
-    margin-bottom: 5px;
-  }
-  
-  .content {
-    padding: 20px;
-  }
-  
-  .content-section {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap; /* Pastikan konten dapat berjajar di baris baru jika tidak muat */
-  }
-  
-  .content-block {
-    width: calc(33.333% - 10px);
-    margin-bottom: 20px; /* Tambahkan margin bawah agar konten terlihat lebih terpisah */
-    background-color: #f4f4f4;
-    padding: 10px;
-    box-sizing: border-box; /* Pastikan padding tidak mempengaruhi lebar konten */
-  }
-  
-  table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  th,
-  td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
-  }
-  
-  th {
-    background-color: #f4f4f4;
-  }
-  
-  .header-title {
-    color: white;
-  }
-  
-  /* Sidebar oleh Febri */
-  /* Branch: SIDEBAR */
-  /* Penanggung Jawab Branch: Febri */
-  
-  .main-content {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    transition: margin-left 0.3s; /* Transisi pergeseran konten */
-  }
-  
-  .header {
-    background-color: #f2f2f2;
-    padding: 10px;
-    text-align: right;
-    display: flex;
-    justify-content: space-between; /* Mengatur ruang antara elemen header */
-    align-items: center; /* Posisikan elemen secara vertikal di tengah header */
-  }
-  
-  .header input {
-    padding: 5px;
-  }
-  
-   /* Media query untuk mode mobile */
-   @media only screen and (max-width: 768px) {
+    /* Custom styles */
     .sidebar {
-      transform: translateX(-100%); /* Geser sidebar keluar layar pada mobile */
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
-  
-    .sidebar.show-sidebar {
-      transform: translateX(0); /* Tampilkan sidebar saat class show-sidebar ditambahkan */
+
+    @media (min-width: 768px) {
+      .sidebar {
+        height: calc(100vh - 56px); /* Adjust for the navbar height */
+      }
     }
-  
-    .navbar-toggle {
-      display: block; /* Tampilkan tombol toggle navbar di mobile */
+
+    /* Hide Sidebar on Small Devices */
+    @media (max-width: 767.98px) {
+      .sidebar.hide {
+        display: none;
+      }
     }
-  
-    .navbar-toggle-desktop {
-      display: none; /* Sembunyikan tombol toggle navbar di desktop */
-    }
-  
-    .navbar-desktop {
-      display: none; /* Sembunyikan navbar desktop */
-    }
-  
-    .content-block {
-      width: 100%; /* Atur konten agar mengisi lebar layar penuh pada mode mobile */
-    }
+
+    .footer {
+    background-color: #2661df; /* Warna hijau dari Bootstrap */
+    padding: 16px 0;
+    text-align: center;
+    color: white; /* Teks warna putih */
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 999;
   }
 
+    /* Tombol Toggle Sidebar hanya muncul di mode mobile */
+    @media (min-width: 768px) {
+      .toggle-sidebar-mobile {
+        display: none;
+      }
+    }
 
-  /* Trending Banner oleh Jarwo */
+    /* Tombol Toggle Sidebar hanya muncul di mode desktop */
+    @media (min-width: 1080px) {
+      .toggle-sidebar-desktop {
+        display: none;
+      }
+    }
+
+
+  /* Content Trending Banner oleh Jarwo */
   /* Branch: TRENDING */
   /* Penanggung Jawab Branch: Jarwo */
-  
-  .trending-banner {
-    background-color: #ddd;
-    padding: 20px;
-    text-align: center;
+  .container{
+    width: 100%;
+    background: #ff000000;
+    align-items: center;
+    justify-content: center;
   }
-  
-
-  
-  /* Media query untuk mode desktop */
-  @media only screen and (min-width: 768px) {
-    .sidebar {
-      transform: translateX(-100%); /* Sembunyikan sidebar di desktop secara default */
-    }
-  
-    .sidebar.show-sidebar {
-      transform: translateX(0); /* Tampilkan sidebar saat class show-sidebar ditambahkan */
-    }
-  
-    .navbar-toggle {
-      display: none; /* Sembunyikan tombol toggle navbar di mobile */
-    }
-  
-    .navbar-toggle-desktop {
-      display: block; /* Tampilkan tombol toggle navbar di desktop */
-    }
-  
-    .navbar-desktop {
-      display: none; /* Sembunyikan navbar desktop */
-    }
-  
-    .content-block {
-      width: calc(33.333% - 20px); /* Atur lebar konten agar 3 kolom pada mode desktop */
-      margin-bottom: 20px; /* Tambahkan margin bawah agar konten terlihat lebih terpisah */
-    }
-  
-    /* Geser konten ketika sidebar muncul */
-    .main-content.show-sidebar {
-      margin-left: 200px; /* Sesuaikan dengan lebar sidebar */
-    }
+  .slider {
+    width: 100%;
+    height: 100%;
   }
-  
-  #toggle-menu-mobile,
-  #toggle-menu-desktop {
-    color: rgb(253, 250, 250);
-    background-color: rgb(115, 17, 17);
+  .slider .owl-item.active.center .slider-card {
+    transform: scale(1);
+    opacity: 1;
+  }
+  .slider-card {
+    background: #00000000;
+    padding: 0px 0px;
+    margin: 0px 0px 0px 0px;
+    border-radius: 15px;
+    transform: scale(0.9);
+    opacity: 1;
+    transition: all 1s;
+  }
+  .slider-card img {
+    border-radius: 15px;
+    width:  100%;
+    height: 100%;
+    margin: 0px 0px 0px 0px;
+  }
+  .img{
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    position: relative;
+  }
+  .image::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgb(0, 0, 0));
+    border-radius: 15px;
   }
 
-  
+  .trending-banner-text{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    background: linear-gradient(360eg, #161616b9, 35%, rgba(73,73,73,0.23), 64%);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 10px;
+    padding-top: 10px;
+  }
+  /* Jenis Trend */
+  .jenis{
+    background-color: #000000;
+    color: #ffffff;
+    font-weight: 600;
+    padding: 15px 10px;
+    height: 10px;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-radius: 15px;
+  }
+  /* Nama */
+  .movie-name{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 140px;
+    margin-left: 5px;
+  }
+  .movie-name span{
+    font-size: 15px;
+    letter-spacing: 1px;
+    font-weight: 400;
+    color: #ffffff;
+  }
+  .movie-name strong{
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 20px;
+    margin-top: 2px;
+    letter-spacing: 0,5px;
+    color: #ffffff;
+  }
+  .music-name{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 140px;
+    margin-left: 5px;
+    color: #ffffff00;
+  }
+
+  /* Kategori */
+  .Kategori-rating{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    margin-left: 5px;
+  }
+  .kategori{
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: 0px 3px;
+  }
+  .rating{
+    font-size: 15px;
+    color: #ffd000;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    font-style: bold;
+    margin-left: 237px;
+  }
+  .rating img{
+    height: 40px;
+    width: 80px;
+    object-fit: contain;
+    object-position: center;
+    margin-left: 5px;
+  }
+
+  /* Navigasi */
+  .owl-nav button {
+    background-color: #ff000000!important;
+    height: 50px;
+    width: 30px;
+  }
+  .owl-nav button:hover {
+    background-color: #000000!important;
+    height: 50px;
+    width: 30px;
+  }
+  .owl-nav .owl-prev {
+    position: absolute;
+    top: calc(50% - 25px);
+    left: -28px;
+    opacity: 1;
+    font-size: 30px !important;
+    z-index: 1;
+  }
+  .owl-nav .owl-next {
+    position: absolute;
+    top: calc(50% - 25px);
+    right: -28px;
+    opacity: 1;
+    font-size: 30px !important;
+    z-index: 1;
+  }
+
+  /* Responsive */
+  @media (min-width: 768px) {
+    .container {
+        max-width: 550px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        max-width: 800px;
+    }
+}
+
+@media (min-width: 1080px) {
+    .container {
+        max-width: 875px;
+    }
+}
+
+@media (min-width: 1230px) {
+    .container {
+        max-width: 1000px;
+    }
+}
+
+@media (min-width: 1366px) {
+    .container {
+        max-width: 1100px;
+    }
+}
+
+@media (min-width: 1600px) {
+    .container {
+        max-width: 1295px;
+    }
+}
+
+@media (min-width: 1920px) {
+    .container {
+        max-width: 1560px;
+    }
+}
+
+ 
+
   /* Content Film oleh Ahmad Faiz */
   /* Branch: FILM */
   /* Penanggung Jawab Branch: Ahmad Faiz */

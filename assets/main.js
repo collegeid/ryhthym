@@ -21,19 +21,29 @@
 
 // Jarwo bertanggung jawab untuk bagian Trending Banner
 // Branch: TRENDING
-
-
+// Owlcarousel
 
 
 
 // Febri bertanggung jawab untuk bagian Base Layout dan Sidebar
-// Branch: BASE, SIDEBAR
+// Branch: BASE, SIDEBAR, FOOTER
 
+  const sidebarToggleBtn = document.getElementById('sidebarToggle');
+  const sidebarToggleDesktopBtn = document.getElementById('sidebarToggleDesktop');
+  const sidebar = document.querySelector('.sidebar');
 
+  sidebarToggleBtn.addEventListener('click', () => {
+    if (sidebar.style.display === 'none') {
+      sidebar.style.display = 'block';
+    } else {
+      sidebar.style.display = 'none';
+    }
+  });
 
-function toggleSidebar() {
-    var sidebar = document.querySelector('.sidebar');
-    var mainContent = document.querySelector('.main-content');
-    sidebar.classList.toggle('show-sidebar');
-    mainContent.classList.toggle('show-sidebar'); // Tambahkan class pada main-content saat toggle
-  }
+  sidebarToggleDesktopBtn.addEventListener('click', () => {
+    if (sidebar.style.display === 'none') {
+      sidebar.style.display = 'block';
+    } else {
+      sidebar.style.display = 'none';
+    }
+  });
