@@ -47,7 +47,213 @@
         display: none;
       }
     }
+
+
+  /* Content Trending Banner oleh Jarwo */
+  /* Branch: TRENDING */
+  /* Penanggung Jawab Branch: Jarwo */
+  .container{
+    width: 100%;
+    background: #ff000000;
+    align-items: center;
+    justify-content: center;
+  }
+  .slider {
+    width: 100%;
+    height: 100%;
+  }
+  .slider .owl-item.active.center .slider-card {
+    transform: scale(1);
+    opacity: 1;
+  }
+  .slider-card {
+    background: #00000000;
+    padding: 0px 0px;
+    margin: 0px 0px 0px 0px;
+    border-radius: 15px;
+    transform: scale(0.9);
+    opacity: 1;
+    transition: all 1s;
+  }
+  .slider-card img {
+    border-radius: 15px;
+    width:  100%;
+    height: 100%;
+    margin: 0px 0px 0px 0px;
+  }
+  .img{
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    position: relative;
+  }
+  .image::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgb(0, 0, 0));
+    border-radius: 15px;
+  }
+
+  .trending-banner-text{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    background: linear-gradient(360eg, #161616b9, 35%, rgba(73,73,73,0.23), 64%);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 10px;
+    padding-top: 10px;
+  }
+  /* Jenis Trend */
+  .jenis{
+    background-color: #000000;
+    color: #ffffff;
+    font-weight: 600;
+    padding: 15px 10px;
+    height: 10px;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-radius: 15px;
+  }
+  /* Nama */
+  .movie-name{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 140px;
+    margin-left: 5px;
+  }
+  .movie-name span{
+    font-size: 15px;
+    letter-spacing: 1px;
+    font-weight: 400;
+    color: #ffffff;
+  }
+  .movie-name strong{
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 20px;
+    margin-top: 2px;
+    letter-spacing: 0,5px;
+    color: #ffffff;
+  }
+  .music-name{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 140px;
+    margin-left: 5px;
+    color: #ffffff00;
+  }
+
+  /* Kategori */
+  .Kategori-rating{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    margin-left: 5px;
+  }
+  .kategori{
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: 0px 3px;
+  }
+  .rating{
+    font-size: 15px;
+    color: #ffd000;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    font-style: bold;
+    margin-left: 237px;
+  }
+  .rating img{
+    height: 40px;
+    width: 80px;
+    object-fit: contain;
+    object-position: center;
+    margin-left: 5px;
+  }
+
+  /* Navigasi */
+  .owl-nav button {
+    background-color: #ff000000!important;
+    height: 50px;
+    width: 30px;
+  }
+  .owl-nav button:hover {
+    background-color: #000000!important;
+    height: 50px;
+    width: 30px;
+  }
+  .owl-nav .owl-prev {
+    position: absolute;
+    top: calc(50% - 25px);
+    left: -28px;
+    opacity: 1;
+    font-size: 30px !important;
+    z-index: 1;
+  }
+  .owl-nav .owl-next {
+    position: absolute;
+    top: calc(50% - 25px);
+    right: -28px;
+    opacity: 1;
+    font-size: 30px !important;
+    z-index: 1;
+  }
+
+  /* Responsive */
+  @media (min-width: 768px) {
+    .container {
+      max-width: 550px;
+    }
+  }
+  @media (min-width: 992px) {
+    .container {
+      max-width: 800px;
+    }
+  }
+  @media (min-width: 1080px) {
+    .container {
+      max-width: 875px;
+    }
+  }
+  @media (min-width: 1230px) {
+    .container {
+      max-width: 1000px;
+    }
+  }
+  @media (min-width: 1366px) {
+    .container {
+      max-width: 1100px;
+    }
+  }
+  @media (min-width: 1600px) {
+    .container {
+      max-width: 1295px;
+    }
+  }
+  @media (min-width: 1920px) {
+    .container {
+      max-width: 1560px;
+    }
+  }
   
+
   /* Content Film oleh Ahmad Faiz */
   /* Branch: FILM */
   /* Penanggung Jawab Branch: Ahmad Faiz */
