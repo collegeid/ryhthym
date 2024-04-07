@@ -28,6 +28,8 @@
 // Febri bertanggung jawab untuk bagian Base Layout dan Sidebar
 // Branch: BASE, SIDEBAR, FOOTER
 
+
+//SIDEBAR
   const sidebarToggleBtn = document.getElementById('sidebarToggle');
   const sidebarToggleDesktopBtn = document.getElementById('sidebarToggleDesktop');
   const sidebar = document.querySelector('.sidebar');
@@ -47,3 +49,17 @@
       sidebar.style.display = 'none';
     }
   });
+
+  document.addEventListener("DOMContentLoaded", function() {
+    var sidebar = document.querySelector('.sidebar');
+  
+    // Tambahkan event listener untuk sentuhan
+    sidebar.addEventListener('touchstart', function() {
+      sidebar.classList.add('touch');
+    });
+  
+    sidebar.addEventListener('touchend', function() {
+      sidebar.classList.remove('touch');
+    });
+  });
+  
