@@ -237,22 +237,20 @@
       max-width: 1000px;
     }
   }
-  @media (min-width: 1366px) {
-    .container {
-      max-width: 1100px;
-    }
-  }
-  @media (min-width: 1600px) {
-    .container {
-      max-width: 1295px;
-    }
-  }
-  @media (min-width: 1920px) {
-    .container {
-      max-width: 1560px;
-    }
+
+
+  /* Trending Banner oleh Jarwo */
+  /* Branch: TRENDING */
+  /* Penanggung Jawab Branch: Jarwo */
+  
+  .trending-banner {
+    background-color: #ddd;
+    padding: 20px;
+    text-align: center;
   }
   
+
+ 
 
   /* Content Film oleh Ahmad Faiz */
   /* Branch: FILM */
