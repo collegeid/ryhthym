@@ -21,8 +21,7 @@
 
 // Jarwo bertanggung jawab untuk bagian Trending Banner
 // Branch: TRENDING
-
-
+// Owlcarousel
 
 
 
