@@ -219,36 +219,45 @@
   /* Responsive */
   @media (min-width: 768px) {
     .container {
-      max-width: 550px;
+        max-width: 550px;
     }
-  }
-  @media (min-width: 992px) {
-    .container {
-      max-width: 800px;
-    }
-  }
-  @media (min-width: 1080px) {
-    .container {
-      max-width: 875px;
-    }
-  }
-  @media (min-width: 1230px) {
-    .container {
-      max-width: 1000px;
-    }
-  }
+}
 
+@media (min-width: 992px) {
+    .container {
+        max-width: 800px;
+    }
+}
 
-  /* Trending Banner oleh Jarwo */
-  /* Branch: TRENDING */
-  /* Penanggung Jawab Branch: Jarwo */
-  
-  .trending-banner {
-    background-color: #ddd;
-    padding: 20px;
-    text-align: center;
-  }
-  
+@media (min-width: 1080px) {
+    .container {
+        max-width: 875px;
+    }
+}
+
+@media (min-width: 1230px) {
+    .container {
+        max-width: 1000px;
+    }
+}
+
+@media (min-width: 1366px) {
+    .container {
+        max-width: 1100px;
+    }
+}
+
+@media (min-width: 1600px) {
+    .container {
+        max-width: 1295px;
+    }
+}
+
+@media (min-width: 1920px) {
+    .container {
+        max-width: 1560px;
+    }
+}
 
  
 
