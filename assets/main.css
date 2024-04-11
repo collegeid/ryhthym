@@ -336,6 +336,20 @@
     position: relative;
     margin-bottom: 56px;
     z-index: 1000;
+    background: transparent;
+  }
+
+  .card-music > .card-body > .card-title{
+    background-color: #000000;
+    color: #ffffff;
+    font-weight: 600;
+    padding: 15px 10px;
+    height: 10px;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
   }
 
   .swiper {
