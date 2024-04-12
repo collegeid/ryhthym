@@ -9,8 +9,31 @@
 
 // Siswo Adi Nugroho bertanggung jawab untuk bagian Music
 // Branch: MUSIC
-
-
+const swiper = new Swiper(".mySwiper", {
+  slidesPerView: 2,
+  centeredSlides: true,
+  spaceBetween: '-28',
+  speed:1200,
+  autoplay: 
+    {
+      delay: 2000,
+    },
+  loop: true,
+  zoom: true,
+  effect: 'coverflow',
+  coverflowEffect: {
+    rotate: 80,
+    slideShadows: true,
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    type: "fraction",
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+});
 
 
 // Haikal Ihza bertanggung jawab untuk bagian TV Show

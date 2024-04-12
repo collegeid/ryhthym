@@ -10,6 +10,7 @@
           <link rel="stylesheet" href="assets/Owl-Carousel/owl.carousel.min.css" />
           <link rel="stylesheet" href="assets/Owl-Carousel/owl.theme.default.css" />
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
           <link rel="stylesheet" href="assets/main.css" />
           <title>Rhythm Movie TV</title>
      </head>
@@ -134,7 +135,7 @@ HINTS: SELAMA KONTEN GAMBAR BISA DI GESER, BERARTI SUKSES
                                              <!--Banner 1-->
                                              <div class="slider-card">
                                                   <div class="image">
-                                                       <img src="assets/Alladin.jpg" alt="" />
+                                                       <img src="assets/img/Alladin.jpg" alt="" />
                                                   </div>
                                                   <div class="trending-banner-text">
                                                        <!--Jenis-->
@@ -151,14 +152,14 @@ HINTS: SELAMA KONTEN GAMBAR BISA DI GESER, BERARTI SUKSES
                                                                  Action, Drama, Comedy
                                                             </div>
                                                             <!--Rating-->
-                                                            <div class="rating">5.3 <img src="assets/imdb.png" alt="" /></div>
+                                                            <div class="rating">5.3 <img src="assets/img/imdb.png" alt="" /></div>
                                                        </div>
                                                   </div>
                                              </div>
                                              <!--Banner 2-->
                                              <div class="slider-card">
                                                   <div class="image">
-                                                       <img src="assets/Blackpink.jpeg" alt="" />
+                                                       <img src="assets/img/Blackpink.jpeg" alt="" />
                                                   </div>
                                                   <div class="trending-banner-text">
                                                        <!--Jenis-->
@@ -176,7 +177,7 @@ HINTS: SELAMA KONTEN GAMBAR BISA DI GESER, BERARTI SUKSES
                                                             </div>
                                                             <!--Rating-->
                                                             <div class="rating" style="margin-left: 330px;">
-                                                                 <img src="assets/Billboard.png" alt="" />
+                                                                 <img src="assetsimg/Billboard.png" alt="" />
                                                             </div>
                                                        </div>
                                                   </div>
@@ -184,7 +185,7 @@ HINTS: SELAMA KONTEN GAMBAR BISA DI GESER, BERARTI SUKSES
                                              <!--Banner 3-->
                                              <div class="slider-card">
                                                   <div class="image">
-                                                       <img src="assets/DeadPool.jpg" alt="" />
+                                                       <img src="assets/img/DeadPool.jpg" alt="" />
                                                   </div>
                                                   <div class="trending-banner-text">
                                                        <!--Jenis-->
@@ -201,14 +202,14 @@ HINTS: SELAMA KONTEN GAMBAR BISA DI GESER, BERARTI SUKSES
                                                                  Action, Drama, Comedy
                                                             </div>
                                                             <!--Rating-->
-                                                            <div class="rating">5.3 <img src="assets/imdb.png" alt="" /></div>
+                                                            <div class="rating">5.3 <img src="assets/img/imdb.png" alt="" /></div>
                                                        </div>
                                                   </div>
                                              </div>
                                              <!--Banner 4-->
                                              <div class="slider-card">
                                                   <div class="image">
-                                                       <img src="assets/Black Panther.jpg" alt="" />
+                                                       <img src="assets/img/Black Panther.jpg" alt="" />
                                                   </div>
                                                   <div class="trending-banner-text">
                                                        <!--Jenis-->
@@ -225,14 +226,14 @@ HINTS: SELAMA KONTEN GAMBAR BISA DI GESER, BERARTI SUKSES
                                                                  Action, Drama, Comedy
                                                             </div>
                                                             <!--Rating-->
-                                                            <div class="rating">5.3 <img src="assets/imdb.png" alt="" /></div>
+                                                            <div class="rating">5.3 <img src="assets/img/imdb.png" alt="" /></div>
                                                        </div>
                                                   </div>
                                              </div>
                                              <!--Banner 5-->
                                              <div class="slider-card">
                                                   <div class="image">
-                                                       <img src="assets/Running Man.jpg" alt="" />
+                                                       <img src="assets/img/Running Man.jpg" alt="" />
                                                   </div>
                                                   <div class="trending-banner-text">
                                                        <!--Jenis-->
@@ -249,7 +250,7 @@ HINTS: SELAMA KONTEN GAMBAR BISA DI GESER, BERARTI SUKSES
                                                                  Games, Comedy
                                                             </div>
                                                             <!--Rating-->
-                                                            <div class="rating" style="margin-left: 290px;">5.3 <img src="assets/imdb.png" alt="" /></div>
+                                                            <div class="rating" style="margin-left: 290px;">5.3 <img src="assets/img/imdb.png" alt="" /></div>
                                                        </div>
                                                   </div>
                                              </div>
@@ -302,14 +303,31 @@ FLOW: (CENTANG ✓ JIKA SUDAH, DAN UPLOAD PADA BRANCH MASING MASING)
 HINTS: SELAMA KONTEN GAMBAR BISA DI GESER, BERARTI SUKSES
 
 -->
-                              <div class="col">
-                                   <div class="card">
-                                        <div class="card-body">
-                                             <h5 class="card-title">Music</h5>
-                                             <!-- Music Content Here -->
-                                        </div>
-                                   </div>
-                              </div>
+          <div class="col">
+            <div class="card card-music">
+              <div class="card-body">
+                <h5 class="card-title"> music</h5>
+                <div class="slideshow-container">
+
+                  <div #swiperRef="" class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide"><img src="assets/img/music1.png" ></div>
+                      <div class="swiper-slide"><img src="assets/img/music2.png" ></div>
+                      <div class="swiper-slide"><img src="assets/img/music3.png" ></div>
+                      <div class="swiper-slide"><img src="assets/img/music4.png" ></div>
+                      <div class="swiper-slide"><img src="assets/img/music5.png" ></div>
+
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-pagination"></div>
+                    </div>
+                
+                  
+                </div>
+              </div>
+            </div>
+          </div>
 
                               <!---- ================ END CONTENT MUSIC BY SISWO ADI NUGROHO ================  --->
 
@@ -347,11 +365,15 @@ HINTS: SELAMA KONTEN GAMBAR BISA DI GESER, BERARTI SUKSES
           <!-- Bootstrap Bundle with Popper -->
           <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
           <script src="https://kit.fontawesome.com/35306b4d5d.js" crossorigin="anonymous"></script>
-          <script type="text/javascript" src="assets/main.js"></script>
-
+          
           <!--JS Jarwo-->
           <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
           <script type="text/javascript" src="assets/Owl-Carousel/owl-carousel.js"></script>
           <script type="text/javascript" src="assets/Owl-Carousel/owl.carousel.min.js"></script>
+          
+          <!--JS Siswo-->
+          <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+          
+          <script type="text/javascript" src="assets/main.js"></script>
      </body>
 </html>
