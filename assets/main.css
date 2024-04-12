@@ -59,7 +59,7 @@
 .rythym-background {
   position: relative;
  /* Make sure the container is positioned */
-  background-image: url('../assets/bg.png');
+  background-image: url('../assets/img/bg.png');
   background-size: cover;
   background-position: center;
 }
