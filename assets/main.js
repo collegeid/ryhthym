@@ -45,6 +45,25 @@ const swiper = new Swiper(".mySwiper", {
 // Jarwo bertanggung jawab untuk bagian Trending Banner
 // Branch: TRENDING
 // Owlcarousel
+// Video Popup
+document.addEventListener('click', function(event) {
+  const sliderCardOverlay = event.target.closest('.slider-card-overlay');
+  const closeBtn = event.target.closest('.close-btn');
+  const videoPopup = document.querySelector('.modal');
+  const videoIframe = document.querySelector('.modal iframe');
+   // Membuka Popup
+   if (sliderCardOverlay) {
+    event.preventDefault();
+    videoPopup.style.display = 'flex';
+  } 
+  // Menutup Popup
+  else if (closeBtn || event.target.closest('.modal-dialog')) {
+    videoPopup.style.display = 'none';
+    videoIframe.src = '';
+  }
+});
+
+
 
 
 
