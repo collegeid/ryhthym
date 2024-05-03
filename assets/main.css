@@ -389,11 +389,15 @@
   .video-content {
     padding-bottom: 58%;
     width: 300px;
-    height: 210px;
+    height: 200px;
   }
   .video-content iframe {
     width: 300px;
-    height: 210px;
+    height: 200px;
+  }
+  .sinopsis{
+    width: 360px;
+    height: 360px;
   }
   .close-btn{
     left: 298px;
@@ -402,6 +406,9 @@
 @media (min-width: 576px){
   .video-content {
     padding-bottom: 65%;
+  }
+  .sinopsis{
+    width: 500px;
   }
   .close-btn{
     left: 445px;
@@ -424,6 +431,10 @@
  }
   .video-content {
     padding-bottom: 50.75%;
+  }
+  .sinopsis{
+    width: 640px;
+    height: 460px;
   }
   .close-btn{
     left: 575px;
