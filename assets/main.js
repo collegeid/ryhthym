@@ -4,7 +4,31 @@
 // Ahmad Faiz bertanggung jawab untuk bagian Film
 // Branch: FILM
 
+var TrandingSlider = new Swiper('.tranding-slider', {
+  effect: 'coverflow',
+  grabCursor: true,
+  centeredSlides: true,
+  loop: true,
+  slidesPerView: 'auto',
+  speed: 1200,
+  autoplay: 
+  {
+    delay: 2000,
+  },
+  loop: true,
+  zoom: true,
+  coverflowEffect: {
+    rotate: 0,
+    stretch: 0,
+    depth: 100,
+    modifier: 2.5,
+  },
 
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  }
+});
 
 
 // Siswo Adi Nugroho bertanggung jawab untuk bagian Music
@@ -16,7 +40,7 @@ const swiper = new Swiper(".mySwiper", {
   speed:1200,
   autoplay: 
     {
-      delay: 2000,
+      delay: 1000,
     },
   loop: true,
   zoom: true,
@@ -38,7 +62,34 @@ const swiper = new Swiper(".mySwiper", {
 
 // Haikal Ihza bertanggung jawab untuk bagian TV Show
 // Branch: TV
+let slideIndex = 1;
+showSlides(slideIndex);
 
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
 
 
 
@@ -49,21 +100,20 @@ const swiper = new Swiper(".mySwiper", {
 document.addEventListener('click', function(event) {
   const sliderCardOverlay = event.target.closest('.slider-card-overlay');
   const closeBtn = event.target.closest('.close-btn');
+  const modalDialog = event.target.closest('.modal-dialog');
   const videoPopup = document.querySelector('.modal');
   const videoIframe = document.querySelector('.modal iframe');
-   // Membuka Popup
-   if (sliderCardOverlay) {
+  // Membuka Popup
+  if (sliderCardOverlay) {
     event.preventDefault();
     videoPopup.style.display = 'flex';
   } 
   // Menutup Popup
-  else if (closeBtn || event.target.closest('.modal-dialog')) {
+  else if (closeBtn || !modalDialog) {
     videoPopup.style.display = 'none';
     videoIframe.src = '';
   }
 });
-
-
 
 
 

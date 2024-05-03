@@ -122,6 +122,18 @@
 /* Content Trending Banner oleh Jarwo */
 /* Branch: TRENDING */
 /* Penanggung Jawab Branch: Jarwo */
+.card-film > .card-body > .card-title{
+  background-color: #000000;
+  color: #ffffff;
+  font-weight: 600;
+  padding: 15px 10px;
+  height: 10px;
+  width: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+}
 .container{
   width: 100%;
   background: #ff000000;
@@ -295,7 +307,7 @@
 }
 .modal-dialog {
   position: relative;
-  height: 850px;
+  height: 820px;
   border-radius: 15px;
   background-color: #ffffff;
 }
@@ -306,19 +318,27 @@
 .video-content{
   position: relative;
   max-width: 90%;
-  height: 0;
   width: 640px;
-  height: 360px;
+  height: 325px;
   border-radius: 15px;
   margin: 10px auto;
-  padding-bottom: 56.25%;
+  padding-bottom: 50.25%;
   align-content: center;
   justify-content: center;
   background-color: #003cff;
 }
 .video-content iframe {
   position: absolute;
+  height: 325px;
   border-radius: 15px;
+}
+.sinopsis{
+  width: 640px;
+  height: 460px;
+  border-radius: 15px;
+  align-content: center;
+  justify-content: center;
+  background-color: #ffffff00;
 }
 .close-btn{
   position: absolute;
@@ -361,15 +381,53 @@
   z-index: 1;
 }
 /* Responsive */
-@media (min-width: 768px) {
+@media (max-width: 576px){
+  .modal-dialog {
+    height: 600px;
+    width: 360px;
+  }
+  .video-content {
+    padding-bottom: 58%;
+    width: 300px;
+    height: 210px;
+  }
+  .video-content iframe {
+    width: 300px;
+    height: 210px;
+  }
+  .close-btn{
+    left: 298px;
+  }
+}
+@media (min-width: 576px){
+  .video-content {
+    padding-bottom: 65%;
+  }
+  .close-btn{
+    left: 445px;
+  }
+}
+@media (min-width: 768px){
   .container {
       max-width: 550px;
  }
+  .video-content {
+    padding-bottom: 65%;
+  }
+  .close-btn{
+    left: 445px;
+  }
 }
 @media (min-width: 992px) {
   .container {
       max-width: 800px;
  }
+  .video-content {
+    padding-bottom: 50.75%;
+  }
+  .close-btn{
+    left: 575px;
+  }
 }
 @media (min-width: 1080px) {
   .container {
@@ -400,7 +458,87 @@
 /* Branch: FILM */
 /* Penanggung Jawab Branch: Ahmad Faiz */
 
+.col{
+  max-height: 100vh;
+  overflow: auto;
+}
 
+.card-music{
+  position: relative;
+  margin-bottom: 56px;
+  z-index: 1000;
+  background: transparent;
+}
+
+.card-music > .card-body > .card-title{
+  background-color: #000000;
+  color: #ffffff;
+  font-weight: 600;
+  padding: 15px 10px;
+  height: 10px;
+  width: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+}
+
+.swiper {
+  width: 100%;
+  height: 300px;
+  margin: 20px auto;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper-slide-active{
+  transform: scale(1) !important;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.swiper-slide-prev, .swiper-slide-next{
+  transform: scale(.75) !important;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.swiper-button-next, .swiper-button-prev{
+  background-color: #000000;
+  padding: 18px;
+  color: #ffffff;
+  border-radius: 100%;
+  width: 50px;
+  height: 50px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.4s ease-in-out;
+  transform: scale(.8);
+  opacity: .2;
+  box-sizing: border-box;
+}
+
+.swiper-button-next::after, .swiper-button-prev::after{
+  transform: scale(.8);
+}
+
+.swiper-button-next:hover, .swiper-button-prev:hover{
+  transition: 0.4s ease-in-out;
+  transform: scale(1);
+  opacity: 1;
+}
 
   /* Content Music oleh Siswo Adi Nugroho */
   /* Branch: MUSIC */
@@ -410,14 +548,14 @@
     overflow: auto;
   }
 
-  .card-music{
+  .card-film{
     position: relative;
     margin-bottom: 56px;
     z-index: 1000;
     background: transparent;
   }
 
-  .card-music > .card-body > .card-title{
+  .card-film > .card-body-film > .card-title-film{
     background-color: #000000;
     color: #ffffff;
     font-weight: 600;
@@ -493,3 +631,115 @@
 /* Content TV Show oleh Haikal Ihza */
 /* Branch: TV */
 /* Penanggung Jawab Branch: Haikal Ihza */
+* {box-sizing:border-box}
+
+  /* Slideshow container */
+  .slideshow-container {
+    max-width: 300px;
+    position: relative;
+    margin: auto;
+  }
+  
+  /* Hide the images by default */
+  .mySlides {
+    width: 100%;
+    height: 400px; /* Set the height according to your needs */
+    overflow: hidden;
+    position: relative;
+  }
+  
+  /* Next & previous buttons */
+  .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 40%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+  }
+  
+  /* Position the "next button" to the right */
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  
+  /* On hover, add a black background color with a little bit see-through5*/
+  .prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+  }
+  
+  /* Caption text */
+  .text {
+    color: #ffffff;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: relative;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  /* Number text (1/3 etc) */
+  .numbertext {
+    color: #fdfdfd;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+  }
+  
+  /* The dots/bullets/indicators */
+  .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #4d070700;
+    border-radius: 50%;
+    display: flex;
+    /*transition: background-color 0.6s ease;*/
+  }
+  
+  .active, .dot:hover {
+    background-color: #71717100;
+  }
+
+  .card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #ffffff00;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, .125);
+    border-radius: .25rem;
+    height:50%;
+    
+}
+
+  body {
+    margin: 0;
+    font-family: var(--bs-font-sans-serif);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #fdfefe;
+    background-color: #fff;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.img{
+  position: relative;
+  display: flex;
+  
+}
+ 
