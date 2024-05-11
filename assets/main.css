@@ -366,12 +366,138 @@
 }
 
 .swiper-slide {
+  position: relative;
   text-align: center;
   font-size: 18px;
   background: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
+
+  cursor: pointer;
+}
+
+.swiper-slide:hover > .hover-card{
+  display: flex;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.hover-card{
+  display: none;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  flex-direction: column;
+
+
+  position: absolute;
+  z-index: 100;
+  width: 150%;
+  height: 100%;
+
+  background-color: #303440;
+  box-shadow: 0px 1px 1px rgba(3, 7, 18, 0.02);
+  border-radius: 8px;
+
+}
+
+.hover-card-header{
+  position: relative;
+}
+
+.hover-card-header > img{
+  width: 100% !important;
+  height: 124px !important;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.hover-card-warp-btn{
+  position: absolute;
+  bottom: 14px;
+  right: 14px;
+}
+
+.hover-card-warp-btn > button{
+  background: transparent;
+  outline: none;
+  border: none;
+  background: lightgreen;
+  border-radius: 100%;
+}
+
+.hover-card-warp-btn > button:nth-child(1){
+  color: #fff;
+}
+
+.hover-card-warp-btn > button:nth-child(2){
+  color: black;
+  background: gray;
+}
+
+
+
+.hover-card-body{
+  padding: 12px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.hover-card-body > h4{
+  width: 100%;
+  font-size: 18px;
+  font-weight: 800;
+  text-align: left;
+}
+
+.hover-card-body > h4:hover{
+  color: lightgreen;
+}
+
+.hover-card-body > p{
+  font-size: 12px;
+  text-align: left; 
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.hover-card-body > a{
+  font-size: 10px;
+  text-decoration: none;
+  color: lightgreen;
+  margin-left: auto;
+  width: 100%;
+  display: block;
+  text-align: right;
+}
+
+.hover-card-info{
+  width: 100%;
+  display: flex;
+  gap: 8px;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.hover-card-info > p{
+  display: flex;
+  gap: 2px;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 12px;
+  margin-bottom: 0;
+}
+
+.hover-card-info > p:nth-child(1){
+  color: lightgreen;
+  padding-right: 8px;
+  border-right: 1px solid gray;
 }
 
 .swiper-slide img {
@@ -616,6 +742,10 @@
 .img{
   position: relative;
   display: flex;
+  
+}
+
+.container-modal{
   
 }
  
