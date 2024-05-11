@@ -96,13 +96,21 @@ FLOW: (CENTANG JIKA SUDAH, DAN UPLOAD PADA BRANCH MASING MASING)
 2. KONFIGURASI SEARCH DENGAN JAVASCRIPT
 
 -->
-                         <!-- Search Bar -->
-                         <div class="input-group mb-3 mt-3">
-                              <input type="text" class="form-control" placeholder="Search/Filter" aria-label="Search/Filter" aria-describedby="button-addon2" />
-                              <button class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
-                              <button class="btn btn-danger toggle-sidebar-mobile d-md-none" id="sidebarToggle"><i class="fa-solid fa-bars-staggered"></i></button>
-                              <button class="btn btn-danger toggle-sidebar-desktop d-none d-md-block" id="sidebarToggleDesktop"><i class="fa-solid fa-bars-staggered"></i></button>
+                    
+                       <!-- Search Bar -->
+                       <div class="input-group mb-3 mt-3">
+                         <input type="text" class="form-control mr-2" placeholder="Search/Filter" aria-label="Search/Filter" aria-describedby="button-addon2" />
+                         <div class="input-group-append">
+                             <button class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
                          </div>
+                         <div class="input-group-append" style="margin-left: 5px;">
+                             <button class="btn btn-danger toggle-sidebar-mobile d-md-none" id="sidebarToggle"><i class="fa-solid fa-bars-staggered"></i></button>
+                         </div>
+                         
+                         <div class="input-group-append" style="margin-left: 5px;">
+                             <button class="btn btn-danger toggle-sidebar-desktop d-none d-md-block" id="sidebarToggleDesktop"><i class="fa-solid fa-bars-staggered"></i></button>
+                         </div>
+                     </div>
 
                          <!---- ============  END SEARCH BY FEBRI =============== -->
 
@@ -165,7 +173,7 @@ HINTS: SELAMA KONTEN GAMBAR BISA DI GESER, BERARTI SUKSES
                                                        <!--Jenis-->
                                                        <span class="jenis">MUSIC</span>
                                                        <!--Nama-->
-                                                       <div class="movie-name">
+                                                       <div class="music-name">
                                                             <span>2023</span>
                                                             <strong>BLACKPINK</strong>
                                                        </div>
@@ -177,7 +185,7 @@ HINTS: SELAMA KONTEN GAMBAR BISA DI GESER, BERARTI SUKSES
                                                             </div>
                                                             <!--Rating-->
                                                             <div class="rating" style="margin-left: 330px;">
-                                                                 <img src="assets/img/Billboard.png" alt="" />
+                                                                 <img src="assetsimg/Billboard.png" alt="" />
                                                             </div>
                                                        </div>
                                                   </div>
@@ -277,34 +285,15 @@ FLOW: (CENTANG ✓ JIKA SUDAH, DAN UPLOAD PADA BRANCH MASING MASING)
 HINTS: SELAMA KONTEN GAMBAR BISA DI GESER, BERARTI SUKSES
 
 -->
-                                   
-          <div class="col">
-            <div class="card card-film">
-              <div class="card-body-film">
-                <h5 class="card-title-film"> film</h5>
-                <div class="slideshow-container">
 
-                  <div #swiperRef="" class="swiper mySwiper">
-                    <div class="swiper-wrapper">
-                      <div class="swiper-slide"><img src="assets/img/image1.jpg" >
-                         
-                    </div>
-                      <div class="swiper-slide"><img src="assets/img/image3.jpeg" ></div>
-                      <div class="swiper-slide"><img src="assets/img/image4.jpg" ></div>
-                      <div class="swiper-slide"><img src="assets/img/image5.jpeg" ></div>
-                      <div class="swiper-slide"><img src="assets/img/image6.jpeg" ></div>
-
-                    </div>
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
-                    
-                    </div>
-                
-                  
-                </div>
-              </div>
-            </div>
-          </div>
+                              <div class="col">
+                                   <div class="card">
+                                        <div class="card-body">
+                                             <h5 class="card-title">Film</h5>
+                                             <!-- Film Content Here -->
+                                        </div>
+                                   </div>
+                              </div>
 
                               <!---- ================ END CONTENT FILM BY AHMAD FAIZ ================  --->
 
@@ -334,7 +323,7 @@ HINTS: SELAMA KONTEN GAMBAR BISA DI GESER, BERARTI SUKSES
                       <div class="swiper-slide"><img src="assets/img/music2.png" ></div>
                       <div class="swiper-slide"><img src="assets/img/music3.png" ></div>
                       <div class="swiper-slide"><img src="assets/img/music4.png" ></div>
-                      <div class="swiper-slide"><img src="assets/img/music5.png" ></div>
+                      <div class="swiper-slide"><img src="assets/img/smusic5.png" ></div>
 
                     </div>
                     <div class="swiper-button-next"></div>
@@ -364,31 +353,15 @@ FLOW: (CENTANG ✓ JIKA SUDAH, DAN UPLOAD PADA BRANCH MASING MASING)
 HINTS: SELAMA KONTEN GAMBAR BISA DI GESER, BERARTI SUKSES
 
 -->
-<div class="col">
-     <div class="card card-TV">
-       <div class="card-body">
-         <h5 class="card-title"> TV SHOW </h5>
-         <div class="slideshow-container">
+                              <div class="col">
+                                   <div class="card">
+                                        <div class="card-body">
+                                             <h5 class="card-title">TV Show</h5>
+                                             <!-- TV Show Content Here -->
+                                        </div>
+                                   </div>
+                              </div>
 
-           <div #swiperRef="" class="swiper mySwiper">
-             <div class="swiper-wrapper">
-               <div class="swiper-slide"><img src="assets/img/geo tv.jpg" ></div>
-               <div class="swiper-slide"><img src="assets/img/HBO.jpg" ></div>
-               <div class="swiper-slide"><img src="assets/img/kickandy.jpeg" ></div>
-               <div class="swiper-slide"><img src="assets/img/PEEACE TV.jpg" ></div>
-               <div class="swiper-slide"><img src="assets/img/tvshow.jpeg" ></div>
-
-             </div>
-             <div class="swiper-button-next"></div>
-             <div class="swiper-button-prev"></div>
-             <div class="swiper-pagination"></div>
-             </div>
-         
-           
-         </div>
-       </div>
-     </div>
-   </div>
                               <!---- ================ END CONTENT TV SHOW BY HAIKAL ================  --->
                          </div>
                     </div>
