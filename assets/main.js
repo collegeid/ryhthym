@@ -95,6 +95,58 @@ var TrandingSlider = new Swiper('.tranding-slider', {
 // Jarwo bertanggung jawab untuk bagian Trending Banner
 // Branch: TRENDING
 // Owlcarousel
+// Video Popup
+document.addEventListener('click', function(event) {
+  const sliderCardOverlay = event.target.closest('.slider-card-overlay');
+  const closeBtn = event.target.closest('.close-btn');
+  const modalDialog = event.target.closest('.modal-dialog');
+  const videoPopup = document.querySelector('.modal');
+  const videoIframe = document.querySelector('.modal iframe');
+
+  // Membuka Popup
+  if (sliderCardOverlay) {
+    event.preventDefault();
+    const videoUrl = sliderCardOverlay.getAttribute('href');
+    const videoId = getYouTubeVideoId(videoUrl);
+    const embedUrl = `https://www.youtube.com/embed/${videoId}`;
+    videoPopup.style.display = 'flex';
+    videoIframe.src = embedUrl;
+  } 
+  // Menutup Popup
+  else if (closeBtn || !modalDialog) {
+    videoPopup.style.display = 'none';
+    videoIframe.src = '';
+  }
+});
+
+// Fungsi untuk mendapatkan ID video YouTube dari URL
+function getYouTubeVideoId(url) {
+  const pattern = /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
+  const match = url.match(pattern);
+
+  // Jika ada kecocokan, kembalikan ID video
+  if (match && match[1]) {
+    return match[1];
+  } else {
+    return null;
+  }
+}
+// Like
+let likeCount = 60;
+function toggleLike() {
+  const likeButton = document.querySelector('.like');
+  const likeCountElement = document.getElementById('likeCount');
+    if (!likeButton.classList.contains('liked')) {
+      likeButton.classList.add('liked');
+      likeButton.style.color = 'red';
+      likeCount++;
+    } else {
+      likeButton.classList.remove('liked');
+      likeButton.style.color = '';
+      likeCount--;
+    }
+    likeCountElement.textContent = likeCount;
+}
 
 
 
