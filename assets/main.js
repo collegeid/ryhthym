@@ -63,40 +63,91 @@ const swiper = new Swiper(".mySwiper", {
 
 // Haikal Ihza bertanggung jawab untuk bagian TV Show
 // Branch: TV
-let slideIndex = 1;
-showSlides(slideIndex);
 
-// Next/previous controls
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
+var TrandingSlider = new Swiper('.tranding-slider', {
+  effect: 'coverflow',
+  grabCursor: true,
+  centeredSlides: true,
+  loop: true,
+  slidesPerView: 'auto',
+  speed: 1200,
+  autoplay: 
+  {
+    delay: 2000,
+  },
+  loop: true,
+  zoom: true,
+  coverflowEffect: {
+    rotate: 0,
+    stretch: 0,
+    depth: 100,
+    modifier: 2.5,
+  },
 
-// Thumbnail image controls
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
-  let i;
-  let slides = document.getElementsByClassName("mySlides");
-  let dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
   }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " active";
-}
+});
+
 
 
 
 // Jarwo bertanggung jawab untuk bagian Trending Banner
 // Branch: TRENDING
 // Owlcarousel
+// Video Popup
+document.addEventListener('click', function(event) {
+  const sliderCardOverlay = event.target.closest('.slider-card-overlay');
+  const closeBtn = event.target.closest('.close-btn');
+  const modalDialog = event.target.closest('.modal-dialog');
+  const videoPopup = document.querySelector('.modal');
+  const videoIframe = document.querySelector('.modal iframe');
+
+  // Membuka Popup
+  if (sliderCardOverlay) {
+    event.preventDefault();
+    const videoUrl = sliderCardOverlay.getAttribute('href');
+    const videoId = getYouTubeVideoId(videoUrl);
+    const embedUrl = `https://www.youtube.com/embed/${videoId}`;
+    videoPopup.style.display = 'flex';
+    videoIframe.src = embedUrl;
+  } 
+  // Menutup Popup
+  else if (closeBtn || !modalDialog) {
+    videoPopup.style.display = 'none';
+    videoIframe.src = '';
+  }
+});
+
+// Fungsi untuk mendapatkan ID video YouTube dari URL
+function getYouTubeVideoId(url) {
+  const pattern = /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
+  const match = url.match(pattern);
+
+  // Jika ada kecocokan, kembalikan ID video
+  if (match && match[1]) {
+    return match[1];
+  } else {
+    return null;
+  }
+}
+// Like
+let likeCount = 60;
+function toggleLike() {
+  const likeButton = document.querySelector('.like');
+  const likeCountElement = document.getElementById('likeCount');
+    if (!likeButton.classList.contains('liked')) {
+      likeButton.classList.add('liked');
+      likeButton.style.color = 'red';
+      likeCount++;
+    } else {
+      likeButton.classList.remove('liked');
+      likeButton.style.color = '';
+      likeCount--;
+    }
+    likeCountElement.textContent = likeCount;
+}
 
 
 
