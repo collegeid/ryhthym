@@ -410,12 +410,6 @@
   transform: scale(.8);
 }
 
-.swiper-button-next:hover, .swiper-button-prev:hover{
-  transition: 0.4s ease-in-out;
-  transform: scale(1);
-  opacity: 1;
-}
-
 
 
   /* Content Music oleh Siswo Adi Nugroho */
@@ -460,7 +454,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-  
     cursor: pointer;
   }
   
