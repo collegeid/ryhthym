@@ -36,9 +36,7 @@ $(document).ready(function () {
 
   // Event click pada slider-card
   $(".slider-card").click(function () {
-    // Mendapatkan index slider-card yang diklik
     var clickedIndex = $(this).parent().index();
-    // Mendapatkan index slide yang berada di tengah
     var centerIndex = owl.find(".owl-item.center").index();
 
     // Menggeser slider jika slider-card yang diklik bukan berada di tengah
@@ -51,4 +49,3 @@ $(document).ready(function () {
     }
   });
 });
-
