@@ -678,14 +678,14 @@
     overflow: auto;
   }
 
-  .card-TV{
+  .card-tv{
     position: relative;
     margin-bottom: 56px;
     z-index: 1000;
     background: transparent;
   }
 
-  .card-TV > .card-body-TV > .card-title-TV{
+  .card-tv > .card-body-TV > .card-title-TV{
     background-color: #000000;
     color: #ffffff;
     font-weight: 600;
