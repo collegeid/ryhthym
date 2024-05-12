@@ -197,6 +197,7 @@
   height: 100%;
   top: 100%;
   left: 0;
+  border-radius: 15px;
   background-color: rgba(27, 27, 27, 0.5);
   justify-content: center;
   align-items: center;
@@ -256,38 +257,12 @@
   letter-spacing: 0,5px;
   color: #ffffff;
 }
-.music-name{
+/* Kategori & Rating */
+.kategori-rating{
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin-top: 140px;
-  margin-left: 5px;
-  color: #ffffff00;
-}
-/* Kategori */
-.Kategori-rating{
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  display: flex;
-  align-items: center;
-  margin-top: 5px;
-  margin-left: 5px;
-}
-.kategori{
-  color: #ffffff;
-  font-size: 15px;
-  font-weight: 500;
-  margin-top: 0px 3px;
 }
 .rating{
-  font-size: 15px;
-  color: #ffd000;
-  letter-spacing: 1px;
-  display: flex;
-  align-items: center;
-  font-style: bold;
-  margin-left: 243px;
+  margin-left: 230px;
 }
 .rating img{
   height: 40px;
@@ -309,11 +284,12 @@
   position: relative;
   height: 820px;
   border-radius: 15px;
-  background-color: #ffffff;
+  background-color: black;
 }
 .modal-content{
   border-radius: 15px;
   border: #ffffff;
+  background-color: #55555500;
 }
 .video-content{
   position: relative;
@@ -325,20 +301,57 @@
   padding-bottom: 50.25%;
   align-content: center;
   justify-content: center;
-  background-color: #003cff;
+  background-color: rgba(0, 0, 255, 0);
 }
 .video-content iframe {
   position: absolute;
   height: 325px;
   border-radius: 15px;
 }
+.judul-trending{
+  height: 50px;
+  background-color: #ff000000;
+}
+.rating-trending{
+  display: flex;
+  height: 40px;
+  background-color: #00000000;
+  font-weight: 500;
+  font-size: 20px;
+  position: relative;
+}
+.info-kiri{
+  gap: 15px;
+  cursor: pointer;
+}
+.info-kiri > p{
+  margin-bottom: 5px;
+}
+.info-kiri > p:nth-child(1){
+  color: red;
+  padding-right: 15px;
+  border-right: 2px solid white;
+} 
+.info-kiri > p:nth-child(2){
+  padding-right: 15px;
+  border-right: 2px solid white;
+}
+.info-kanan{
+  font-size: 17px;
+  padding-top: 8px;
+}
 .sinopsis{
-  width: 640px;
-  height: 460px;
+  height: 380px;
   border-radius: 15px;
-  align-content: center;
+  align-items: flex-start;
   justify-content: center;
-  background-color: #ffffff00;
+  background-color: #ff000000;
+}
+.like:hover{
+  cursor: pointer;
+  color: red;
+  transform: scale(1.2);
+  transition: all 0.2s ease ease-in-out;
 }
 .close-btn{
   position: absolute;
@@ -351,9 +364,6 @@
   padding: 3px;
 }
 /* Navigasi */
-.owl-nav{
-  color: #ffffff;
-}
 .owl-nav button {
   background-color: #00000000!important;
   height: 50px;
@@ -361,8 +371,6 @@
 }
 .owl-nav button:hover {
   background-color: #2b4bff!important;
-  height: 50px;
-  width: 30px;
 }
 .owl-nav .owl-prev {
   position: absolute;
@@ -381,60 +389,77 @@
   z-index: 1;
 }
 /* Responsive */
+@media (max-width: 550px) {
+  .movie-name,
+  .kategori-rating {
+    display: none;
+  }
+}
 @media (max-width: 576px){
   .modal-dialog {
     height: 600px;
     width: 360px;
   }
-  .video-content {
-    padding-bottom: 58%;
-    width: 300px;
-    height: 200px;
-  }
+  .video-content,
   .video-content iframe {
     width: 300px;
-    height: 200px;
+    height: 181px;
+  }
+  .judul-trending{
+    width: 360px;
+    height: 40px;
   }
   .sinopsis{
     width: 360px;
-    height: 360px;
+    height: 285px;
+    font-size: small;
   }
   .close-btn{
     left: 298px;
+  }
+  .info-kanan{
+    display: none;
   }
 }
 @media (min-width: 576px){
   .video-content {
     padding-bottom: 65%;
   }
+  .judul-trending,
   .sinopsis{
     width: 500px;
   }
   .close-btn{
     left: 445px;
   }
+  .info-kanan{
+    display: none;
+  }
 }
 @media (min-width: 768px){
   .container {
-      max-width: 550px;
- }
+    max-width: 550px;
+  }
   .video-content {
     padding-bottom: 65%;
   }
   .close-btn{
     left: 445px;
   }
+  .info-kanan{
+    display:flex;
+  }
 }
 @media (min-width: 992px) {
   .container {
-      max-width: 800px;
- }
+    max-width: 800px;
+  }
   .video-content {
     padding-bottom: 50.75%;
   }
+  .judul-trending,
   .sinopsis{
     width: 640px;
-    height: 460px;
   }
   .close-btn{
     left: 575px;
@@ -442,28 +467,34 @@
 }
 @media (min-width: 1080px) {
   .container {
-      max-width: 875px;
- }
+    max-width: 875px;
+  }
 }
 @media (min-width: 1230px) {
   .container {
-      max-width: 1000px;
- }
+    max-width: 1000px;
+  }
 }
 @media (min-width: 1366px) {
   .container {
-      max-width: 1100px;
- }
+    max-width: 1100px;
+  }
+  .movie-name{
+    margin-top: 70px;
+  }
 }
 @media (min-width: 1600px) {
   .container {
-      max-width: 1295px;
- }
+    max-width: 1295px;
+  }
+  .movie-name{
+    margin-top: 150px;
+  }
 }
 @media (min-width: 1920px) {
   .container {
-      max-width: 1560px;
- }
+    max-width: 1560px;
+  }
 }
 /* Content Film oleh Ahmad Faiz */
 /* Branch: FILM */
