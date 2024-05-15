@@ -59,7 +59,7 @@
 .rythym-background {
   position: relative;
  /* Make sure the container is positioned */
-  background-image: url('../assets/img/bg.png');
+  background-image: url('../img/bg.png');
   background-size: cover;
   background-position: center;
 }
@@ -814,7 +814,7 @@
     background: transparent;
   } 
 
-   .card-tv > .card-body-TV > .card-title-TV{
+   .card-tv > .card-body-tv > .card-title-tv{
     background-color: #000000;
     color: #ffffff;
     font-weight: 600;
