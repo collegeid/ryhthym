@@ -11,10 +11,10 @@ var TrandingSlider = new Swiper('.tranding-slider', {
   loop: true,
   slidesPerView: 'auto',
   speed: 1200,
-  autoplay: 
-  {
-    delay: 2000,
-  },
+  // autoplay: 
+  // {
+  //   delay: 2000,
+  // },
   loop: true,
   zoom: true,
   coverflowEffect: {
@@ -38,10 +38,10 @@ const swiper = new Swiper(".mySwiper", {
   centeredSlides: true,
   spaceBetween: '-28',
   speed:1200,
-  autoplay: 
-    {
-      delay: 1000,
-    },
+  // autoplay: 
+  //   {
+  //     delay: 1000,
+  //   },
   loop: true,
   zoom: true,
   effect: 'coverflow',
@@ -63,6 +63,27 @@ const swiper = new Swiper(".mySwiper", {
 // Haikal Ihza bertanggung jawab untuk bagian TV Show
 // Branch: TV
 
+/*var myModal = document.getElementById('myModal')
+var myInput = document.getElementById('myInput')
+
+myModal.addEventListener('shown.bs.modal', function () {
+  myInput.focus()
+})*/
+
+/*App.Router.map(function()
+{
+    this.resource('HOME');
+    this.resource('DINESH');
+    this.resource('CLICK');
+});*/
+
+var myModal = document.getElementById('myModal')
+var myInput = document.getElementById('myInput')
+
+myModal.addEventListener('shown.bs.modal', function () {
+  myInput.focus()
+})
+
 var TrandingSlider = new Swiper('.tranding-slider', {
   effect: 'coverflow',
   grabCursor: true,
@@ -70,10 +91,10 @@ var TrandingSlider = new Swiper('.tranding-slider', {
   loop: true,
   slidesPerView: 'auto',
   speed: 1200,
-  autoplay: 
-  {
-    delay: 2000,
-  },
+  // autoplay: 
+  // {
+  //   delay: 2000,
+  // },
   loop: true,
   zoom: true,
   coverflowEffect: {
@@ -87,7 +108,11 @@ var TrandingSlider = new Swiper('.tranding-slider', {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
   }
+  
 });
+
+
+
 
 
 
