@@ -3,12 +3,14 @@ document.addEventListener('DOMContentLoaded', function () {
     $("#suggestions").hide()
    const searchInput = document.getElementById('searchInput');
    const searchButton = document.getElementById('searchButton');
+   const suggestionsContainer = document.getElementById('suggestionsContainer');
    const suggestions = document.getElementById('suggestions');
 
    searchButton.addEventListener('click', function () {
        const query = searchInput.value.trim();
        if (query !== '') {
            search(query);
+           suggestionsContainer.style.zIndex = '1500'; // Mengatur letak index container suggestions
            $("#suggestions").show()
        }
    });

@@ -132,7 +132,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  text-transform: uppercase;
 }
 .container{
   width: 100%;
@@ -201,7 +200,6 @@
   background-color: rgba(27, 27, 27, 0.5);
   justify-content: center;
   align-items: center;
-  color: #ffffff;
   transition: all ease 0.3s;
   display: none;
   z-index: 2;
@@ -326,6 +324,7 @@
 }
 .info-kiri > p{
   margin-bottom: 5px;
+  color: #ffffff;
 }
 .info-kiri > p:nth-child(1){
   color: red;

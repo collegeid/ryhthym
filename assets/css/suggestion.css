@@ -1,9 +1,27 @@
+       
+       #suggestionsContainer {
+        position: absolute;
+        height: 400px;
+        overflow-y: auto;
+        border-radius: 15px;
+        margin-right: 1%;
+    }
+    @media (max-width: 515px) {
+        #suggestionsContainer {
+            height: 450px;
+        }
+    }
+    @media (max-width: 992px) {
+        #suggestionsContainer {
+            margin-right: 2%;
+        }
+    }
+
        /* Gaya untuk suggestions */
        #suggestions {
         padding: 10px;
         background-color: #1a1a1b;
-        border-radius: 5px;
-        margin-top: 10px;
+        border-radius: 15px;
         max-width: 1920px; /* Atur lebar maksimum suggestion */
     }
     
@@ -12,6 +30,9 @@
         margin-bottom: 10px;
         display: flex; /* Menggunakan Flexbox */
         align-items: center; /* Menyamakan tinggi item */
+        padding: 10px;
+        border-radius: 15px;
+        background-color: #000000;
     }
     
     .suggestion-item img.thumbnail {
