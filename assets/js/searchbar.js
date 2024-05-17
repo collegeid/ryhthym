@@ -1,47 +1,49 @@
-// integrasi searchbar, automatic search by febri
-// integrasi dynamic suggestion container improvement by jarwo
-
 document.addEventListener('DOMContentLoaded', function() {
     $("#suggestions").hide()
     const searchInput = document.getElementById('searchInput');
     const searchButton = document.getElementById('searchButton');
     const suggestionsContainer = document.getElementById('suggestionsContainer');
     const suggestions = document.getElementById('suggestions');
-    let typing = false; // Menandai apakah pengguna sedang mengetik
+    let typingTimer; // Timer untuk menunggu selesai mengetik
+    const doneTypingInterval = 500; // Interval waktu setelah selesai mengetik
 
     // Pencarian saat input berubah
     searchInput.addEventListener('input', function() {
-        typing = true; // Pengguna sedang mengetik
+        clearTimeout(typingTimer); // Bersihkan timer sebelumnya
         const query = searchInput.value.trim();
         if (query !== '') {
-            search(query);
-            suggestionsContainer.style.zIndex = '1500'; // Mengatur letak index container suggestions
-            $("#suggestions").show();
+            typingTimer = setTimeout(() => {
+                clearSuggestions(); // Bersihkan hasil pencarian sebelumnya
+                search(query);
+                suggestionsContainer.style.zIndex = '1500'; // Setel indeks Z container suggestions
+                $("#suggestions").show();
+            }, doneTypingInterval);
         } else {
+            clearSuggestions(); // Bersihkan hasil pencarian jika input kosong
             $("#suggestions").hide();
         }
     });
 
     // Pencarian saat tombol pencarian diklik
     searchButton.addEventListener('click', function() {
-        if (!typing) { // Jika pengguna tidak sedang mengetik
-            const query = searchInput.value.trim();
-            if (query !== '') {
-                search(query);
-                suggestionsContainer.style.zIndex = '1500'; // Mengatur letak index container suggestions
-                $("#suggestions").show();
-            }
+        const query = searchInput.value.trim();
+        if (query !== '') {
+            clearSuggestions(); // Bersihkan hasil pencarian sebelumnya
+            search(query);
+            suggestionsContainer.style.zIndex = '1500'; // Setel indeks Z container suggestions
+            $("#suggestions").show();
         }
-        typing = false; // Reset status typing
     });
 
-    function search(query) {
-        suggestions.innerHTML = ''; // Bersihkan suggestions
+    function clearSuggestions() {
+        suggestions.innerHTML = ''; // Bersihkan hasil pencarian sebelumnya
+    }
 
+    function search(query) {
         console.log('Searching for:', query);
 
-        searchInEndpoint('/tv/find/' + query, 'TV Shows');
         searchInEndpoint('/movies/find/' + query, 'Movies');
+        searchInEndpoint('/tv/find/' + query, 'TV Shows');
         searchInEndpoint('/tracks/find/' + query, 'Music');
     }
 
@@ -56,11 +58,12 @@ document.addEventListener('DOMContentLoaded', function() {
             .then(data => {
                 console.log('Data received for category:', category, data);
                 if (data && ((data.results && data.results.length > 0) || (category === 'Music' && data.tracks && data.tracks.items && data.tracks.items.length > 0))) {
-                    if (category === "Music") {
-                        displayResultsMusics(data.tracks, category); // Perhatikan perubahan ini
-                    } else {
-                        displayResults(data, category);
-                    }
+                   if(category == "Music" ){
+                    console.log
+                    displayResultsMusic(data.tracks, category);
+                   } else {
+                    displayResults(data.results, category);
+                   }
                 } else {
                     displayNotFound(category);
                 }
@@ -71,84 +74,107 @@ document.addEventListener('DOMContentLoaded', function() {
             });
     }
 
-    function displayResults(results, category) {
+    function displayResultsMusic(tracks, category) {
+        const hrElement = document.createElement('hr'); // Buat elemen hr
+        hrElement.style.width = '50%'; // Atur lebar hr
+        hrElement.style.margin = '60'; // Pusatkan hr
+        suggestions.appendChild(hrElement); // Tambahkan hr ke suggestions
+    
         const categoryHeader = document.createElement('h4');
         categoryHeader.textContent = category;
         categoryHeader.style.color = 'white';
+        categoryHeader.style.textAlign = 'center'; // Menengahkan judul
         suggestions.appendChild(categoryHeader);
 
-        // Untuk kategori Movies dan TV
-        if (results.total_results > 0) {
-            // Tampilkan hasil movies atau tv
-            displaySuggestions(results.results);
-        } else {
-            displayNotFound(category);
-        }
-    }
+        const hrElementEnd = document.createElement('hr'); // Buat elemen hr
+        hrElementEnd.style.width = '50%'; // Atur lebar hr
+        hrElementEnd.style.margin = '20'; // Pusatkan hr
+        suggestions.appendChild(hrElementEnd); // Tambahkan hr ke suggestions
 
-
-    function displayResultsMusics(tracks, category) {
-        const categoryHeader = document.createElement('h4');
-        categoryHeader.textContent = category;
-        categoryHeader.style.color = 'white';
-        suggestions.appendChild(categoryHeader);
-
-        console.log("ini trakcs lagu", tracks);
-
-        if (tracks && tracks.items && tracks.items.length > 0) {
+        if (tracks.items && tracks.items.length > 0) {
             displaySuggestions(tracks.items);
         } else {
             displayNotFound(category);
         }
     }
 
-
-    function displayNotFound(category) {
+    function displayResults(results, category) {
+        const hrElement = document.createElement('hr'); // Buat elemen hr
+        hrElement.style.width = '50%'; // Atur lebar hr
+        hrElement.style.margin = '60'; // Pusatkan hr
+        suggestions.appendChild(hrElement); // Tambahkan hr ke suggestions
+    
         const categoryHeader = document.createElement('h4');
         categoryHeader.textContent = category;
         categoryHeader.style.color = 'white';
+        categoryHeader.style.textAlign = 'center'; // Menengahkan judul
         suggestions.appendChild(categoryHeader);
 
+        const hrElementEnd = document.createElement('hr'); // Buat elemen hr
+        hrElementEnd.style.width = '50%'; // Atur lebar hr
+        hrElementEnd.style.margin = '20'; // Pusatkan hr
+        suggestions.appendChild(hrElementEnd); // Tambahkan hr ke suggestions
+    
+      if (results && results.length > 0) {
+         // Tampilkan hasil movies atau tv
+           displaySuggestions(results);
+        } else {
+          displayNotFound(category);
+        }
+    }
+    function displayNotFound(category) {
+        const hrElement = document.createElement('hr'); // Buat elemen hr
+        hrElement.style.width = '50%'; // Atur lebar hr
+        hrElement.style.margin = '70'; // Pusatkan hr
+        suggestions.appendChild(hrElement); // Tambahkan hr ke suggestions
+    
+        const categoryHeader = document.createElement('h4');
+        categoryHeader.textContent = category;
+        categoryHeader.style.color = 'white';
+        categoryHeader.style.textAlign = 'center'; // Menengahkan judul
+        suggestions.appendChild(categoryHeader);
+    
         const notFoundMessage = document.createElement('p');
         notFoundMessage.textContent = 'No data found in this category.';
         notFoundMessage.style.color = 'white';
+        notFoundMessage.style.textAlign = 'center'; // Menengahkan pesan
         suggestions.appendChild(notFoundMessage);
     }
+    
 
     function addSuggestionItem(item) {
         const suggestionItem = document.createElement('div');
         suggestionItem.classList.add('suggestion-item');
-        suggestionItem.style.display = 'flex'; // Menggunakan Flexbox untuk layout
+        suggestionItem.style.display = 'flex';
 
         const thumbnail = document.createElement('img');
-        thumbnail.style.width = '100px'; // Atur lebar gambar
-        thumbnail.style.height = 'auto'; // Atur tinggi gambar sesuai proporsi
-        thumbnail.style.marginRight = '10px'; // Atur margin kanan untuk memberikan jarak antara gambar dan teks
+        thumbnail.style.width = '100px';
+        thumbnail.style.height = 'auto';
+        thumbnail.style.marginRight = '10px';
         thumbnail.classList.add('thumbnail');
 
         const textContainer = document.createElement('div');
-        textContainer.style.flex = '1'; // Bagian teks akan mengisi sisa ruang yang tersedia
+        textContainer.style.flex = '1';
         textContainer.style.color = 'white';
 
         const title = document.createElement('h5');
-        const albums = document.createElement('p'); // Menggunakan elemen <p> untuk nama albums
-        const overview = document.createElement('h6'); // Menggunakan elemen <p> untuk overview
+        const overview = document.createElement('h6');
 
         if (item.poster_path) {
-            thumbnail.src = `https://image.tmdb.org/t/p/w500${item.poster_path}`; // Ganti dengan URL thumbnail yang sesuai
+            thumbnail.src = `https://image.tmdb.org/t/p/w500${item.poster_path}`;
             thumbnail.alt = item.title;
 
             title.textContent = item.title;
             overview.textContent = item.overview;
+
         } else if (item.album && item.album.images && item.album.images.length > 0) {
-            thumbnail.src = item.album.images[0].url; // Mengambil gambar pertama dari album
+            thumbnail.src = item.album.images[0].url;
             thumbnail.alt = item.name;
 
             title.textContent = item.name;
-            albums.textContent = item.album.name // Menampilkan nama album
-            overview.textContent = item.artists.map(artist => artist.name).join(', '); // Menampilkan nama artis
+            overview.textContent = item.artists.map(artist => artist.name).join(', ');
         } else {
-            return; // Jika tidak ada gambar atau informasi yang relevan, abaikan item ini
+            return;
         }
 
         suggestionItem.appendChild(thumbnail);
@@ -160,15 +186,15 @@ document.addEventListener('DOMContentLoaded', function() {
         dismissButton.textContent = 'Dismiss';
         dismissButton.classList.add('dismiss-button');
         dismissButton.addEventListener('click', function() {
-            suggestionItem.remove(); // Hapus item suggestion ketika tombol Dismiss ditekan
+            suggestionItem.remove();
         });
         suggestionItem.appendChild(dismissButton);
 
         suggestions.appendChild(suggestionItem);
     }
 
-    // Fungsi untuk menampilkan suggestion
-    function displaySuggestions(suggestionData) {
+     // Fungsi untuk menampilkan suggestion
+     function displaySuggestions(suggestionData) {
         suggestionData.forEach(item => {
             addSuggestionItem(item);
         });
