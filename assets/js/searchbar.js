@@ -173,4 +173,11 @@ document.addEventListener('DOMContentLoaded', function() {
             addSuggestionItem(item);
         });
     }
+    // Tambahkan event listener untuk menghilangkan suggestionsContainer saat klik di luar
+    document.addEventListener('click', function (event) {
+        const isClickInside = suggestionsContainer.contains(event.target) || searchInput.contains(event.target) || searchButton.contains(event.target);
+        if (!isClickInside) {
+            $("#suggestions").hide();
+        }
+    });
 });
