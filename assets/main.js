@@ -91,10 +91,10 @@ var TrandingSlider = new Swiper('.tranding-slider', {
   loop: true,
   slidesPerView: 'auto',
   speed: 1200,
-  // autoplay: 
-  // {
-  //   delay: 2000,
-  // },
+  autoplay: 
+{
+   delay: 2000,
+  },
   loop: true,
   zoom: true,
   coverflowEffect: {
@@ -112,6 +112,16 @@ var TrandingSlider = new Swiper('.tranding-slider', {
 });
 
 
+const modalImage = document.getElementById('modalImage');
+const btnTvs = document.querySelectorAll('.btn-tv button');
+
+btnTvs.forEach((btnTv) => {
+  btnTv.addEventListener('click', (event) => {
+    event.preventDefault();
+    const thumbnailSrc = btnTv.getAttribute('data-thumbnail-src');
+    modalImage.src = thumbnailSrc;
+  });
+});
 
 
 
