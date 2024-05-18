@@ -1,5 +1,5 @@
 <h1>Roadmap</h1>
-<a href="https://collegeid.github.io/rythym_markmap/">Klik Di sini</a>
+<a href="https://collegeid.github.io/rythym_markmap/">  Click Here</a>
 
 <h2>Dataset (Film, TV, Music)</h2>
 Preview : <a href="https://rhytym.gigalixirapp.com">v0.0.1 (Elixir & Phoenix)</a>
@@ -60,7 +60,7 @@ Preview : <a href="https://rhytym.gigalixirapp.com">v0.0.1 (Elixir & Phoenix)</a
   </li>
   <li>
     <strong>GET /movies/:id</strong> - Menampilkan detail film
-    <br>Example: <a href="https://rhytym.gigalixirapp.com/movies/1">GET /movies/1</a>
+    <br>Example: <a href="https://rhytym.gigalixirapp.com/movies/823464">GET /movies/823464</a>
   </li>
   <li>
     <strong>GET /movies/find/:query</strong> - Mencari film berdasarkan query (judul film)
