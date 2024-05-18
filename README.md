@@ -10,10 +10,6 @@ Preview : <a href="https://rhytym.gigalixirapp.com">v0.0.1 (Elixir & Phoenix)</a
     <strong>GET /</strong> - Menampilkan Copyright message
     <br>Example: <a href="https://rhytym.gigalixirapp.com/">GET /</a>
   </li>
-  <li>
-    <strong>GET /welcome</strong> - Menampilkan pesan selamat datang
-    <br>Example: <a href="https://rhytym.gigalixirapp.com/welcome">GET /welcome</a>
-  </li>
 </ul>
 
 <h3>Music Endpoints</h3>
@@ -74,6 +70,14 @@ Preview : <a href="https://rhytym.gigalixirapp.com">v0.0.1 (Elixir & Phoenix)</a
     <strong>GET /cinema/find/:query</strong> - Mencari film beserta acara TV  berdasarkan query
     <br>Example: <a href="https://rhytym.gigalixirapp.com/cinema/find/juicy luicy">GET /cinema/find/juicy luicy</a>
   </li>
+  <li>
+    <strong>GET /trendings/multi</strong> - Menampilkan gabungan trending Album, Movies, dan TV
+    <br>Example: <a href="https://rhytym.gigalixirapp.com/trendings/multi">GET /trendings/multi</a>
+  </li>
+</ul>
+
+<h3>Multi Trending Endpoints</h3>
+<ul>
   <li>
     <strong>GET /trendings/multi</strong> - Menampilkan gabungan trending Album, Movies, dan TV
     <br>Example: <a href="https://rhytym.gigalixirapp.com/trendings/multi">GET /trendings/multi</a>
