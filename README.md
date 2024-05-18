@@ -1,13 +1,13 @@
 <h1>Roadmap</h1>
-<a href="https://collegeid.github.io/rythym_markmap/">  Click Here</a>
+<a href="https://collegeid.github.io/rythym_markmap/">Click Here</a>
 <hr>
 <h2>Dataset (Film, TV, Music)</h2>
-Preview : <a href="https://rhytym.gigalixirapp.com">v0.0.1 (Elixir & Phoenix)</a>
+Preview: <a href="https://rhytym.gigalixirapp.com">v0.0.1 (Elixir & Phoenix)</a>
 
 <h3>General Endpoints</h3>
 <ul>
   <li>
-    <strong>GET /</strong> - Menampilkan Copyright message
+    <strong>GET /</strong> - Displays a Copyright message
     <br>Example: <a href="https://rhytym.gigalixirapp.com/">GET /</a>
   </li>
 </ul>
@@ -15,35 +15,35 @@ Preview : <a href="https://rhytym.gigalixirapp.com">v0.0.1 (Elixir & Phoenix)</a
 <h3>Music Endpoints</h3>
 <ul>
   <li>
-    <strong>GET /api/album/musics</strong> - Menampilkan album musik (Spotify)
-    <br>Example: <a href="https://rhytym.gigalixirapp.com/album/musics">GET /api/album/musics</a>
+    <strong>GET /api/album/musics</strong> - Displays music albums (Spotify)
+    <br>Example: <a href="https://rhytym.gigalixirapp.com/api/album/musics">GET /api/album/musics</a>
   </li>
   <li>
-    <strong>GET /api/check/album/:id</strong> - Menampilkan detail album
-    <br>Example: <a href="https://rhytym.gigalixirapp.com/check/album/2lZzryqflrZLO9YDjnlkMz">GET /api/check/album/2lZzryqflrZLO9YDjnlkMz (Juicy Luicy)</a>
+    <strong>GET /api/check/album/:id</strong> - Displays album details
+    <br>Example: <a href="https://rhytym.gigalixirapp.com/api/check/album/2lZzryqflrZLO9YDjnlkMz">GET /api/check/album/2lZzryqflrZLO9YDjnlkMz (Juicy Luicy)</a>
   </li>
   <li>
-    <strong>GET /api/tracks/album/:id</strong> - Menampilkan daftar lagu dari album
-    <br>Example: <a href="https://rhytym.gigalixirapp.com/tracks/album/2lZzryqflrZLO9YDjnlkMz">GET /api/tracks/album/2lZzryqflrZLO9YDjnlkMz (Juicy Luicy)</a>
+    <strong>GET /api/tracks/album/:id</strong> - Displays tracks from an album
+    <br>Example: <a href="https://rhytym.gigalixirapp.com/api/tracks/album/2lZzryqflrZLO9YDjnlkMz">GET /api/tracks/album/2lZzryqflrZLO9YDjnlkMz (Juicy Luicy)</a>
   </li>
   <li>
-    <strong>GET /api/tracks/find/:query</strong> - Mencari lagu berdasarkan query
-    <br>Example: <a href="https://rhytym.gigalixirapp.com/tracks/find/juicy luicy">GET /api/tracks/find/juicy luicy</a>
+    <strong>GET /api/tracks/find/:query</strong> - Searches for tracks based on a query
+    <br>Example: <a href="https://rhytym.gigalixirapp.com/api/tracks/find/juicy luicy">GET /api/tracks/find/juicy luicy</a>
   </li>
 </ul>
 
 <h3>TV Endpoints</h3>
 <ul>
   <li>
-    <strong>GET /tv</strong> - Menampilkan daftar acara TV (TV dewasa terfilter)
+    <strong>GET /tv</strong> - Displays a list of TV shows (filtered for adult content)
     <br>Example: <a href="https://rhytym.gigalixirapp.com/tv">GET /tv</a>
   </li>
   <li>
-    <strong>GET /tv/:id</strong> - Menampilkan detail acara TV
+    <strong>GET /tv/:id</strong> - Displays TV show details
     <br>Example: <a href="https://rhytym.gigalixirapp.com/tv/1">GET /tv/1</a>
   </li>
   <li>
-    <strong>GET /tv/find/:query</strong> - Mencari acara TV berdasarkan query (judul acara TV)
+    <strong>GET /tv/find/:query</strong> - Searches for TV shows based on a query (TV show title)
     <br>Example: <a href="https://rhytym.gigalixirapp.com/tv/find/breaking">GET /tv/find/breaking</a>
   </li>
 </ul>
@@ -51,15 +51,15 @@ Preview : <a href="https://rhytym.gigalixirapp.com">v0.0.1 (Elixir & Phoenix)</a
 <h3>Movie Endpoints</h3>
 <ul>
   <li>
-    <strong>GET /movies</strong> - Menampilkan daftar film (Film unsur dewasa terfilter)
+    <strong>GET /movies</strong> - Displays a list of movies (filtered for adult content)
     <br>Example: <a href="https://rhytym.gigalixirapp.com/movies">GET /movies</a>
   </li>
   <li>
-    <strong>GET /movies/:id</strong> - Menampilkan detail film
+    <strong>GET /movies/:id</strong> - Displays movie details
     <br>Example: <a href="https://rhytym.gigalixirapp.com/movies/823464">GET /movies/823464</a>
   </li>
   <li>
-    <strong>GET /movies/find/:query</strong> - Mencari film berdasarkan query (judul film)
+    <strong>GET /movies/find/:query</strong> - Searches for movies based on a query (movie title)
     <br>Example: <a href="https://rhytym.gigalixirapp.com/movies/find/inception">GET /movies/find/inception</a>
   </li>
 </ul>
@@ -67,11 +67,11 @@ Preview : <a href="https://rhytym.gigalixirapp.com">v0.0.1 (Elixir & Phoenix)</a
 <h3>Combined Search Endpoints</h3>
 <ul>
   <li>
-    <strong>GET /cinema/find/:query</strong> - Mencari film beserta acara TV  berdasarkan query
+    <strong>GET /cinema/find/:query</strong> - Searches for both movies and TV shows based on a query
     <br>Example: <a href="https://rhytym.gigalixirapp.com/cinema/find/juicy luicy">GET /cinema/find/juicy luicy</a>
   </li>
   <li>
-    <strong>GET /trendings/multi</strong> - Menampilkan gabungan trending Album, Movies, dan TV
+    <strong>GET /trendings/multi</strong> - Displays combined trending albums, movies, and TV shows
     <br>Example: <a href="https://rhytym.gigalixirapp.com/trendings/multi">GET /trendings/multi</a>
   </li>
 </ul>
@@ -79,7 +79,7 @@ Preview : <a href="https://rhytym.gigalixirapp.com">v0.0.1 (Elixir & Phoenix)</a
 <h3>Multi Trending Endpoints</h3>
 <ul>
   <li>
-    <strong>GET /trendings/multi</strong> - Menampilkan gabungan trending Album, Movies, dan TV
+    <strong>GET /trendings/multi</strong> - Displays combined trending albums, movies, and TV shows
     <br>Example: <a href="https://rhytym.gigalixirapp.com/trendings/multi">GET /trendings/multi</a>
   </li>
 </ul>
