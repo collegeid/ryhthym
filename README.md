@@ -10,10 +10,6 @@ Preview : <a href="https://rhytym.gigalixirapp.com">v0.0.1 (Elixir & Phoenix)</a
     <strong>GET /</strong> - Menampilkan Copyright message
     <br>Example: <a href="https://rhytym.gigalixirapp.com/">GET /</a>
   </li>
-  <li>
-    <strong>GET /welcome</strong> - Menampilkan pesan selamat datang
-    <br>Example: <a href="https://rhytym.gigalixirapp.com/welcome">GET /welcome</a>
-  </li>
 </ul>
 
 <h3>Music Endpoints</h3>
