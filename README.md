@@ -1,14 +1,8 @@
 <h1>Roadmap</h1>
-<a href="https://collegeid.github.io/rythym_markmap/">Click Here</a>
-<!-- Iframe replaced with a link -->
-<a href="https://collegeid.github.io/rythym_markmap/">View the markmap</a>
-
+<a href="https://collegeid.github.io/rythym_markmap/">  Click Here</a>
 <hr>
-
 <h2>Dataset (Film, TV, Music)</h2>
-Preview: <a href="https://rhytym.gigalixirapp.com">v0.0.1 (Elixir & Phoenix)</a>
-<!-- Iframe replaced with a link -->
-<a href="https://collegeid.github.io/rythym_markmap/">View the markmap</a>
+Preview : <a href="https://rhytym.gigalixirapp.com">v0.0.1 (Elixir & Phoenix)</a>
 
 <h3>General Endpoints</h3>
 <ul>
@@ -22,19 +16,19 @@ Preview: <a href="https://rhytym.gigalixirapp.com">v0.0.1 (Elixir & Phoenix)</a>
 <ul>
   <li>
     <strong>GET /api/album/musics</strong> - Menampilkan album musik (Spotify)
-    <br>Example: <a href="https://rhytym.gigalixirapp.com/api/album/musics">GET /api/album/musics</a>
+    <br>Example: <a href="https://rhytym.gigalixirapp.com/album/musics">GET /api/album/musics</a>
   </li>
   <li>
     <strong>GET /api/check/album/:id</strong> - Menampilkan detail album
-    <br>Example: <a href="https://rhytym.gigalixirapp.com/api/check/album/2lZzryqflrZLO9YDjnlkMz">GET /api/check/album/2lZzryqflrZLO9YDjnlkMz (Juicy Luicy)</a>
+    <br>Example: <a href="https://rhytym.gigalixirapp.com/check/album/2lZzryqflrZLO9YDjnlkMz">GET /api/check/album/2lZzryqflrZLO9YDjnlkMz (Juicy Luicy)</a>
   </li>
   <li>
     <strong>GET /api/tracks/album/:id</strong> - Menampilkan daftar lagu dari album
-    <br>Example: <a href="https://rhytym.gigalixirapp.com/api/tracks/album/2lZzryqflrZLO9YDjnlkMz">GET /api/tracks/album/2lZzryqflrZLO9YDjnlkMz (Juicy Luicy)</a>
+    <br>Example: <a href="https://rhytym.gigalixirapp.com/tracks/album/2lZzryqflrZLO9YDjnlkMz">GET /api/tracks/album/2lZzryqflrZLO9YDjnlkMz (Juicy Luicy)</a>
   </li>
   <li>
     <strong>GET /api/tracks/find/:query</strong> - Mencari lagu berdasarkan query
-    <br>Example: <a href="https://rhytym.gigalixirapp.com/api/tracks/find/juicy luicy">GET /api/tracks/find/juicy luicy</a>
+    <br>Example: <a href="https://rhytym.gigalixirapp.com/tracks/find/juicy luicy">GET /api/tracks/find/juicy luicy</a>
   </li>
 </ul>
 
@@ -73,7 +67,7 @@ Preview: <a href="https://rhytym.gigalixirapp.com">v0.0.1 (Elixir & Phoenix)</a>
 <h3>Combined Search Endpoints</h3>
 <ul>
   <li>
-    <strong>GET /cinema/find/:query</strong> - Mencari film beserta acara TV berdasarkan query
+    <strong>GET /cinema/find/:query</strong> - Mencari film beserta acara TV  berdasarkan query
     <br>Example: <a href="https://rhytym.gigalixirapp.com/cinema/find/juicy luicy">GET /cinema/find/juicy luicy</a>
   </li>
   <li>
@@ -91,9 +85,3 @@ Preview: <a href="https://rhytym.gigalixirapp.com">v0.0.1 (Elixir & Phoenix)</a>
 </ul>
 
 <hr>
-
-<!-- Preview project with an image as a placeholder -->
-Preview Project: 
-<a href="https://collegeid.github.io/ryhthym">
-  <img src="https://collegeid.github.io/ryhthym/thumbnail.png" alt="Preview Project" style="width:100%; height:auto; border:none;">
-</a>
