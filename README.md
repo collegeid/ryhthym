@@ -1,6 +1,11 @@
 <h1>Roadmap</h1>
 <a href="https://collegeid.github.io/rythym_markmap/">Click Here</a>
 <hr>
+
+<p><strong>Note:</strong> Only registered with our CORS URL allowed.</p>
+<p>Best regards, Stellar Team</p>
+
+
 <h2>Dataset (Film, TV, Music)</h2>
 Preview: <a href="https://rhytym.gigalixirapp.com">v0.0.1 (Elixir & Phoenix)</a>
 
