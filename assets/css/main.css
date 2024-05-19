@@ -1090,7 +1090,7 @@
     left: 15%;
     top: 25%;
     max-height: 65%;
-    background-color: #2b4bff;
+    background-color: #000000b1;
   }
   .posisi-kanan{
     width: 80%;
@@ -1123,6 +1123,9 @@
     margin-top: -5%;
     left: 176%;
     font-size: xx-small ;
+  }
+  .play-btn{
+    left: 20%;
   }
 }
 
