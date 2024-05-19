@@ -59,6 +59,27 @@ const swiper = new Swiper(".mySwiper", {
   },
 });
 
+document.addEventListener("click",function (event){
+  const musicCardOverlay = event.target.closest('#cards-music');
+  const closeBtn = event.target.closest('.close-btn');
+  const modalDialog = event.target.closest('#music-modal-dialog');
+  const musicPopup = document.querySelector('#music-modal');
+  const musicImg = document.querySelector('#music-modal img');
+  
+  //GET DATA
+  let getImg
+  if(musicCardOverlay) getImg = musicCardOverlay.querySelector('img').getAttribute('src');
+
+  
+    // Membuka Popup
+    if (musicCardOverlay) {
+      event.preventDefault();
+      musicPopup.style.display = 'flex';
+      musicImg.src = getImg 
+    } else if (closeBtn || !modalDialog) {
+      musicPopup.style.display = 'none';
+    }
+  })
 
 // Haikal Ihza bertanggung jawab untuk bagian TV Show
 // Branch: TV
@@ -99,9 +120,9 @@ const swiper = new Swiper(".mySwiper", {
 document.addEventListener('click', function(event) {
   const sliderCardOverlay = event.target.closest('.slider-card-overlay');
   const closeBtn = event.target.closest('.close-btn');
-  const modalDialog = event.target.closest('.modal-dialog');
-  const videoPopup = document.querySelector('.modal');
-  const videoIframe = document.querySelector('.modal iframe');
+  const modalDialog = event.target.closest('#trending-modal-dialog');
+  const videoPopup = document.querySelector('#trending-modal');
+  const videoIframe = document.querySelector('#trending-modal iframe');
 
   // Membuka Popup
   if (sliderCardOverlay) {
