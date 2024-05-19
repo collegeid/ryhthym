@@ -597,6 +597,11 @@
     z-index: 1000;
     background: transparent;
   }
+
+  .card-music img{
+    border: solid 2px transparent;
+    border-radius: 18px;
+  }
   
   .card-music > .card-body > .card-title{
     background-color: #000000;
@@ -621,11 +626,9 @@
     position: relative;
     text-align: center;
     font-size: 18px;
-    background: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
-  
     cursor: pointer;
   }
   

@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="assets/css/main.css" />
     <link rel="stylesheet" href="assets/css/suggestion.css" />
+    <link rel="stylesheet" href="assets/css/music.css" />
     <title>Rhythm Movie TV</title>
   </head>
   <body class="rythym-background">
@@ -280,8 +281,9 @@ HINTS: SELAMA KONTEN GAMBAR BISA DI GESER, BERARTI SUKSES
               </div>
             </div>
           </div>
-          <div class="modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-            <div class="modal-dialog  modal-lg">
+          
+          <div id="trending-modal" class="modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+            <div id="trending-modal-dialog" class="modal-dialog modal-lg">
               <div class="modal-content">
                 <div class="video-content">
                   <iframe width="100%" height="100%" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -386,13 +388,13 @@ HINTS: SELAMA KONTEN GAMBAR BISA DI GESER, BERARTI SUKSES
                   <div class="slideshow-container">
                     <div #swiperRef="" class="swiper mySwiper">
                       <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                          <img src="assets/img/music1.png">
+
+                        <div id="cards-music" class="swiper-slide">
+                          <img src="assets/img/music1.png" class="music-item" alt="music1">
                           <div class="hover-card">
                             <div class="hover-card-header">
-                              <img src="assets/img/music1.png">
+                              <img src="assets/img/music1.png" class="music-item" alt="music1">
                               <div class="hover-card-warp-btn">
-                                <!-- <a href="https://youtu.be/Oextk-If8HQ?si=gi9B7BVrddLDkiIz" type="button"><i class="bi bi-play-fill"></i></a> -->
                                 <button>
                                   <i class="bi bi-play-fill"></i>
                                 </button>
@@ -414,11 +416,11 @@ HINTS: SELAMA KONTEN GAMBAR BISA DI GESER, BERARTI SUKSES
                             </div>
                           </div>
                         </div>
-                        <div class="swiper-slide">
-                          <img src="assets/img/music2.png">
+                        <div id="cards-music" class="swiper-slide">
+                          <img src="assets/img/music2.png" class="music-item" alt="music">
                           <div class="hover-card">
                             <div class="hover-card-header">
-                              <img src="assets/img/music2.png">
+                              <img src="assets/img/music2.png" class="music-item" alt="music">
                               <div class="hover-card-warp-btn">
                                 <button>
                                   <i class="bi bi-play-fill"></i>
@@ -441,11 +443,11 @@ HINTS: SELAMA KONTEN GAMBAR BISA DI GESER, BERARTI SUKSES
                             </div>
                           </div>
                         </div>
-                        <div class="swiper-slide">
-                          <img src="assets/img/music3.png">
+                        <div id="cards-music" class="swiper-slide">
+                          <img src="assets/img/music3.png" class="music-item" alt="music">
                           <div class="hover-card">
                             <div class="hover-card-header">
-                              <img src="assets/img/music3.png">
+                              <img src="assets/img/music3.png" class="music-item" alt="music">
                               <div class="hover-card-warp-btn">
                                 <button>
                                   <i class="bi bi-play-fill"></i>
@@ -468,11 +470,11 @@ HINTS: SELAMA KONTEN GAMBAR BISA DI GESER, BERARTI SUKSES
                             </div>
                           </div>
                         </div>
-                        <div class="swiper-slide">
-                          <img src="assets/img/music4.png">
+                        <div id="cards-music" class="swiper-slide">
+                          <img src="assets/img/music4.png" class="music-item" alt="music">
                           <div class="hover-card">
                             <div class="hover-card-header">
-                              <img src="assets/img/music4.png">
+                              <img src="assets/img/music4.png" class="music-item" alt="music">
                               <div class="hover-card-warp-btn">
                                 <button>
                                   <i class="bi bi-play-fill"></i>
@@ -495,13 +497,14 @@ HINTS: SELAMA KONTEN GAMBAR BISA DI GESER, BERARTI SUKSES
                             </div>
                           </div>
                         </div>
-                        <div class="swiper-slide">
-                          <img src="assets/img/music5.png">
-                          <div class="hover-card">
+                        <div id="cards-music" class="swiper-slide">
+                          <img src="assets/img/music5.png" class="music-item" alt="music">
+                          <!-- Hover Cards -->
+                          <div id="card-click" class="hover-card">
                             <div class="hover-card-header">
-                              <img src="assets/img/music5.png">
+                              <img src="assets/img/music5.png" class="music-item" alt="music">
                               <div class="hover-card-warp-btn">
-                                <button>
+                                <button >
                                   <i class="bi bi-play-fill"></i>
                                 </button>
                                 <button>
@@ -530,6 +533,77 @@ HINTS: SELAMA KONTEN GAMBAR BISA DI GESER, BERARTI SUKSES
                   </div>
                 </div>
               </div>
+
+                <!-- Modal -->
+                <div id="music-modal" class="modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                  <div id="music-modal-dialog" class="modal-dialog modal-xl">
+                    <div class="modal-content modal-content-music">
+                      <div class="banner-music-content">
+                        <img src="" alt="" />
+                        <!-- <audio controls>
+                          <source src="https://w3codegenerator.com/audio/audio.mp3" type="audio/mpeg">
+                          <source src="" type="audio/ogg">
+                          <source src="" type="audio/wav">
+                          <p>Your browser does not support the video tag.</p>
+                        </audio> -->
+                        <h4>Daily Album</h4>
+                      </div>
+                      <div class="list-music-content">
+                        <ul>
+                          <li class="audio-item">
+                            <p>simply dummy text of the printing</p>
+                            <div class="audio-item-btn">
+                              <button>
+                                <i class="bi bi-play-fill"></i>
+                              </button>
+                              <button>
+                                <i class="bi bi-bookmark-plus-fill"></i>
+                              </button>
+                            </div>
+                          </li>
+
+                          <li class="audio-item">
+                            <p>simply dummy text of the printing</p>
+                            <div class="audio-item-btn">
+                              <button>
+                                <i class="bi bi-play-fill"></i>
+                              </button>
+                              <button>
+                                <i class="bi bi-bookmark-plus-fill"></i>
+                              </button>
+                            </div>
+                          </li>
+
+                          <li class="audio-item">
+                            <p>simply dummy text of the printing</p>
+                            <div class="audio-item-btn">
+                              <button>
+                                <i class="bi bi-play-fill"></i>
+                              </button>
+                              <button>
+                                <i class="bi bi-bookmark-plus-fill"></i>
+                              </button>
+                            </div>
+                          </li>
+
+                          <li class="audio-item">
+                            <p>simply dummy text of the printing</p>
+                            <div class="audio-item-btn">
+                              <button>
+                                <i class="bi bi-play-fill"></i>
+                              </button>
+                              <button>
+                                <i class="bi bi-bookmark-plus-fill"></i>
+                              </button>
+                            </div>
+                          </li>
+                         
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
             </div>
             <!---- ================ END CONTENT MUSIC BY SISWO ADI NUGROHO ================  --->
             <!--- ============= CONTENT TV SHOW - HAIKAL =============

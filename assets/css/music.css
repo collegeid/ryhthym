@@ -1,0 +1,73 @@
+.modal-dialog#music-modal-dialog{
+    height: auto !important;
+}
+
+.modal-content-music{
+    position: relative;
+    flex-direction: row;
+}
+
+.banner-music-content img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    padding: 14px;
+    border-radius: 30px;
+}
+
+.banner-music-content h4{
+    color: rgb(84, 83, 94);
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+
+.list-music-content{
+    padding: 14px;
+    width: 100%;
+}
+
+.list-music-content ul {
+    padding: 12px 0;
+    list-style: none;
+}
+.audio-item{
+    display: flex;
+    justify-content: space-between;
+    gap: 32px;
+    border: solid 1px white;
+    margin-bottom: 10px;
+    padding: 4px;
+    border-radius: 8px;
+}
+
+.audio-item p{
+    color: white;
+    margin-bottom: 0;
+    max-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-transform: capitalize;
+}
+
+.audio-item-btn{
+    display: flex;
+    gap: 2px;
+}
+
+.audio-item-btn button{
+    background: transparent;
+    color: white;
+    outline: none;
+    border: none;
+}
+
+@media only screen and (max-width: 600px) {
+    .modal-content-music{
+        flex-direction: column;
+    }
+}
