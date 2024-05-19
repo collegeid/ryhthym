@@ -4,9 +4,18 @@ document.addEventListener('DOMContentLoaded', function() {
     const searchButton = document.getElementById('searchButton');
     const suggestionsContainer = document.getElementById('suggestionsContainer');
     const suggestions = document.getElementById('suggestions');
+    const closeButton = document.querySelector('.close-button-suggestions');
     let typingTimer; // Timer untuk menunggu selesai mengetik
     const doneTypingInterval = 500; // Interval waktu setelah selesai mengetik
 
+    function toggleCloseButtonVisibility() {
+        const closeButton = document.querySelector('.close-button-suggestions');
+        if (suggestionsContainer.style.display === 'none') {
+            closeButton.style.display = 'none';
+        } else {
+            closeButton.style.display = 'block';
+        }
+    }
     // Pencarian saat input berubah
     searchInput.addEventListener('input', function() {
         clearTimeout(typingTimer); // Bersihkan timer sebelumnya
@@ -17,10 +26,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 search(query);
                 suggestionsContainer.style.zIndex = '1500'; // Setel indeks Z container suggestions
                 $("#suggestions").show();
+                toggleCloseButtonVisibility(true);
             }, doneTypingInterval);
         } else {
             clearSuggestions(); // Bersihkan hasil pencarian jika input kosong
             $("#suggestions").hide();
+            toggleCloseButtonVisibility(false);
         }
     });
 
@@ -32,6 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
             search(query);
             suggestionsContainer.style.zIndex = '1500'; // Setel indeks Z container suggestions
             $("#suggestions").show();
+            toggleCloseButtonVisibility();
         }
     });
 
@@ -187,6 +199,7 @@ document.addEventListener('DOMContentLoaded', function() {
         dismissButton.classList.add('dismiss-button');
         dismissButton.addEventListener('click', function() {
             suggestionItem.remove();
+            event.stopPropagation();
         });
         suggestionItem.appendChild(dismissButton);
 
@@ -199,11 +212,20 @@ document.addEventListener('DOMContentLoaded', function() {
             addSuggestionItem(item);
         });
     }
-    // Tambahkan event listener untuk menghilangkan suggestionsContainer saat klik di luar
-    document.addEventListener('click', function (event) {
+
+    // listener tombol close-button untuk menghilangkan suggestionsContainer dan close-button saat diklik
+    closeButton.addEventListener('click', function(event) {
+        event.stopPropagation(); // Mencegah event click menyebar ke luar dari closeButton
+        $("#suggestions").hide();
+        this.style.display = 'none'; // Menyembunyikan close-button
+    });
+    
+    // listener untuk menghilangkan suggestionsContainer dan close-button saat klik dilakukan di luar suggestionsContainer
+    document.addEventListener('click', function(event) {
         const isClickInside = suggestionsContainer.contains(event.target) || searchInput.contains(event.target) || searchButton.contains(event.target);
         if (!isClickInside) {
             $("#suggestions").hide();
+            closeButton.style.display = 'none'; // Menyembunyikan close-button
         }
     });
 });

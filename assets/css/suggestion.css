@@ -1,65 +1,86 @@
-       
-       #suggestionsContainer {
-        position: absolute;
-        height: 400px;
-        overflow-y: auto;
-        border-radius: 15px;
-        margin-right: 1%;
+#suggestionsContainer {
+    position: absolute;
+    height: 400px;
+    overflow-y: auto;
+    border-radius: 15px;
+    margin-right: 1%;
+}
+@media (max-width: 515px) {
+    #suggestionsContainer {
+        height: 450px;
     }
-    @media (max-width: 515px) {
-        #suggestionsContainer {
-            height: 450px;
-        }
+}
+@media (max-width: 992px) {
+    #suggestionsContainer {
+        margin-right: 2%;
     }
-    @media (max-width: 992px) {
-        #suggestionsContainer {
-            margin-right: 2%;
-        }
-    }
+}
 
-       /* Gaya untuk suggestions */
-       #suggestions {
-        padding: 10px;
-        background-color: #1a1a1b;
-        border-radius: 15px;
-        max-width: 1920px; /* Atur lebar maksimum suggestion */
-    }
-    
-    /* Gaya untuk setiap item dalam suggestions */
-    .suggestion-item {
-        margin-bottom: 10px;
-        display: flex; /* Menggunakan Flexbox */
-        align-items: center; /* Menyamakan tinggi item */
-        padding: 10px;
-        border-radius: 15px;
-        background-color: #000000;
-    }
-    
-    .suggestion-item img.thumbnail {
-        width: 50px;
-        height: auto; /* Atur tinggi gambar sesuai proporsi */
-        border-radius: 5px;
-        margin-right: 100px;
-    }
-    
-    /* Gaya untuk teks */
-    .suggestion-item .text-container {
-        flex: 1; /* Bagian teks akan mengisi sisa ruang yang tersedia */
-        color: #ffffff;
-    }
-    
-    /* Gaya untuk tombol dismiss */
-    .dismiss-button {
-        background-color: transparent;
-        border: none;
-        color: #ffffff;
-        font-size: 14px;
-        cursor: pointer;
-        outline: none;
-        margin-left: auto; /* Untuk menempatkan tombol dismiss ke kanan */
-    }
-    
-    /* Gaya hover untuk tombol dismiss */
-    .dismiss-button:hover {
-        color: #ff0000;
-    }
+   /* Gaya untuk suggestions */
+   #suggestions {
+    padding: 10px;
+    background-color: #1a1a1b;
+    border-radius: 15px;
+    max-width: 1920px; /* Atur lebar maksimum suggestion */
+}
+
+/* Gaya untuk setiap item dalam suggestions */
+.suggestion-item {
+    margin-bottom: 10px;
+    display: flex; /* Menggunakan Flexbox */
+    align-items: center; /* Menyamakan tinggi item */
+    padding: 10px;
+    border-radius: 15px;
+    background-color: #000000;
+}
+
+.suggestion-item img.thumbnail {
+    width: 50px;
+    height: auto; /* Atur tinggi gambar sesuai proporsi */
+    border-radius: 5px;
+    margin-right: 100px;
+}
+
+/* Gaya untuk teks */
+.suggestion-item .text-container {
+    flex: 1; /* Bagian teks akan mengisi sisa ruang yang tersedia */
+    color: #ffffff;
+}
+
+/* Gaya untuk tombol dismiss */
+.dismiss-button {
+    background-color: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 14px;
+    cursor: pointer;
+    outline: none;
+    margin-left: auto; /* Untuk menempatkan tombol dismiss ke kanan */
+}
+
+/* Gaya hover untuk tombol dismiss */
+.dismiss-button:hover {
+    color: #ff0000;
+}
+
+/* Style for close button */
+.close-button-suggestions {
+    display: none;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    background-color: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 40px;
+    cursor: pointer;
+}
+.close-button-suggestions span{
+    position: fixed;
+    position: absolute;
+    right: 20px;
+}
+
+.close-button-suggestions:hover {
+    color: #ff0000;
+}
