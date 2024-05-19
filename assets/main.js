@@ -4,31 +4,31 @@
 // Ahmad Faiz bertanggung jawab untuk bagian Film
 // Branch: FILM
 
-// var TrandingSlider = new Swiper('.tranding-slider', {
-//   effect: 'coverflow',
-//   grabCursor: true,
-//   centeredSlides: true,
-//   loop: true,
-//   slidesPerView: 'auto',
-//   speed: 1200,
-//   // autoplay: 
-//   // {
-//   //   delay: 2000,
-//   // },
-//   loop: true,
-//   zoom: true,
-//   coverflowEffect: {
-//     rotate: 0,
-//     stretch: 0,
-//     depth: 100,
-//     modifier: 2.5,
-//   },
+var TrandingSlider = new Swiper('.tranding-slider', {
+  effect: 'coverflow',
+  grabCursor: true,
+  centeredSlides: true,
+  loop: true,
+  slidesPerView: 'auto',
+  speed: 1200,
+  autoplay: 
+  {
+    delay: 2000,
+  },
+  loop: true,
+  zoom: true,
+  coverflowEffect: {
+    rotate: 0,
+    stretch: 0,
+    depth: 100,
+    modifier: 2.5,
+  },
 
-//   navigation: {
-//     nextEl: '.swiper-button-next',
-//     prevEl: '.swiper-button-prev',
-//   }
-// });
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  }
+});
 
 
 // Siswo Adi Nugroho bertanggung jawab untuk bagian Music
@@ -38,10 +38,10 @@ const swiper = new Swiper(".mySwiper", {
   centeredSlides: true,
   spaceBetween: '-28',
   speed:1200,
-  // autoplay: 
-  //   {
-  //     delay: 1000,
-  //   },
+  autoplay: 
+    {
+      delay: 1000,
+    },
   loop: true,
   zoom: true,
   effect: 'coverflow',
@@ -59,56 +59,35 @@ const swiper = new Swiper(".mySwiper", {
   },
 });
 
-document.addEventListener("click",function (event){
-  const musicCardOverlay = event.target.closest('#cards-music');
-  const closeBtn = event.target.closest('.close-btn');
-  const modalDialog = event.target.closest('#music-modal-dialog');
-  const musicPopup = document.querySelector('#music-modal');
-  const musicImg = document.querySelector('#music-modal img');
-  
-  //GET DATA
-  let getImg
-  if(musicCardOverlay) getImg = musicCardOverlay.querySelector('img').getAttribute('src');
-
-  
-    // Membuka Popup
-    if (musicCardOverlay) {
-      event.preventDefault();
-      musicPopup.style.display = 'flex';
-      musicImg.src = getImg 
-    } else if (closeBtn || !modalDialog) {
-      musicPopup.style.display = 'none';
-    }
-  })
 
 // Haikal Ihza bertanggung jawab untuk bagian TV Show
 // Branch: TV
 
-// var TrandingSlider = new Swiper('.tranding-slider', {
-//   effect: 'coverflow',
-//   grabCursor: true,
-//   centeredSlides: true,
-//   loop: true,
-//   slidesPerView: 'auto',
-//   speed: 1200,
-//   // autoplay: 
-//   // {
-//   //   delay: 2000,
-//   // },
-//   loop: true,
-//   zoom: true,
-//   coverflowEffect: {
-//     rotate: 0,
-//     stretch: 0,
-//     depth: 100,
-//     modifier: 2.5,
-//   },
+var TrandingSlider = new Swiper('.tranding-slider', {
+  effect: 'coverflow',
+  grabCursor: true,
+  centeredSlides: true,
+  loop: true,
+  slidesPerView: 'auto',
+  speed: 1200,
+  autoplay: 
+  {
+    delay: 2000,
+  },
+  loop: true,
+  zoom: true,
+  coverflowEffect: {
+    rotate: 0,
+    stretch: 0,
+    depth: 100,
+    modifier: 2.5,
+  },
 
-//   navigation: {
-//     nextEl: '.swiper-button-next',
-//     prevEl: '.swiper-button-prev',
-//   }
-// });
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  }
+});
 
 
 
@@ -120,9 +99,9 @@ document.addEventListener("click",function (event){
 document.addEventListener('click', function(event) {
   const sliderCardOverlay = event.target.closest('.slider-card-overlay');
   const closeBtn = event.target.closest('.close-btn');
-  const modalDialog = event.target.closest('#trending-modal-dialog');
-  const videoPopup = document.querySelector('#trending-modal');
-  const videoIframe = document.querySelector('#trending-modal iframe');
+  const modalDialog = event.target.closest('.modal-dialog');
+  const videoPopup = document.querySelector('.modal');
+  const videoIframe = document.querySelector('.modal iframe');
 
   // Membuka Popup
   if (sliderCardOverlay) {
