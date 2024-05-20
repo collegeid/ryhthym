@@ -268,6 +268,9 @@
   object-fit: contain;
   object-position: center;
 }
+.sinopsis-film-trending{
+  display: none;
+}
 /* Pop Up */
 .modal{
   position: fixed;
@@ -322,16 +325,26 @@
   gap: 15px;
   cursor: pointer;
 }
+.info-kiri > a{
+  margin-right: -10px;
+}
 .info-kiri > p{
   margin-bottom: 5px;
-  color: #ffffff;
+  color: white;
 }
-.info-kiri > p:nth-child(1){
+.info-kiri > span{
+  color: white;
+}
+.bintang{
+  margin-bottom: 5px;
+  color: red;
+}
+.info-kiri > p:nth-child(2){
   color: red;
   padding-right: 15px;
   border-right: 2px solid white;
 } 
-.info-kiri > p:nth-child(2){
+.info-kiri > p:nth-child(3){
   padding-right: 15px;
   border-right: 2px solid white;
 }
@@ -362,6 +375,13 @@
   cursor: pointer;
   padding: 3px;
 }
+.episode-box {
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 5px;
+}
+
 /* Navigasi */
 .owl-nav button {
   background-color: #00000000!important;
