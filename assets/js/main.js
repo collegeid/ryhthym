@@ -142,10 +142,10 @@ const swiper = new Swiper(".mySwiper", {
   centeredSlides: true,
   spaceBetween: '-28',
   speed:1200,
-  autoplay: 
-    {
-      delay: 1000,
-    },
+  // autoplay: 
+  //   {
+  //     delay: 1000,
+  //   },
   loop: true,
   zoom: true,
   effect: 'coverflow',
