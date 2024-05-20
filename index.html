@@ -331,37 +331,212 @@ FLOW: (CENTANG ✓ JIKA SUDAH, DAN UPLOAD PADA BRANCH MASING MASING)
 HINTS: SELAMA KONTEN GAMBAR BISA DI GESER, BERARTI SUKSES
 
 -->
-            <div class="col">
-              <div class="card card-music">
-                <div class="card-body">
-                  <h5 class="card-title">film</h5>
-                  <div class="slideshow-container">
-                    <div #swiperRef="" class="swiper mySwiper">
-                      <div class="swiper-wrapper" id="film-data">
-                        <div class="swiper-slide">
-                          <img src="assets/img/image1.jpg">
-                        </div>
-                        <div class="swiper-slide">
-                          <img src="assets/img/image3.jpeg">
-                        </div>
-                        <div class="swiper-slide">
-                          <img src="assets/img/image4.jpg">
-                        </div>
-                        <div class="swiper-slide">
-                          <img src="assets/img/image5.jpeg">
-                        </div>
-                        <div class="swiper-slide">
-                          <img src="assets/img/image9.jpeg">
-                        </div>
-                      </div>
-                      <div class="swiper-button-next"></div>
-                      <div class="swiper-button-prev"></div>
-                      <!-- <div class="swiper-pagination"></div> -->
-                    </div>
-                  </div>
-                </div>
-              </div>
+<section class="section-card">     
+  <div class="col">
+    <div class="card card-film">
+      <div class="card-body-film">
+        <h5 class="card-title-film"> Film </h5>
+        <div class="slideshow-container">
+
+          <div #swiperRef="" class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                 <div class="swiper-slide" onclick="openModal('myModal1', 'Judul Gambar 1', 'Sinopsis singkat film...', '4.5/5')"><img src="assets/img/image1.jpg" ></div>
+                 <div class="swiper-slide" onclick="openModal('myModal2', 'Judul Gambar 2', 'Sinopsis singkat film...', '4.7/5')"><img src="assets/img/image3.jpeg" ></div>
+                 <div class="swiper-slide" onclick="openModal('myModal3', 'Judul Gambar 3', 'Sinopsis singkat film...', '4.8/5')"><img src="assets/img/image8.webp" ></div>
+                 <div class="swiper-slide" onclick="openModal('myModal4', 'Judul Gambar 4', 'Sinopsis singkat film...', '4.9/5')"><img src="assets/img/image5.jpeg" ></div>
+                 <div class="swiper-slide" onclick="openModal('myModal5', 'Judul Gambar 5', 'Sinopsis singkat film...', '4.6/5')"><img src="assets/img/image6.jpeg" ></div>
             </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            
+            </div>
+        
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+   <!-- Tambahkan div modal untuk setiap gambar -->
+
+
+<div id="myModal1" class="modal-film" onclick="closeModal(event)">
+  <span class="close">&times;</span>
+  <div class="modal-content-film">
+       <div class="posisi-kiri">
+            <img id="myposter-film" src="assets/img/image1.jpg" alt="judul gambar 1">
+            <!-- Tambahkan tombol play -->
+            <div class="play-btn" onclick="openVideoPopup('https://www.youtube.com/embed/nq9sz0aaLeI')">
+                 <i class="fa fa-play-circle"></i>
+            </div>
+            
+            <!-- <div id="myModal-film" class="yt-film">
+                 <iframe id="videoFrame" width="100%" height="100%" src="https://www.youtube.com/embed/nq9sz0aaLeI" title="YouTube video player" frameborder="0" 
+                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" 
+                 allowfullscreen></iframe>
+            </div> -->
+       </div>
+       <div class="posisi-kanan">
+        <h1>The Call (2020)</h1>
+        <p class="sinopsis-film">
+            The Call merupakan film bergenre horror-thriller asal Korea Selatan yang diproduksi oleh Yong Film dan disutradarai oleh Lee Chung Hyun.
+            Film ini didistribusikan oleh Next Entertainment World dan Netflix, sejak perilisan awalnya pada 27 November 2020.
+            Film ini dibintangi oleh aktris ternama, Park Shin-Hye dan Jeon Jeong Seo.
+        </p>
+        <div class="kotak-rating-film">
+            <i class="views-film"><i class="fas fa-eye"></i> 200</i>
+            <div class="like-btn" onclick="toggleLikeFilm()">
+                <i id="like-icon-film" class="far fa-heart"></i>
+                <span id="like-count-film">150</span>
+            </div>
+            <i class="rating-film"><span class="star"></span> 4.5 </i>
+        </div>
+       </div>  
+  </div>
+</div>
+
+
+<div id="myModal2" class="modal-film" onclick="closeModal(event)">
+  <span class="close">&times;</span>
+  <div class="modal-content-film">
+       <div class="posisi-kiri">
+            <img id="myposter-film" src="assets/img/image3.jpeg" alt="judul gambar 2">
+            <!-- Tambahkan tombol play -->
+            <div class="play-btn" onclick="openVideoPopup('https://www.youtube.com/embed/5Gutb4hc5r4')">
+                 <i class="fa fa-play-circle"></i>
+            </div>
+            
+            <!-- <div id="myModal-film" class="yt-film">
+                 <iframe id="videoFrame" width="100%" height="100%" src="https://www.youtube.com/embed/nq9sz0aaLeI" title="YouTube video player" frameborder="0" 
+                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" 
+                 allowfullscreen></iframe>
+            </div> -->
+       </div>
+       <div class="posisi-kanan">
+            <h1>last Seen Alive </h1>
+            <p class="sinopsis-film">
+              Film Last Seen Alive ini mengisahkan tentang pasangan suami istri yang sedang dalam perjalanan menuju rumah 
+              orang tua sang istri, Lisa Spann (Jaimie Alexander). Hubungan mereka sedang tidak dalam kondisi yang baik sehingga 
+              Lisa memutuskan untuk berada di rumah orang tuanya dulu.
+
+            </p>
+            <div class="kotak-rating-film">
+                 <i class="views-film"> <i class="fas fa-eye"></i> 230</i>
+                 <div class="like-btn" onclick="toggleLike()">
+                      <i id="like-icon" class="far fa-heart"></i>
+                      <span id="like-count">150</span>
+                 </div>
+                 <i class="rating-film"><span class="star"></span> 4.8 </i>
+            </div>
+       </div>
+  </div>
+</div>
+
+
+<div id="myModal3" class="modal-film" onclick="closeModal(event)">
+  <span class="close">&times;</span>
+  <div class="modal-content-film">
+       <div class="posisi-kiri">
+            <img id="myposter-film" src="assets/img/image8.webp" alt="judul gambar 3">
+            <!-- Tambahkan tombol play -->
+            <div class="play-btn" onclick="openVideoPopup('https://www.youtube.com/embed/PDEl1rw_Vn0')">
+                 <i class="fa fa-play-circle"></i>
+            </div>
+            
+            <!-- <div id="myModal-film" class="yt-film">
+                 <iframe id="videoFrame" width="100%" height="100%" src="https://youtu.be/PDEl1rw_Vn0?si=xfOVQhTXFEQr9I9O" title="YouTube video player" frameborder="0" 
+                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" 
+                 allowfullscreen></iframe>
+            </div> -->
+       </div>
+       <div class="posisi-kanan">
+            <h1>The Roundup </h1>
+            <p class="sinopsis-film">
+              unishment sendiri menyoroti kisah detektif bernama Ma Deok Do yang ditugaskan untuk menangkap penjahat berbahaya.
+              Dalam menjalankan tugasnya, detektif Ma Seok Do memburu anggota sindikat judi online yang berhasil melarikan diri dari penjera
+
+            </p>
+            <div class="kotak-rating-film">
+                 <i class="views-film"> <i class="fas fa-eye"></i> 130</i>
+                 <div class="like-btn" onclick="toggleLike()">
+                      <i id="like-icon" class="far fa-heart"></i>
+                      <span id="like-count">150</span>
+                 </div>
+                 <i class="rating-film"><span class="star"></span> 4.6 </i>
+            </div>
+       </div>
+  </div>
+</div>
+
+<div id="myModal4" class="modal-film" onclick="closeModal(event)">
+  <span class="close">&times;</span>
+  <div class="modal-content-film">
+       <div class="posisi-kiri">
+            <img id="myposter-film" src="assets/img/image5.jpeg" alt="judul gambar 4">
+            <!-- Tambahkan tombol play -->
+            <div class="play-btn" onclick="openVideoPopup('https://www.youtube.com/embed/qc2Nr-1AYBc')">
+                 <i class="fa fa-play-circle"></i>
+            </div>
+            
+            <!-- <div id="myModal-film" class="yt-film">
+                 <iframe id="videoFrame" width="100%" height="100%" src="https://www.youtube.com/embed/nq9sz0aaLeI" title="YouTube video player" frameborder="0" 
+                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" 
+                 allowfullscreen></iframe>
+            </div> -->
+       </div>
+       <div class="posisi-kanan">
+            <h1>Poong 2 </h1>
+            <p class="sinopsis-film">
+              “Poong, the Joseon Psychiatrist” adalah drama yang mengisahkan kehidupan seorang ahli akupuntur yang lahir
+               dari keluarga bangsawan. Ia menjadi ahli akupuntur kepala di istana kerajaan. Namun, takdir buruk menghampirinya 
+               ketika Raja meninggal setelah ia melakukan akupuntur padanya
+            </p>
+            <div class="kotak-rating-film">
+                 <i class="views-film"> <i class="fas fa-eye"></i> 157</i>
+                 <div class="like-btn" onclick="toggleLike()">
+                      <i id="like-icon" class="far fa-heart"></i>
+                      <span id="like-count">150</span>
+                 </div>
+                 <i class="rating-film"><span class="star"></span> 4.4 </i>
+            </div>
+       </div>
+  </div>
+</div>
+
+<div id="myModal5" class="modal-film" onclick="closeModal(event)">
+  <span class="close">&times;</span>
+  <div class="modal-content-film">
+       <div class="posisi-kiri">
+            <img id="myposter-film" src="assets/img/image6.jpeg" alt="judul gambar 5">
+            <!-- Tambahkan tombol play -->
+            <div class="play-btn" onclick="openVideoPopup('https://www.youtube.com/embed/-NKZ_3GgH_k')">
+                 <i class="fa fa-play-circle"></i>
+            </div>
+            
+            <!-- <div id="myModal-film" class="yt-film">
+                 <iframe id="videoFrame" width="100%" height="100%" src="https://www.youtube.com/embed/nq9sz0aaLeI" title="YouTube video player" frameborder="0" 
+                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" 
+                 allowfullscreen></iframe>
+            </div> -->
+       </div>
+       <div class="posisi-kanan">
+            <h1>season of deity </h1>
+            <p class="sinopsis-film">
+              EASON OF DEITY merupakan drakor tentang malaikat maut terbaru 2023. Drama ini berkisah tentang percintaan 
+              malaikat maut dengan seorang dokter. Mengusung genre fantasi romantis, tokoh dokter yang bernama Han Gye-jeol
+               (Im Soo-hyang) ini digambarkan sebagai manusia yang punya kemampuan khusus.
+            </p>
+            <div class="kotak-rating-film">
+                 <i class="views-film"> <i class="fas fa-eye"></i> 157</i>
+                 <div class="like-btn" onclick="toggleLike()">
+                      <i id="like-icon" class="far fa-heart"></i>
+                      <span id="like-count">150</span>
+                 </div>
+                 <i class="rating-film"><span class="star"></span> 4.7 </i>
+            </div>
+       </div>
+  </div>
+</div>
             <!---- ================ END CONTENT FILM BY AHMAD FAIZ ================  --->
             <!--- ============= CONTENT MUSIC - SISWO =============
 
