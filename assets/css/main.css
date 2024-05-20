@@ -932,17 +932,17 @@
 
   .views-film {
     margin-left: -173%;
-    margin-top: 17%;
+    margin-top: 9%;
     font-size: small;
   }
   .like-btn {
     margin-left: -110%;
-    margin-top: 17%;
+    margin-top: 9%;
     font-size: small;
   }
   .rating-film {
     margin-left: -113%;
-    margin-top: 17%;
+    margin-top: 9%;
     font-size: small;
   }
 }
@@ -983,17 +983,17 @@
   }
   .views-film {
     margin-left: -173%;
-    margin-top: 17%;
+    margin-top: 9%;
     font-size: small;
   }
   .like-btn {
     margin-left: -110%;
-    margin-top: 17%;
+    margin-top: 9%;
     font-size: small;
   }
   .rating-film{
     margin-left: -113%;
-    margin-top: 17%;
+    margin-top: 9%;
     font-size: small;
   }
 }
@@ -1258,6 +1258,53 @@
     margin-left: 0%;
     margin-top: -35%;
     max-height: 50%;
+  }
+}
+ /* iphone 12 pro max  */
+@media (max-width: 428px) {
+  .play-btn {
+    margin-top: -150px;
+    margin-left: 100px;    
+    width: 40px;
+    height: 40px;
+  }
+  .modal-content-film {
+    max-height: 53%;
+  }
+
+  .views-film {
+    margin-left: -150%;
+  }
+  .like-btn {
+    margin-left: -95%;
+  }
+  .rating-film{
+    margin-left: -97%;
+  }
+}
+ 
+/* Styles for iPhone 12 Pro */
+@media (max-width: 390px) {
+  .modal-content-film {
+    max-height: 60%;
+  }
+  .views-film {
+    margin-left: -165%;
+    margin-top: 20%;
+  }
+  .like-btn {
+    margin-left: -105%;
+    margin-top: 20%;
+  }
+  .rating-film{
+    margin-left: -108%;
+    margin-top: 20%;
+  }
+  .play-btn {
+    margin-top: -150px;
+    margin-left: 85px;    
+    width: 40px;
+    height: 40px;
   }
 }
 
