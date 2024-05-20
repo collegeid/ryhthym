@@ -16,10 +16,10 @@
 }
 
 .banner-music-content h4{
-    color: rgb(84, 83, 94);
+    color: black;
     position: absolute;
-    bottom: 20px;
-    left: 20px;
+    top: 17px;
+    left: 27px;
     font-size: 20px;
     font-weight: 800;
 }
@@ -33,7 +33,11 @@
 .list-music-content ul {
     padding: 12px 0;
     list-style: none;
+    max-height: 340px;
+    overflow: auto;
+    padding-right: 8px;
 }
+
 .audio-item{
     display: flex;
     justify-content: space-between;
@@ -66,7 +70,7 @@
     border: none;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 991px) {
     .modal-content-music{
         flex-direction: column;
     }
