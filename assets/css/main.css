@@ -375,6 +375,13 @@
   cursor: pointer;
   padding: 3px;
 }
+.episode-box {
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 5px;
+}
+
 /* Navigasi */
 .owl-nav button {
   background-color: #00000000!important;
