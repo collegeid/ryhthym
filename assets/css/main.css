@@ -59,7 +59,7 @@
 .rythym-background {
   position: relative;
  /* Make sure the container is positioned */
-  background-image: url('../assets/img/bg.png');
+  background-image: url('../img/bg.png');
   background-size: cover;
   background-position: center;
 }
@@ -132,7 +132,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  text-transform: uppercase;
 }
 .container{
   width: 100%;
@@ -153,9 +152,9 @@
   padding: 0px 0px;
   margin: 0px 0px 0px 0px;
   border-radius: 15px;
+  transition: all 1s;
   transform: scale(0.9);
   opacity: 1;
-  transition: all 1s;
 }
 .slider-card img {
   border-radius: 15px;
@@ -175,7 +174,7 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 40%;
+  height: 60%;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgb(0, 0, 0));
   border-radius: 15px;
 }
@@ -189,6 +188,35 @@
   align-items: flex-start;
   padding-left: 10px;
   padding-top: 10px;
+}
+/* Overlay */
+.slider-card-overlay{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 100%;
+  left: 0;
+  border-radius: 15px;
+  background-color: rgba(27, 27, 27, 0.5);
+  justify-content: center;
+  align-items: center;
+  transition: all ease 0.3s;
+  display: none;
+  z-index: 2;
+}
+.fas.fa-play:hover {
+  cursor: pointer;
+  color: rgb(0, 38, 255);
+  transform: scale(1.3);
+  transition: all 0.2s ease;
+}
+.slider-card-overlay i{
+  font-size: 40px;
+}
+.owl-item.active.center:hover >.slider-card >.slider-card-overlay{
+  top: 0px;
+  transition: all ease 0.3s;
+  display: flex;
 }
 /* Jenis Trend */
 .jenis{
@@ -210,7 +238,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-top: 140px;
+  margin-top: 150px;
   margin-left: 5px;
 }
 .movie-name span{
@@ -227,56 +255,121 @@
   letter-spacing: 0,5px;
   color: #ffffff;
 }
-.music-name{
+/* Kategori & Rating */
+.kategori-rating{
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin-top: 140px;
-  margin-left: 5px;
-  color: #ffffff00;
-}
-/* Kategori */
-.Kategori-rating{
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  display: flex;
-  align-items: center;
-  margin-top: 10px;
-  margin-left: 5px;
-}
-.kategori{
-  color: #ffffff;
-  font-size: 15px;
-  font-weight: 500;
-  margin-top: 0px 3px;
 }
 .rating{
-  font-size: 15px;
-  color: #ffd000;
-  letter-spacing: 1px;
-  display: flex;
-  align-items: center;
-  font-style: bold;
-  margin-left: 237px;
+  margin-left: 230px;
 }
 .rating img{
   height: 40px;
   width: 80px;
   object-fit: contain;
   object-position: center;
-  margin-left: 5px;
+}
+/* Pop Up */
+.modal{
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  display: none;
+}
+.modal-dialog {
+  position: relative;
+  height: 820px;
+  border-radius: 15px;
+  background-color: black;
+}
+.modal-content{
+  border-radius: 15px;
+  border: #ffffff;
+  background-color: #55555500;
+}
+.video-content{
+  position: relative;
+  max-width: 90%;
+  width: 640px;
+  height: 325px;
+  border-radius: 15px;
+  margin: 10px auto;
+  padding-bottom: 50.25%;
+  align-content: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 255, 0);
+}
+.video-content iframe {
+  position: absolute;
+  height: 325px;
+  border-radius: 15px;
+}
+.judul-trending{
+  height: 50px;
+  background-color: #ff000000;
+}
+.rating-trending{
+  display: flex;
+  height: 40px;
+  background-color: #00000000;
+  font-weight: 500;
+  font-size: 20px;
+  position: relative;
+}
+.info-kiri{
+  gap: 15px;
+  cursor: pointer;
+}
+.info-kiri > p{
+  margin-bottom: 5px;
+  color: #ffffff;
+}
+.info-kiri > p:nth-child(1){
+  color: red;
+  padding-right: 15px;
+  border-right: 2px solid white;
+} 
+.info-kiri > p:nth-child(2){
+  padding-right: 15px;
+  border-right: 2px solid white;
+}
+.info-kanan{
+  font-size: 17px;
+  padding-top: 8px;
+}
+.sinopsis{
+  height: 380px;
+  border-radius: 15px;
+  align-items: flex-start;
+  justify-content: center;
+  background-color: #ff000000;
+}
+.like:hover{
+  cursor: pointer;
+  color: red;
+  transform: scale(1.2);
+  transition: all 0.2s ease ease-in-out;
+}
+.close-btn{
+  position: absolute;
+  background-color: #ffffff00;
+  border: #ffffff00;
+  font-size: 40px;
+  top: -20px;
+  left: 575px;
+  cursor: pointer;
+  padding: 3px;
 }
 /* Navigasi */
 .owl-nav button {
-  background-color: #ff000000!important;
+  background-color: #00000000!important;
   height: 50px;
   width: 30px;
 }
 .owl-nav button:hover {
-  background-color: #000000!important;
-  height: 50px;
-  width: 30px;
+  background-color: #2b4bff!important;
 }
 .owl-nav .owl-prev {
   position: absolute;
@@ -295,58 +388,132 @@
   z-index: 1;
 }
 /* Responsive */
-@media (min-width: 768px) {
+@media (max-width: 550px) {
+  .movie-name,
+  .kategori-rating {
+    display: none;
+  }
+}
+@media (max-width: 576px){
+  .modal-dialog {
+    height: 600px;
+    width: 360px;
+  }
+  .video-content,
+  .video-content iframe {
+    width: 300px;
+    height: 181px;
+  }
+  .judul-trending{
+    width: 360px;
+    height: 40px;
+  }
+  .sinopsis{
+    width: 360px;
+    height: 285px;
+    font-size: small;
+  }
+  .close-btn{
+    left: 298px;
+  }
+  .info-kanan{
+    display: none;
+  }
+}
+@media (min-width: 576px){
+  .video-content {
+    padding-bottom: 65%;
+  }
+  .judul-trending,
+  .sinopsis{
+    width: 500px;
+  }
+  .close-btn{
+    left: 445px;
+  }
+  .info-kanan{
+    display: none;
+  }
+}
+@media (min-width: 768px){
   .container {
-      max-width: 550px;
- }
+    max-width: 550px;
+  }
+  .video-content {
+    padding-bottom: 65%;
+  }
+  .close-btn{
+    left: 445px;
+  }
+  .info-kanan{
+    display:flex;
+  }
 }
 @media (min-width: 992px) {
   .container {
-      max-width: 800px;
- }
+    max-width: 800px;
+  }
+  .video-content {
+    padding-bottom: 50.75%;
+  }
+  .judul-trending,
+  .sinopsis{
+    width: 640px;
+  }
+  .close-btn{
+    left: 575px;
+  }
 }
 @media (min-width: 1080px) {
   .container {
-      max-width: 875px;
- }
+    max-width: 875px;
+  }
 }
 @media (min-width: 1230px) {
   .container {
-      max-width: 1000px;
- }
+    max-width: 1000px;
+  }
 }
 @media (min-width: 1366px) {
   .container {
-      max-width: 1100px;
- }
+    max-width: 1100px;
+  }
+  .movie-name{
+    margin-top: 70px;
+  }
 }
 @media (min-width: 1600px) {
   .container {
-      max-width: 1295px;
- }
+    max-width: 1295px;
+  }
+  .movie-name{
+    margin-top: 150px;
+  }
 }
 @media (min-width: 1920px) {
   .container {
-      max-width: 1560px;
- }
+    max-width: 1560px;
+  }
 }
+
+
 /* Content Film oleh Ahmad Faiz */
 /* Branch: FILM */
 /* Penanggung Jawab Branch: Ahmad Faiz */
 
-.col{
+/* .col{
   max-height: 100vh;
   overflow: auto;
-}
+} */
 
-.card-music{
+/* .card-tv{
   position: relative;
   margin-bottom: 56px;
   z-index: 1000;
   background: transparent;
-}
+} */
 
-.card-music > .card-body > .card-title{
+/* .card-tv > .card-body-TV > .card-title-TV{
   background-color: #000000;
   color: #ffffff;
   font-weight: 600;
@@ -357,41 +524,41 @@
   justify-content: center;
   align-items: center;
   text-transform: uppercase;
-}
+} */
 
-.swiper {
+/* .swiper {
   width: 100%;
   height: 300px;
   margin: 20px auto;
-}
+} */
 
-.swiper-slide {
+/* .swiper-slide {
   text-align: center;
   font-size: 18px;
   background: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
-}
+} */
 
-.swiper-slide img {
+/* .swiper-slide img {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
+} */
 
-.swiper-slide-active{
+/* .swiper-slide-active{
   transform: scale(1) !important;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
+} */
 
-.swiper-slide-prev, .swiper-slide-next{
+/* .swiper-slide-prev, .swiper-slide-next{
   transform: scale(.75) !important;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
+} */
 
-.swiper-button-next, .swiper-button-prev{
+/* .swiper-button-next, .swiper-button-prev{
   background-color: #000000;
   padding: 18px;
   color: #ffffff;
@@ -404,17 +571,17 @@
   transform: scale(.8);
   opacity: .2;
   box-sizing: border-box;
-}
+} */
 
-.swiper-button-next::after, .swiper-button-prev::after{
+/* .swiper-button-next::after, .swiper-button-prev::after{
   transform: scale(.8);
-}
+} */
 
-.swiper-button-next:hover, .swiper-button-prev:hover{
+/* .swiper-button-next:hover, .swiper-button-prev:hover{
   transition: 0.4s ease-in-out;
   transform: scale(1);
   opacity: 1;
-}
+} */
 
   /* Content Music oleh Siswo Adi Nugroho */
   /* Branch: MUSIC */
@@ -423,15 +590,15 @@
     max-height: 100vh;
     overflow: auto;
   }
-
-  .card-film{
+  
+  .card-music{
     position: relative;
     margin-bottom: 56px;
     z-index: 1000;
     background: transparent;
   }
-
-  .card-film > .card-body-film > .card-title-film{
+  
+  .card-music > .card-body > .card-title{
     background-color: #000000;
     color: #ffffff;
     font-weight: 600;
@@ -443,39 +610,166 @@
     align-items: center;
     text-transform: uppercase;
   }
-
+  
   .swiper {
     width: 100%;
     height: 300px;
     margin: 20px auto;
   }
-
+  
   .swiper-slide {
+    position: relative;
     text-align: center;
     font-size: 18px;
     background: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
+  
+    cursor: pointer;
   }
-
+  
+  .swiper-slide:hover > .hover-card{
+    display: flex;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  .hover-card{
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    flex-direction: column;
+  
+  
+    position: absolute;
+    z-index: 100;
+    width: 150%;
+    height: 100%;
+  
+    background-color: #303440;
+    box-shadow: 0px 1px 1px rgba(3, 7, 18, 0.02);
+    border-radius: 8px;
+  
+  }
+  
+  .hover-card-header{
+    position: relative;
+  }
+  
+  .hover-card-header > img{
+    width: 100% !important;
+    height: 124px !important;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+  
+  .hover-card-warp-btn{
+    position: absolute;
+    bottom: 14px;
+    right: 14px;
+  }
+  
+  .hover-card-warp-btn > button{
+    background: transparent;
+    outline: none;
+    border: none;
+    background: lightgreen;
+    border-radius: 100%;
+  }
+  
+  .hover-card-warp-btn > button:nth-child(1){
+    color: #fff;
+  }
+  
+  .hover-card-warp-btn > button:nth-child(2){
+    color: black;
+    background: gray;
+  }
+  
+  
+  
+  .hover-card-body{
+    padding: 12px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  .hover-card-body > h4{
+    width: 100%;
+    font-size: 18px;
+    font-weight: 800;
+    text-align: left;
+  }
+  
+  .hover-card-body > h4:hover{
+    color: lightgreen;
+  }
+  
+  .hover-card-body > p{
+    color: #fff;
+    font-size: 12px;
+    text-align: left; 
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  .hover-card-body > a{
+    font-size: 10px;
+    text-decoration: none;
+    color: lightgreen;
+    margin-left: auto;
+    width: 100%;
+    display: block;
+    text-align: right;
+  }
+  
+  .hover-card-info{
+    width: 100%;
+    display: flex;
+    gap: 8px;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  
+  .hover-card-info > p{
+    color: #fff;
+    display: flex;
+    gap: 2px;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    margin-bottom: 0;
+  }
+  
+  .hover-card-info > p:nth-child(1){
+    color: rgb(223, 48, 17);
+    padding-right: 8px;
+    border-right: 1px solid gray;
+  }
+  
   .swiper-slide img {
     display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
-
+  
   .swiper-slide-active{
     transform: scale(1) !important;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
-
+  
   .swiper-slide-prev, .swiper-slide-next{
     transform: scale(.75) !important;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
-
+  
   .swiper-button-next, .swiper-button-prev{
     background-color: #000000;
     padding: 18px;
@@ -507,19 +801,19 @@
 /* Content TV Show oleh Haikal Ihza */
 /* Branch: TV */
 /* Penanggung Jawab Branch: Haikal Ihza */
-.col{
+ /* .col{
     max-height: 100vh;
     overflow: auto;
-  }
+  } */
 
   .card-tv{
     position: relative;
     margin-bottom: 56px;
     z-index: 1000;
     background: transparent;
-  }
+  } 
 
-  .card-tv > .card-body-tv > .card-title-tv{
+   .card-tv > .card-body-tv > .card-title-tv{
     background-color: #000000;
     color: #ffffff;
     font-weight: 600;
@@ -532,23 +826,11 @@
     text-transform: uppercase;
   }
 
-  .card {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    min-width: 0;
-    word-wrap: break-word;
-    background-color: #fff0;
-    background-clip: border-box;
-    border: 1px solid rgba(0, 0, 0, .125);
-    border-radius: .25rem;
-}
-
   .swiper {
     width: 100%;
     height: 300px;
     margin: 20px auto;
-  }
+  } 
 
   .swiper-slide {
     text-align: center;
@@ -557,44 +839,24 @@
     display: flex;
     justify-content: center;
     align-items: center;
-  }
+  } 
 
   .swiper-slide img {
     display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
-  }
+  } 
 
   .swiper-slide-active{
     transform: scale(1) !important;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  }
+  } 
 
-  .swiper-slide-prev, .swiper-slide-next {
+  .swiper-slide-prev, .swiper-slide-next{
     transform: scale(.75) !important;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  }
-
- .btntv {
-    transform: scale(1) !important;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  }
-
-  .btntv {
-    transform: scale(.75) !important;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.564);
-  }
-
-  .btntv {
-    border-color: #050505fe;
-    border-radius: 10px;
-    background-color: #050505fb;
-    transition: 0.4s ease-in-out;
-    transform: scale(.8);
-    opacity: .9;
-    box-sizing: border-box;
-  }
+  } 
 
   .swiper-button-next, .swiper-button-prev{
     background-color: #000000;
@@ -614,191 +876,9 @@
   .swiper-button-next::after, .swiper-button-prev::after{
     transform: scale(.8);
   }
-  
+   
   .swiper-button-next:hover, .swiper-button-prev:hover{
     transition: 0.4s ease-in-out;
     transform: scale(1);
     opacity: 1;
-  } 
-
-  .btn-tv{
-    color: #f2f2f2;
-    font-size: 15px;
-    padding: 8px 12px;
-    position: absolute;
-    bottom: 8px;
-    width: 100%;
-    text-align: center;
-  }
-
-  .episode-list{
-    color: #f2f2f2;
-  }
-
-  /* pop up */
-  
-  
-  .modal {
-    position: fixed;
-    top: auto;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 1050;
-    display: none;
-    overflow: hidden;
-    outline: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-  }
-  
-  .modal.show {
-    display: block;
-  }
-  
-  .modal-dialog {
-    position: relative;
-    width: auto;
-    margin: 1.75rem auto;
-    pointer-events: none;
-  }
-  
-  .modal-content {
-    position: relative;
-    background-color: #141414;
-    border: 1px solid #424242;
-    border-radius: .3rem;
-    outline: 0;
-    pointer-events: auto;
-    width: 100%;
-    max-width: 800px;
-  }
-  
-  .modal-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1rem;
-    border-bottom: 1px solid #424242;
-  }
-  
-  .modal-header .judul {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #fff;
-  }
-  
-  .modal-header .btn-close {
-    padding: .5rem;
-    border: none;
-    background: none;
-    font-size: 1.5rem;
-    color: #fff;
-    opacity: .5;
-  }
-  
-  .modal-header .btn-close:focus {
-    box-shadow: none;
-  }
-  
-  .modal-header .btn-close:hover {
-    color: #fff;
-    opacity: .75;
-  }
-  
-  .modal-body {
-    position: relative;
-    padding: 1rem;
-    max-height: calc(100vh - 210px); /* adjust this value to fit your needs */
-    overflow-y: auto;
-  }
-  
-  .modal-body .text-episode {
-    font-size: 1.25rem;
-    font-weight: bold;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 1rem;
-  }
-  
-  .modal-body .text-episode button {
-    padding: .5rem 1rem;
-    border-radius: .25rem;
-    background-color: #e50914;
-    color: #fff;
-    border: none;
-    font-size: .875rem;
-    font-weight: bold;
-    cursor: pointer;
-  }
-  
-  .modal-body .text-episode button:hover {
-    background-color:#e50914;
-  }
-  
-  .modal-body .text-episode button:focus {
-    box-shadow: none;
-  }
-  
-  .modal-body .episode {
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 1rem;
-  }
-  
-  .modal-body .episode .text {
-    padding: .15rem;
-    border-radius: .20rem;
-    background-color: #ffffff;
-    color: #ffffff;
-    font-size: .875rem;
-  }
-
-  .ytp-cued-thumbnail-overlay-image {
-    background-size: cover;
-    -moz-background-size: cover;
-    -webkit-background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-}
-
-.embed-responsive-tv {
-  border-radius: 2.5%;
-  padding-bottom: 56.25%;
-  margin-left: 30px;
-  height: 0;
-  overflow: hidden;
-}
-
-.embed-responsive-item {
-  position: auto;
-  top: 0;
-  left: 0;
-  border: none;
-}
-
-.episode-list{
-  padding: 14px;
-  width: 100%;
-}
-
-.episode-list {
-  padding: 12px 0;
-  list-style: none;
-}
-.episode-list{
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
-  border: flex 1px white;
-  margin-bottom: 10px;
-  padding: 4px;
-  border-radius: 8px;
-  font-size: small;
-}
-  
-  
+  }   

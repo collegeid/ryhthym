@@ -111,7 +111,7 @@ var TrandingSlider = new Swiper('.tranding-slider', {
   
 });
 
-
+/*
 const modalImage = document.getElementById('modalImage');
 const btnTvs = document.querySelectorAll('.btn-tv button');
 
@@ -122,6 +122,8 @@ btnTvs.forEach((btnTv) => {
     modalImage.src = thumbnailSrc;
   });
 });
+
+*/
 
 
 
