@@ -167,17 +167,18 @@ document.addEventListener('click', function(event) {
       bintangPop.style.display = 'none';
       ratingBanner.style.display = 'none';
       ratingumur.style.display = 'none';
-      sinopsisTitle.textContent = 'Episode List:';
-      sinopsisContainer.innerHTML = `
-        <ul class="list-unstyled">
-          <li>Episode 1</li>
-          <li>Episode 2</li>
-          <li>Episode 3</li>
-          <li>Episode 4</li>
-        </ul>
-      `;
+      sinopsisTitle.textContent = 'Episode Series:';
+      sinopsisContainer.innerHTML = '';
+      for (let i = 1; i <= 5; i++) {
+          let episodeElement = document.createElement('div');
+          episodeElement.textContent = 'Episode ' + i;
+          episodeElement.classList.add('episode-box');
+          sinopsisContainer.appendChild(episodeElement);
+      }
       sinopsisContainer.style.overflowY = 'scroll';
-      sinopsisContainer.style.maxHeight = '300px';
+      sinopsisContainer.style.maxHeight = '170px';
+      sinopsisContainer.style.paddingRight = '30px';
+      sinopsisContainer.style.paddingTop = '20px';
     } else if (sliderCard.id === 'trending-card-music') {
       bintangPop.style.display = 'none';
       ratingBanner.style.display = 'none';
@@ -185,8 +186,9 @@ document.addEventListener('click', function(event) {
       sinopsisTitle.textContent = 'Song List:';
       sinopsisContainer.innerHTML = listMusicContent.innerHTML;
       sinopsisContainer.style.overflowY = 'scroll';
-      sinopsisContainer.style.maxHeight = '300px';
+      sinopsisContainer.style.maxHeight = '150px';
       sinopsisContainer.style.paddingRight = '30px';
+      sinopsisContainer.style.paddingTop = '20px';
     }
   } 
   // Menutup Popup
@@ -209,7 +211,6 @@ function getYouTubeVideoId(url) {
     return null;
   }
 }
-
 
 // Like
 let likeCount = 60;
