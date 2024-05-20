@@ -1,0 +1,866 @@
+/* Content Film oleh Ahmad Faiz */
+/* Branch: FILM */
+/* Penanggung Jawab Branch: Ahmad Faiz */
+
+.col{
+    max-height: 100vh;
+    overflow: auto;
+  }
+  
+  .card-film{
+    position: relative;
+    margin-bottom: 56px;
+    z-index: 1000;
+    background: transparent;
+  }
+  
+  .card-film > .card-body-film > .card-title-film{
+    background-color: #000000;
+    color: #ffffff;
+    font-weight: 600;
+    padding: 15px 10px;
+    height: 10px;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+  }
+  
+  .swiper {
+    width: 100%;
+    height: 300px;
+    margin: 20px auto;
+  }
+  
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .swiper-slide-active{
+    transform: scale(1) !important;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  
+  .swiper-slide-prev, .swiper-slide-next{
+    transform: scale(.75) !important;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  
+  .swiper-button-next, .swiper-button-prev{
+    background-color: #000000;
+    padding: 18px;
+    color: #ffffff;
+    border-radius: 100%;
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+    transform: scale(.8);
+    opacity: .2;
+    box-sizing: border-box;
+  }
+  
+  .swiper-button-next::after, .swiper-button-prev::after{
+    transform: scale(.8);
+  }
+  
+  .swiper-button-next:hover, .swiper-button-prev:hover{
+    transition: 0.4s ease-in-out;
+    transform: scale(1);
+    opacity: 1;
+  }
+  
+  /* Pop Up */
+  /* Style the modal */
+  .modal-film {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1500; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    
+    left: 50%;
+    top: 45%; /* mengatur atas bawah modul */
+    transform: translate(-50%, -50%); /* Geser modal ke tengah secara tepat */
+  
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(140, 0, 255); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.407); /* Black w/ opacity */
+    backdrop-filter: blur(1px);
+     /* Gaya CSS lainnya */
+     width: 100vw; /* instead of 100% */
+     height: 130vh; /* instead of 130% */
+     justify-content: center; /* Menengahkan modal */
+  }
+  
+  
+  .modal-content-film {
+    margin: auto;
+    /* Menggunakan flexbox */
+    flex-direction: row; /* Menata letak elemen secara horizontal */
+    align-items: center; /* Mengatur vertikal alignment ke tengah */
+    justify-content: space-between; /* Menyisakan ruang di antara gambar dan caption */
+    top: 30%;
+    left: 15%;
+    width: 90%; /* Menggunakan unit persentase */
+    max-width: 800px; /* Menyesuaikan lebar maksimum */
+    max-height: 80vh;
+    padding: 10px;
+    position: relative;
+    background-color: #000000ea;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .posisi-kiri{
+    background-color: #000000;
+    height: 515px;
+    margin-left: -50%;
+    width: 0px;
+  }
+  #myposter-film {
+    height: 515px;
+    margin-left: -00%;
+    width: 0px;
+  }
+  
+  .play-btn {
+    width: 60px;
+    height: 60px;
+    background-color: rgba(0, 0, 0, 0.945);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+  }
+  
+  .play-btn i {
+    color: rgb(255, 0, 0);
+    font-size: 24px;
+  }
+  
+  .posisi-kanan{
+   
+    height: 515px;
+    margin-left: 50%;
+    margin-top: -60%;
+    
+  }
+  
+  .posisi-kanan h1 {
+    color: #fff;
+  }
+  
+  .sinopsis-film {
+    color: #ffffff;
+  
+  }
+  
+  .views-film {
+    position: absolute;
+  
+    font-size: 17px;
+    white-space: nowrap;
+    background-color: #ffef08ac;
+    color: #000000;
+    border-radius: 9px;
+    align-items: center;
+    padding: 5px 10px 5px;
+  }
+  
+  
+  .rating-film {
+    cursor: pointer;
+    position: absolute;
+    top: 440px;
+    left: 500px;
+    font-size: 17px;
+    white-space: nowrap;
+    background-color: #ffef08a8;
+    color: #000000;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    padding: 5px 10px 5px;
+  
+  }
+  
+  .star {
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+  }
+  
+  .star::before {
+    content: '\2605';
+  }
+  
+  
+  .like-btn {
+    cursor: pointer;
+    position: absolute;
+    top: 440px;
+    left: 430px;
+    font-size: 17px;
+    white-space: nowrap;
+    background-color: #ffef08a8;
+    color: #ff0000;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    padding: 5px 10px 5px;
+  }
+  
+  .like-btn:hover {
+    color: rgb(255, 0, 0); /* Ubah warna ikon saat mouse di atasnya */
+  }
+  
+  .like-icon {
+    color: #ff0000;
+  }
+  
+  .text-danger {
+    color: red;
+  }
+  .text-secondary {
+    color: grey;
+  }
+  
+  .views-film {
+    cursor: pointer;
+    position: absolute;
+    top: 440px;
+    left: 565px;
+    font-size: 17px;
+    white-space: nowrap;
+    background-color: #ffef08a8;
+    color: #000000;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    padding: 5px 10px 5px;
+  }
+  /* Modal Content (image) */
+  /* buat responsive */
+  @media (max-width: 1028px) {
+    .posisi-kiri{
+      height: 485px;
+    }
+    #myposter-film {
+      height: 485px;
+    }
+  }
+  
+  @media (min-width: 830px) {
+    .posisi-kiri{
+      height: 455px;
+    }
+    #myposter-film {
+      height: 455px;
+    }
+  }
+  
+  @media (max-width: 788px) {
+    .posisi-kiri{
+      height: 465px;
+    }
+    #myposter-film {
+      height: 465px;
+    }
+  }
+  
+  @media (min-width: 789px) {
+    .posisi-kiri{
+      height: 465px;
+    }
+    #myposter-film {
+      height: 465px;
+    }
+  }
+  
+  
+  @media (max-width: 890px) {
+    .posisi-kiri{
+      width: 325px;
+    }
+    #myposter-film {
+      width: 325px;
+    }
+  }
+  
+  @media (min-width: 724px) {
+    .posisi-kiri{
+      width: 265px;
+    }
+    #myposter-film {
+      width: 265px;
+    }
+  }
+  
+  
+  @media (max-width: 907px) {
+    .posisi-kiri{
+      width: 325px;
+    }
+    #myposter-film {
+      width: 325px;
+    }
+  }
+  
+  @media (max-width: 890px) {
+    .posisi-kiri{
+      width: 325px;
+    }
+    #myposter-film {
+      width: 325px;
+    }
+  }
+  
+  @media (max-width: 721px) {
+    .posisi-kiri{
+      width: 275px;
+    }
+    #myposter-film {
+      width: 275px;
+    }
+  }
+  
+  @media (min-width: 898px) {
+    .posisi-kiri{
+      width: 325px;
+    }
+    #myposter-film {
+      width: 325px;
+    }
+  }
+  
+  @media (min-width: 720px) {
+    .posisi-kiri{
+      width: 275px;
+    }
+    #myposter-film {
+      width: 275px;
+    }
+  }
+  
+  @media (max-width: 1238px) {
+    .posisi-kiri{
+      width: 405px;
+      height: 300px;
+    }
+    #myposter-film {
+      width: 405px;
+      height: 300px;
+    }
+  }
+  
+  @media (max-width: 896px) {
+    .posisi-kiri{
+      width: 345px;
+    }
+    #myposter-film {
+      width: 345px;
+    }
+  }
+  
+  @media (max-width: 891px) {
+    .posisi-kiri{
+      width: 340px;
+    }
+    #myposter-film {
+      width: 340px;
+    }
+  }
+  
+  @media (max-width: 1238px) {
+    .posisi-kanan{
+      height: 510px;
+    }
+    
+  }
+  
+  
+  
+  @media (max-width: 550px) {
+    .posisi-kiri{
+      height: 250px;
+      width: 280px;
+      margin-left: 0%;
+    }
+    #myposter-film {
+      height: 250px;
+      width: 280px;
+      margin-left: 0%;
+    }
+    .posisi-kanan{
+      height: 510px;
+      width: 90%;
+      margin-left: 0%;
+      margin-top: 5%;
+    }
+    .posisi-kanan h1 {
+      margin-left: 0%;
+      width: 90%;
+      margin-top: 5%;
+    }
+    .sinopsis-film {
+      font-size: small;
+    }
+    .play-btn {
+      margin-top: -130px;
+      margin-left: 80px;
+      width: 30px;
+      height: 30px;
+    }
+  
+    .views-film {
+      margin-left: -173%;
+      margin-top: 9%;
+      font-size: small;
+    }
+    .like-btn {
+      margin-left: -110%;
+      margin-top: 9%;
+      font-size: small;
+    }
+    .rating-film {
+      margin-left: -113%;
+      margin-top: 9%;
+      font-size: small;
+    }
+  }
+  
+  
+  
+  @media (min-width: 550px) {
+    
+    .posisi-kiri{
+      height: 250px;
+      width: 280px;
+      margin-left: 0%;
+    }
+    #myposter-film {
+      height: 250px;
+      width: 280px;
+      margin-left: 0%;
+    }
+    .posisi-kanan{
+      height: 510px;
+      width: 90%;
+      margin-left: 0%;
+      margin-top: 5%;
+    }
+    .posisi-kanan h1 {
+      margin-left: 0%;
+      width: 90%;
+      margin-top: 5%;
+    }
+    .sinopsis-film {
+      font-size: small;
+    }
+    .play-btn {
+      margin-top: -130px;
+      margin-left: 80px;
+      width: 30px;
+      height: 30px;
+    }
+    .views-film {
+      margin-left: -173%;
+      margin-top: 9%;
+      font-size: small;
+    }
+    .like-btn {
+      margin-left: -110%;
+      margin-top: 9%;
+      font-size: small;
+    }
+    .rating-film{
+      margin-left: -113%;
+      margin-top: 9%;
+      font-size: small;
+    }
+  }
+  
+  @media (min-width: 775px) {
+    .posisi-kiri{
+      width: 300px;
+      height: 500px;
+      margin-left: -25%;
+    }
+    #myposter-film {
+      width: 300px;
+      height: 500px;
+      margin-left: -25%;
+    }
+    .posisi-kanan{
+      width: 300px;
+      margin-left: 50%;
+      margin-top: -30%;
+    }
+    .modal-content-film{
+      left: 35%;
+      top: 85%;
+      max-height: 65%;
+    }
+  }
+  
+    
+  
+  @media (min-width: 1344px) {
+    .posisi-kiri{
+      width: 70%;
+      height: 500px;
+      margin-left: -10%;
+      
+    }
+    #myposter-film {
+      width: 70%;
+      height: 500px;
+      margin-left: -10%;
+    }
+    .posisi-kanan{
+      width: 60%;
+      margin-left: 35%;
+      margin-top: -40%;
+    }
+    .posisi-kanan h1 {
+      margin-left: 35%;
+      width: 60%;
+      margin-top: -40%;
+    }
+    .sinopsis-film {
+      font-size: medium;
+      margin-left: 30%;
+      margin-top: 10%;
+    }
+    .play-btn {
+      margin-top: -10px;
+      margin-left: 30px;
+      width: 50px;
+      height: 50px;
+    }
+    .views-film {
+      margin-left: -15%;
+      margin-top: 5%;
+      font-size: medium;
+    }
+    .like-btn {
+      margin-left: 11%;
+      margin-top: 5%;
+      font-size: medium;
+    }
+    .rating-film{
+      margin-left: 11%;
+      margin-top: 5%;
+      font-size: medium;
+    }
+    .modal-content-film{
+      left: 40%;
+      top: 85%;
+      max-height: 50%;
+    }
+  }
+  
+   
+  
+  
+  @media (max-width: 550px) {
+    .modal-content-film{
+      margin-left: -10%;
+      margin-top: -40%;
+      height: 70%;
+    }
+  }
+  
+  @media (min-width: 550px) {
+    .modal-content-film{
+      margin-left: -10%;
+      margin-top: -40%;
+      height: 70%;
+    }
+  }  
+  
+  @media (min-width: 1440px) {
+    .posisi-kiri{
+      width: 70%;
+      height: 500px;
+      margin-left: -10%;
+      
+    }
+    #myposter-film {
+      width: 70%;
+      height: 500px;
+      margin-left: -10%;
+    }
+    .posisi-kanan{
+      width: 60%;
+      margin-left: 35%;
+      margin-top: -40%;
+    }
+    .posisi-kanan h1 {
+      margin-left: 35%;
+      width: 60%;
+      margin-top: -40%;
+    }
+    .sinopsis-film {
+      font-size: medium;
+      margin-left: 30%;
+      margin-top: 10%;
+    }
+    .play-btn {
+      margin-top: -10px;
+      margin-left: 30px;
+      width: 50px;
+      height: 50px;
+    }
+    .views-film {
+      margin-left: -15%;
+      margin-top: 5%;
+      font-size: medium;
+    }
+    .like-btn {
+      margin-left: 11%;
+      margin-top: 5%;
+      font-size: medium;
+    }
+    .rating-film{
+      margin-left: 11%;
+      margin-top: 5%;
+      font-size: medium;
+    }
+    .modal-content-film{
+      left: 40%;
+      top: 85%;
+      max-height: 0%;
+    }
+  }
+  
+  @media (min-width: 1296px) {
+    .posisi-kiri{
+      width: 70%;
+      height: 500px;
+      margin-left: -10%;
+      
+    }
+    #myposter-film {
+      width: 70%;
+      height: 450px;
+      margin-left: -10%;
+    }
+    .posisi-kanan{
+      width: 60%;
+      margin-left: 35%;
+      margin-top: -35%;
+    }
+    .posisi-kanan h1 {
+      margin-left: 35%;
+      width: 60%;
+      margin-top: -35%;
+    }
+    .sinopsis-film {
+      font-size: medium;
+      margin-left: 30%;
+      margin-top: 10%;
+    }
+    .play-btn {
+      margin-top: -10px;
+      margin-left: 30px;
+      width: 50px;
+      height: 50px;
+    }
+    .views-film {
+      margin-left: -15%;
+      margin-top: -2%;
+      font-size: medium;
+    }
+    .like-btn {
+      margin-left: 11%;
+      margin-top: -2%;
+      font-size: medium;
+    }
+    .rating-film{
+      margin-left: 11%;
+      margin-top: -2%;
+      font-size: medium;
+    }
+    .modal-content-film{
+      left: 30%;
+      top: 80%;
+      max-height: 62%;
+    }
+  }
+  @media (min-width: 1500px) {
+    .posisi-kiri{
+      width: 70%;
+      height: 500px;
+      margin-left: -10%;
+      
+    }
+    #myposter-film {
+      width: 70%;
+      height: 500px;
+      margin-left: -10%;
+    }
+    .posisi-kanan{
+      width: 60%;
+      margin-left: 35%;
+      margin-top: -40%;
+    }
+    .posisi-kanan h1 {
+      margin-left: 35%;
+      width: 60%;
+      margin-top: -40%;
+    }
+    .sinopsis-film {
+      font-size: medium;
+      margin-left: 30%;
+      margin-top: 10%;
+    }
+    .play-btn {
+      margin-top: -10px;
+      margin-left: 30px;
+      width: 50px;
+      height: 50px;
+    }
+    .views-film {
+      margin-left: -15%;
+      margin-top: 5%;
+      font-size: medium;
+    }
+    .like-btn {
+      margin-left: 11%;
+      margin-top: 5%;
+      font-size: medium;
+    }
+    .rating-film{
+      margin-left: 11%;
+      margin-top: 5%;
+      font-size: medium;
+    }
+    .modal-content-film{
+      margin-left: 0%;
+      margin-top: -35%;
+      max-height: 50%;
+    }
+  }
+   /* iphone 12 pro max  */
+  @media (max-width: 428px) {
+    .play-btn {
+      margin-top: -150px;
+      margin-left: 100px;    
+      width: 40px;
+      height: 40px;
+    }
+    .modal-content-film {
+      max-height: 53%;
+    }
+  
+    .views-film {
+      margin-left: -150%;
+    }
+    .like-btn {
+      margin-left: -95%;
+    }
+    .rating-film{
+      margin-left: -97%;
+    }
+  }
+   
+  /* Styles for iPhone 12 Pro */
+  @media (max-width: 390px) {
+    .modal-content-film {
+      max-height: 60%;
+    }
+    .views-film {
+      margin-left: -165%;
+      margin-top: 20%;
+    }
+    .like-btn {
+      margin-left: -105%;
+      margin-top: 20%;
+    }
+    .rating-film{
+      margin-left: -108%;
+      margin-top: 20%;
+    }
+    .play-btn {
+      margin-top: -150px;
+      margin-left: 85px;    
+      width: 40px;
+      height: 40px;
+    }
+  }
+  
+  #videoFrame {
+    width: 560px; /* Atur lebar video sesuai kebutuhan */
+    height: 315px; /* Atur tinggi video sesuai kebutuhan */
+    position: absolute; /* Tetapkan posisi absolut untuk video */
+    top: 100%; /* Geser video ke tengah vertikal */
+    left: 50%; /* Geser video ke tengah horizontal */
+    transform: translate(-50%, -50%); /* Geser video ke tengah secara tepat */
+  }
+  
+  
+  
+  
+  /* Add Animation */
+  .modal-content, #caption {  
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+  }
+  
+  @-webkit-keyframes zoom {
+    from {-webkit-transform:scale(0)} 
+    to {-webkit-transform:scale(1)}
+  }
+  
+  @keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+  }
+  
+  /* The Close Button */
+  .close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  /* 100% Image Width on Smaller Screens */
+  @media only screen and (max-width: 700px) {
+    .modal-content {
+       font-size: 14px; /* reduce font size */
+       padding: 5px; /* reduce padding */
+     }
+   }
+  
