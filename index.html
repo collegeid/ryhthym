@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="assets/css/main.css" />
     <link rel="stylesheet" href="assets/css/suggestion.css" />
+    <link rel="stylesheet" href="assets/css/music.css" />
     <title>Rhythm Movie TV</title>
   </head>
   <body class="rythym-background">
@@ -104,7 +105,12 @@ FLOW: (CENTANG JIKA SUDAH, DAN UPLOAD PADA BRANCH MASING MASING)
             </div>
           </div>
           <!-- Suggestions -->
-          <div id="suggestions" class="mt-3"></div>
+          <div id="suggestionsContainer" class="mt-3">
+            <button class="close-button-suggestions" onclick="closeSuggestions()">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <div id="suggestions"></div>
+          </div>
           <br>
           <!---- ============  END SEARCH BY FEBRI =============== -->
           <!--- ============= TRENDING CONTAINER - JARWO =============
@@ -128,7 +134,7 @@ HINTS: SELAMA KONTEN GAMBAR BISA DI GESER, BERARTI SUKSES
               <div class="slider">
                 <div class="owl-carousel owl-theme">
                   <!--Banner 1-->
-                  <div class="slider-card">
+                  <div class="slider-card" id="trending-card-movie">
                     <a href="https://youtu.be/-G5XI61Y9ms?si=3H846VaBGxMiMYSx" class="slider-card-overlay">
                       <i class="fas fa-play "></i>
                     </a>
@@ -155,38 +161,16 @@ HINTS: SELAMA KONTEN GAMBAR BISA DI GESER, BERARTI SUKSES
                           <img src="assets/img/imdb.png" alt="" />
                         </div>
                       </div>
+                      <div class="sinopsis-film-trending">
+                        <p>Aladdin adalah anak jalanan yang menggemaskan yang bertemu Putri Jasmine, putri cantik sultan Agrabah.
+                          Saat mengunjungi istananya yang eksotis, Aladdin menemukan lampu minyak ajaib yang mengeluarkan jin yang kuat, 
+                          bijaksana, dan lebih besar dari kehidupan. Saat Aladdin dan jin mulai berteman, mereka harus segera memulai 
+                          misi berbahaya untuk menghentikan penyihir jahat, Jafar, yang ingin menggulingkan kerajaan Jasmine muda.</p>      
+                      </div>
                     </div>
                   </div>
                   <!--Banner 2-->
-                  <div class="slider-card">
-                    <a href="https://youtu.be/nxs0RHpT_Hg?si=glgANxG57qTHC56F" class="slider-card-overlay">
-                      <i class="fas fa-play"></i>
-                    </a>
-                    <div class="image">
-                      <img src="assets/img/Blackpink.jpeg" alt="" />
-                    </div>
-                    <div class="trending-banner-text">
-                      <!--Jenis-->
-                      <span class="jenis">MUSIC</span>
-                      <!--Nama-->
-                      <div class="movie-name">
-                        <span>2023</span>
-                        <strong>BLACKPINK</strong>
-                      </div>
-                      <!--Kategori dan Rating-->
-                      <div class="kategori-rating flex-column flex-md-row">
-                        <div class="kategori d-flex align-items-center text-decoration-none mx-1">
-                          <a class="me-1 py-2 text-decoration-none text-white">Official</a>
-                          <a class="me-1 py-2 text-decoration-none text-white">Music</a>
-                        </div>
-                        <div class="rating d-inline-flex" style="margin-left: 330px;">
-                          <img src="assets/img/Billboard.png" alt="" />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!--Banner 3-->
-                  <div class="slider-card">
+                  <div class="slider-card" id="trending-card-movie">
                     <a href="https://youtu.be/Xithigfg7dA?si=EZrNqHoWFPI7VcQg" class="slider-card-overlay">
                       <i class="fas fa-play"></i>
                     </a>
@@ -213,10 +197,17 @@ HINTS: SELAMA KONTEN GAMBAR BISA DI GESER, BERARTI SUKSES
                           <img src="assets/img/imdb.png" alt="" />
                         </div>
                       </div>
+                      <div class="sinopsis-film-trending">
+                        <p>Wade Wilson (Ryan Reynolds) adalah mantan anggota Pasukan Khusus yang kini bekerja sebagai tentara bayaran. 
+                          Dunianya runtuh ketika ilmuwan jahat Ajax (Ed Skrein) menyiksa, menjelekkan, dan mengubahnya menjadi Deadpool. 
+                          Eksperimen nakal ini membuat Deadpool memiliki kekuatan penyembuhan yang dipercepat dan selera humor yang menyimpang. 
+                          Dengan bantuan sekutu mutan Colossus dan Negasonic Teenage Warhead (Brianna Hildebrand), Deadpool menggunakan 
+                          keterampilan barunya untuk memburu pria yang hampir menghancurkan hidupnya.</p>      
+                      </div>
                     </div>
                   </div>
-                  <!--Banner 4-->
-                  <div class="slider-card">
+                  <!--Banner 3-->
+                  <div class="slider-card" id="trending-card-movie">
                     <a href="https://youtu.be/xjDjIWPwcPU?si=A1Q-gla7-6usi49m" class="slider-card-overlay">
                       <i class="fas fa-play"></i>
                     </a>
@@ -243,10 +234,18 @@ HINTS: SELAMA KONTEN GAMBAR BISA DI GESER, BERARTI SUKSES
                           <img src="assets/img/imdb.png" alt="" />
                         </div>
                       </div>
+                      <!--Sinopsis-->
+                      <div class="sinopsis-film-trending">
+                        <p>Setelah kematian ayahnya, T'Challa kembali ke negara Wakanda di Afrika untuk mengambil tempat yang sah sebagai raja. 
+                          Ketika musuh yang kuat tiba-tiba muncul kembali, keberanian T'Challa sebagai raja dan sebagai Black Panther diuji 
+                          ketika dia terlibat dalam konflik yang membahayakan nasib Wakanda dan seluruh dunia. Dihadapkan pada pengkhianatan dan bahaya, 
+                          raja muda ini harus mengumpulkan sekutunya dan melepaskan kekuatan penuh Black Panther untuk mengalahkan musuh-musuhnya 
+                          dan menjamin keselamatan rakyatnya.</p>      
+                      </div>
                     </div>
                   </div>
-                  <!--Banner 5-->
-                  <div class="slider-card">
+                  <!--Banner 4-->
+                  <div class="slider-card" id="trending-card-tv">
                     <a href="https://youtu.be/cmJBeODwFuM?si=fEPhIU9wgXlVjA8S" class="slider-card-overlay">
                       <i class="fas fa-play"></i>
                     </a>
@@ -274,6 +273,35 @@ HINTS: SELAMA KONTEN GAMBAR BISA DI GESER, BERARTI SUKSES
                       </div>
                     </div>
                   </div>
+                  <!--Banner 5-->
+                  <div class="slider-card" id="trending-card-music">
+                    <a href="https://youtu.be/wP4ZxxJCVSI?si=CypRfVPxsbcr_w4a" class="slider-card-overlay">
+                      <i class="fas fa-play"></i>
+                    </a>
+                    <div class="image">
+                      <img src="assets/img/Juicy Luicy.jpg" alt="" />
+                    </div>
+                    <div class="trending-banner-text">
+                      <!--Jenis-->
+                      <span class="jenis" style="font-size: 18px;">MUSIC</span>
+                      <!--Nama-->
+                      <div class="movie-name">
+                        <span>2024</span>
+                        <strong>JUICY LUICY</strong>
+                      </div>
+                      <!--Kategori dan Rating-->
+                      <div class="kategori-rating flex-column flex-md-row">
+                        <div class="kategori d-flex align-items-center text-decoration-none mx-1">
+                          <a class="me-1 py-2 text-decoration-none text-white">Official</a>
+                          <a class="me-1 py-2 text-decoration-none text-white">Music</a>
+                        </div>
+                        <div class="rating d-inline-flex" style="margin-left: 330px;">
+                          <a class="me-2 py-2 text-decoration-none text-white d-none">5</a>
+                          <img src="assets/img/Billboard.png" alt="" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -283,7 +311,7 @@ HINTS: SELAMA KONTEN GAMBAR BISA DI GESER, BERARTI SUKSES
               <div class="modal-content">
                 <div class="video-content">
                   <iframe width="100%" height="100%" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                  <button type="button" class="close-btn" data-dismiss="modal" aria-label="Close">
+                  <button type="button" class="close-btn text-white" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
@@ -292,24 +320,23 @@ HINTS: SELAMA KONTEN GAMBAR BISA DI GESER, BERARTI SUKSES
                 </div>
                 <div class="rating-trending rating-trending-lg pt-1 flex-column flex-md-row">
                   <div class="info-kiri text-decoration-none d-flex ps-4">
-                    <p>
-                      <a class="bi bi-star-fill text-decoration-none text-white"></a>&#9733; 9.3
-                    </p>
-                    <p>13+</p>
-                    <p>2020</p>
+                    <a class="bintang text-decoration-none text-red">&#9733;</a>
+                    <p class="skor">9.3</p>
+                    <p class="umur">13+</p>
+                    <span>2020</span>
                   </div>
                   <div class="info-kanan mx-4 ms-md-auto">
-                    <div class="fa-solid fa-eye me-3">
+                    <div class="fa-solid fa-eye me-3 text-white">
                       <a class="viewer-count text-decoration-none text-white">100</a>
                     </div>
-                    <div class="like fas fa-thumbs-up mx-2" onclick="toggleLike()">
+                    <div class="like fas fa-thumbs-up mx-2 text-white" onclick="toggleLike()">
                       <a class="like-count text-decoration-none text-white" id="likeCount">60</a>
                     </div>
                   </div>
                 </div>
                 <div class="sinopsis sinopsis-lg px-4 text-white">
-                  <h3>Sinopsi:</h3>
-                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. </p>
+                  <h3>Sinopsis:</h3>
+                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                 </div>
               </div>
             </div>
@@ -331,212 +358,37 @@ FLOW: (CENTANG ✓ JIKA SUDAH, DAN UPLOAD PADA BRANCH MASING MASING)
 HINTS: SELAMA KONTEN GAMBAR BISA DI GESER, BERARTI SUKSES
 
 -->
-<section class="section-card">     
-  <div class="col">
-    <div class="card card-film">
-      <div class="card-body-film">
-        <h5 class="card-title-film"> Film </h5>
-        <div class="slideshow-container">
-
-          <div #swiperRef="" class="swiper mySwiper">
-            <div class="swiper-wrapper">
-                 <div class="swiper-slide" onclick="openModal('myModal1', 'Judul Gambar 1', 'Sinopsis singkat film...', '4.5/5')"><img src="assets/img/image1.jpg" ></div>
-                 <div class="swiper-slide" onclick="openModal('myModal2', 'Judul Gambar 2', 'Sinopsis singkat film...', '4.7/5')"><img src="assets/img/image3.jpeg" ></div>
-                 <div class="swiper-slide" onclick="openModal('myModal3', 'Judul Gambar 3', 'Sinopsis singkat film...', '4.8/5')"><img src="assets/img/image8.webp" ></div>
-                 <div class="swiper-slide" onclick="openModal('myModal4', 'Judul Gambar 4', 'Sinopsis singkat film...', '4.9/5')"><img src="assets/img/image5.jpeg" ></div>
-                 <div class="swiper-slide" onclick="openModal('myModal5', 'Judul Gambar 5', 'Sinopsis singkat film...', '4.6/5')"><img src="assets/img/image6.jpeg" ></div>
+            <div class="col">
+              <div class="card card-music">
+                <div class="card-body">
+                  <h5 class="card-title">film</h5>
+                  <div class="slideshow-container">
+                    <div #swiperRef="" class="swiper mySwiper">
+                      <div class="swiper-wrapper" id="film-data">
+                        <div class="swiper-slide">
+                          <img src="assets/img/image1.jpg">
+                        </div>
+                        <div class="swiper-slide">
+                          <img src="assets/img/image3.jpeg">
+                        </div>
+                        <div class="swiper-slide">
+                          <img src="assets/img/image4.jpg">
+                        </div>
+                        <div class="swiper-slide">
+                          <img src="assets/img/image5.jpeg">
+                        </div>
+                        <div class="swiper-slide">
+                          <img src="assets/img/image9.jpeg">
+                        </div>
+                      </div>
+                      <div class="swiper-button-next"></div>
+                      <div class="swiper-button-prev"></div>
+                      <!-- <div class="swiper-pagination"></div> -->
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-            
-            </div>
-        
-          
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-   <!-- Tambahkan div modal untuk setiap gambar -->
-
-
-<div id="myModal1" class="modal-film" onclick="closeModal(event)">
-  <span class="close">&times;</span>
-  <div class="modal-content-film">
-       <div class="posisi-kiri">
-            <img id="myposter-film" src="assets/img/image1.jpg" alt="judul gambar 1">
-            <!-- Tambahkan tombol play -->
-            <div class="play-btn" onclick="openVideoPopup('https://www.youtube.com/embed/nq9sz0aaLeI')">
-                 <i class="fa fa-play-circle"></i>
-            </div>
-            
-            <!-- <div id="myModal-film" class="yt-film">
-                 <iframe id="videoFrame" width="100%" height="100%" src="https://www.youtube.com/embed/nq9sz0aaLeI" title="YouTube video player" frameborder="0" 
-                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" 
-                 allowfullscreen></iframe>
-            </div> -->
-       </div>
-       <div class="posisi-kanan">
-        <h1>The Call (2020)</h1>
-        <p class="sinopsis-film">
-            The Call merupakan film bergenre horror-thriller asal Korea Selatan yang diproduksi oleh Yong Film dan disutradarai oleh Lee Chung Hyun.
-            Film ini didistribusikan oleh Next Entertainment World dan Netflix, sejak perilisan awalnya pada 27 November 2020.
-            Film ini dibintangi oleh aktris ternama, Park Shin-Hye dan Jeon Jeong Seo.
-        </p>
-        <div class="kotak-rating-film">
-            <i class="views-film"><i class="fas fa-eye"></i> 200</i>
-            <div class="like-btn" onclick="toggleLikeFilm()">
-                <i id="like-icon-film" class="far fa-heart"></i>
-                <span id="like-count-film">150</span>
-            </div>
-            <i class="rating-film"><span class="star"></span> 4.5 </i>
-        </div>
-       </div>  
-  </div>
-</div>
-
-
-<div id="myModal2" class="modal-film" onclick="closeModal(event)">
-  <span class="close">&times;</span>
-  <div class="modal-content-film">
-       <div class="posisi-kiri">
-            <img id="myposter-film" src="assets/img/image3.jpeg" alt="judul gambar 2">
-            <!-- Tambahkan tombol play -->
-            <div class="play-btn" onclick="openVideoPopup('https://www.youtube.com/embed/5Gutb4hc5r4')">
-                 <i class="fa fa-play-circle"></i>
-            </div>
-            
-            <!-- <div id="myModal-film" class="yt-film">
-                 <iframe id="videoFrame" width="100%" height="100%" src="https://www.youtube.com/embed/nq9sz0aaLeI" title="YouTube video player" frameborder="0" 
-                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" 
-                 allowfullscreen></iframe>
-            </div> -->
-       </div>
-       <div class="posisi-kanan">
-            <h1>last Seen Alive </h1>
-            <p class="sinopsis-film">
-              Film Last Seen Alive ini mengisahkan tentang pasangan suami istri yang sedang dalam perjalanan menuju rumah 
-              orang tua sang istri, Lisa Spann (Jaimie Alexander). Hubungan mereka sedang tidak dalam kondisi yang baik sehingga 
-              Lisa memutuskan untuk berada di rumah orang tuanya dulu.
-
-            </p>
-            <div class="kotak-rating-film">
-                 <i class="views-film"> <i class="fas fa-eye"></i> 230</i>
-                 <div class="like-btn" onclick="toggleLike()">
-                      <i id="like-icon" class="far fa-heart"></i>
-                      <span id="like-count">150</span>
-                 </div>
-                 <i class="rating-film"><span class="star"></span> 4.8 </i>
-            </div>
-       </div>
-  </div>
-</div>
-
-
-<div id="myModal3" class="modal-film" onclick="closeModal(event)">
-  <span class="close">&times;</span>
-  <div class="modal-content-film">
-       <div class="posisi-kiri">
-            <img id="myposter-film" src="assets/img/image8.webp" alt="judul gambar 3">
-            <!-- Tambahkan tombol play -->
-            <div class="play-btn" onclick="openVideoPopup('https://www.youtube.com/embed/PDEl1rw_Vn0')">
-                 <i class="fa fa-play-circle"></i>
-            </div>
-            
-            <!-- <div id="myModal-film" class="yt-film">
-                 <iframe id="videoFrame" width="100%" height="100%" src="https://youtu.be/PDEl1rw_Vn0?si=xfOVQhTXFEQr9I9O" title="YouTube video player" frameborder="0" 
-                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" 
-                 allowfullscreen></iframe>
-            </div> -->
-       </div>
-       <div class="posisi-kanan">
-            <h1>The Roundup </h1>
-            <p class="sinopsis-film">
-              unishment sendiri menyoroti kisah detektif bernama Ma Deok Do yang ditugaskan untuk menangkap penjahat berbahaya.
-              Dalam menjalankan tugasnya, detektif Ma Seok Do memburu anggota sindikat judi online yang berhasil melarikan diri dari penjera
-
-            </p>
-            <div class="kotak-rating-film">
-                 <i class="views-film"> <i class="fas fa-eye"></i> 130</i>
-                 <div class="like-btn" onclick="toggleLike()">
-                      <i id="like-icon" class="far fa-heart"></i>
-                      <span id="like-count">150</span>
-                 </div>
-                 <i class="rating-film"><span class="star"></span> 4.6 </i>
-            </div>
-       </div>
-  </div>
-</div>
-
-<div id="myModal4" class="modal-film" onclick="closeModal(event)">
-  <span class="close">&times;</span>
-  <div class="modal-content-film">
-       <div class="posisi-kiri">
-            <img id="myposter-film" src="assets/img/image5.jpeg" alt="judul gambar 4">
-            <!-- Tambahkan tombol play -->
-            <div class="play-btn" onclick="openVideoPopup('https://www.youtube.com/embed/qc2Nr-1AYBc')">
-                 <i class="fa fa-play-circle"></i>
-            </div>
-            
-            <!-- <div id="myModal-film" class="yt-film">
-                 <iframe id="videoFrame" width="100%" height="100%" src="https://www.youtube.com/embed/nq9sz0aaLeI" title="YouTube video player" frameborder="0" 
-                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" 
-                 allowfullscreen></iframe>
-            </div> -->
-       </div>
-       <div class="posisi-kanan">
-            <h1>Poong 2 </h1>
-            <p class="sinopsis-film">
-              “Poong, the Joseon Psychiatrist” adalah drama yang mengisahkan kehidupan seorang ahli akupuntur yang lahir
-               dari keluarga bangsawan. Ia menjadi ahli akupuntur kepala di istana kerajaan. Namun, takdir buruk menghampirinya 
-               ketika Raja meninggal setelah ia melakukan akupuntur padanya
-            </p>
-            <div class="kotak-rating-film">
-                 <i class="views-film"> <i class="fas fa-eye"></i> 157</i>
-                 <div class="like-btn" onclick="toggleLike()">
-                      <i id="like-icon" class="far fa-heart"></i>
-                      <span id="like-count">150</span>
-                 </div>
-                 <i class="rating-film"><span class="star"></span> 4.4 </i>
-            </div>
-       </div>
-  </div>
-</div>
-
-<div id="myModal5" class="modal-film" onclick="closeModal(event)">
-  <span class="close">&times;</span>
-  <div class="modal-content-film">
-       <div class="posisi-kiri">
-            <img id="myposter-film" src="assets/img/image6.jpeg" alt="judul gambar 5">
-            <!-- Tambahkan tombol play -->
-            <div class="play-btn" onclick="openVideoPopup('https://www.youtube.com/embed/-NKZ_3GgH_k')">
-                 <i class="fa fa-play-circle"></i>
-            </div>
-            
-            <!-- <div id="myModal-film" class="yt-film">
-                 <iframe id="videoFrame" width="100%" height="100%" src="https://www.youtube.com/embed/nq9sz0aaLeI" title="YouTube video player" frameborder="0" 
-                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" 
-                 allowfullscreen></iframe>
-            </div> -->
-       </div>
-       <div class="posisi-kanan">
-            <h1>season of deity </h1>
-            <p class="sinopsis-film">
-              EASON OF DEITY merupakan drakor tentang malaikat maut terbaru 2023. Drama ini berkisah tentang percintaan 
-              malaikat maut dengan seorang dokter. Mengusung genre fantasi romantis, tokoh dokter yang bernama Han Gye-jeol
-               (Im Soo-hyang) ini digambarkan sebagai manusia yang punya kemampuan khusus.
-            </p>
-            <div class="kotak-rating-film">
-                 <i class="views-film"> <i class="fas fa-eye"></i> 157</i>
-                 <div class="like-btn" onclick="toggleLike()">
-                      <i id="like-icon" class="far fa-heart"></i>
-                      <span id="like-count">150</span>
-                 </div>
-                 <i class="rating-film"><span class="star"></span> 4.7 </i>
-            </div>
-       </div>
-  </div>
-</div>
             <!---- ================ END CONTENT FILM BY AHMAD FAIZ ================  --->
             <!--- ============= CONTENT MUSIC - SISWO =============
 
@@ -559,13 +411,13 @@ HINTS: SELAMA KONTEN GAMBAR BISA DI GESER, BERARTI SUKSES
                   <div class="slideshow-container">
                     <div #swiperRef="" class="swiper mySwiper">
                       <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                          <img src="assets/img/music1.png">
+
+                        <div id="cards-music" class="swiper-slide">
+                          <img src="assets/img/music1.png" class="music-item" alt="music1">
                           <div class="hover-card">
                             <div class="hover-card-header">
-                              <img src="assets/img/music1.png">
+                              <img src="assets/img/music1.png" class="music-item" alt="music1">
                               <div class="hover-card-warp-btn">
-                                <!-- <a href="https://youtu.be/Oextk-If8HQ?si=gi9B7BVrddLDkiIz" type="button"><i class="bi bi-play-fill"></i></a> -->
                                 <button>
                                   <i class="bi bi-play-fill"></i>
                                 </button>
@@ -587,11 +439,11 @@ HINTS: SELAMA KONTEN GAMBAR BISA DI GESER, BERARTI SUKSES
                             </div>
                           </div>
                         </div>
-                        <div class="swiper-slide">
-                          <img src="assets/img/music2.png">
+                        <div id="cards-music" class="swiper-slide">
+                          <img src="assets/img/music2.png" class="music-item" alt="music">
                           <div class="hover-card">
                             <div class="hover-card-header">
-                              <img src="assets/img/music2.png">
+                              <img src="assets/img/music2.png" class="music-item" alt="music">
                               <div class="hover-card-warp-btn">
                                 <button>
                                   <i class="bi bi-play-fill"></i>
@@ -614,11 +466,11 @@ HINTS: SELAMA KONTEN GAMBAR BISA DI GESER, BERARTI SUKSES
                             </div>
                           </div>
                         </div>
-                        <div class="swiper-slide">
-                          <img src="assets/img/music3.png">
+                        <div id="cards-music" class="swiper-slide">
+                          <img src="assets/img/music3.png" class="music-item" alt="music">
                           <div class="hover-card">
                             <div class="hover-card-header">
-                              <img src="assets/img/music3.png">
+                              <img src="assets/img/music3.png" class="music-item" alt="music">
                               <div class="hover-card-warp-btn">
                                 <button>
                                   <i class="bi bi-play-fill"></i>
@@ -641,11 +493,11 @@ HINTS: SELAMA KONTEN GAMBAR BISA DI GESER, BERARTI SUKSES
                             </div>
                           </div>
                         </div>
-                        <div class="swiper-slide">
-                          <img src="assets/img/music4.png">
+                        <div id="cards-music" class="swiper-slide">
+                          <img src="assets/img/music4.png" class="music-item" alt="music">
                           <div class="hover-card">
                             <div class="hover-card-header">
-                              <img src="assets/img/music4.png">
+                              <img src="assets/img/music4.png" class="music-item" alt="music">
                               <div class="hover-card-warp-btn">
                                 <button>
                                   <i class="bi bi-play-fill"></i>
@@ -668,13 +520,14 @@ HINTS: SELAMA KONTEN GAMBAR BISA DI GESER, BERARTI SUKSES
                             </div>
                           </div>
                         </div>
-                        <div class="swiper-slide">
-                          <img src="assets/img/music5.png">
-                          <div class="hover-card">
+                        <div id="cards-music" class="swiper-slide">
+                          <img src="assets/img/music5.png" class="music-item" alt="music">
+                          <!-- Hover Cards -->
+                          <div id="card-click" class="hover-card">
                             <div class="hover-card-header">
-                              <img src="assets/img/music5.png">
+                              <img src="assets/img/music5.png" class="music-item" alt="music">
                               <div class="hover-card-warp-btn">
-                                <button>
+                                <button >
                                   <i class="bi bi-play-fill"></i>
                                 </button>
                                 <button>
@@ -703,6 +556,149 @@ HINTS: SELAMA KONTEN GAMBAR BISA DI GESER, BERARTI SUKSES
                   </div>
                 </div>
               </div>
+
+                <!-- Modal -->
+                <div id="music-modal" class="modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                  <div id="music-modal-dialog" class="modal-dialog modal-xl">
+                    <div class="modal-content modal-content-music">
+                      <div class="banner-music-content">
+                        <img src="" alt="" />
+                        <!-- <audio controls>
+                          <source src="https://w3codegenerator.com/audio/audio.mp3" type="audio/mpeg">
+                          <source src="" type="audio/ogg">
+                          <source src="" type="audio/wav">
+                          <p>Your browser does not support the video tag.</p>
+                        </audio> -->
+                        <h4>Daily Album</h4>
+                      </div>
+                      <div class="list-music-content">
+                        <ul>
+                          <li class="audio-item">
+                            <p>simply dummy text of the printing</p>
+                            <div class="audio-item-btn">
+                              <button>
+                                <i class="bi bi-play-fill"></i>
+                              </button>
+                              <button>
+                                <i class="bi bi-bookmark-plus-fill"></i>
+                              </button>
+                            </div>
+                          </li>
+
+                          <li class="audio-item">
+                            <p>simply dummy text of the printing</p>
+                            <div class="audio-item-btn">
+                              <button>
+                                <i class="bi bi-play-fill"></i>
+                              </button>
+                              <button>
+                                <i class="bi bi-bookmark-plus-fill"></i>
+                              </button>
+                            </div>
+                          </li>
+
+                          <li class="audio-item">
+                            <p>simply dummy text of the printing</p>
+                            <div class="audio-item-btn">
+                              <button>
+                                <i class="bi bi-play-fill"></i>
+                              </button>
+                              <button>
+                                <i class="bi bi-bookmark-plus-fill"></i>
+                              </button>
+                            </div>
+                          </li>
+
+                          <li class="audio-item">
+                            <p>simply dummy text of the printing</p>
+                            <div class="audio-item-btn">
+                              <button>
+                                <i class="bi bi-play-fill"></i>
+                              </button>
+                              <button>
+                                <i class="bi bi-bookmark-plus-fill"></i>
+                              </button>
+                            </div>
+                          </li>
+
+                          <li class="audio-item">
+                            <p>simply dummy text of the printing</p>
+                            <div class="audio-item-btn">
+                              <button>
+                                <i class="bi bi-play-fill"></i>
+                              </button>
+                              <button>
+                                <i class="bi bi-bookmark-plus-fill"></i>
+                              </button>
+                            </div>
+                          </li>
+
+                          <li class="audio-item">
+                            <p>simply dummy text of the printing</p>
+                            <div class="audio-item-btn">
+                              <button>
+                                <i class="bi bi-play-fill"></i>
+                              </button>
+                              <button>
+                                <i class="bi bi-bookmark-plus-fill"></i>
+                              </button>
+                            </div>
+                          </li>
+
+                          <li class="audio-item">
+                            <p>simply dummy text of the printing</p>
+                            <div class="audio-item-btn">
+                              <button>
+                                <i class="bi bi-play-fill"></i>
+                              </button>
+                              <button>
+                                <i class="bi bi-bookmark-plus-fill"></i>
+                              </button>
+                            </div>
+                          </li>
+
+                          <li class="audio-item">
+                            <p>simply dummy text of the printing</p>
+                            <div class="audio-item-btn">
+                              <button>
+                                <i class="bi bi-play-fill"></i>
+                              </button>
+                              <button>
+                                <i class="bi bi-bookmark-plus-fill"></i>
+                              </button>
+                            </div>
+                          </li>
+                         
+                          <li class="audio-item">
+                            <p>simply dummy text of the printing</p>
+                            <div class="audio-item-btn">
+                              <button>
+                                <i class="bi bi-play-fill"></i>
+                              </button>
+                              <button>
+                                <i class="bi bi-bookmark-plus-fill"></i>
+                              </button>
+                            </div>
+                          </li>
+
+                          <li class="audio-item">
+                            <p>simply dummy text of the printing</p>
+                            <div class="audio-item-btn">
+                              <button>
+                                <i class="bi bi-play-fill"></i>
+                              </button>
+                              <button>
+                                <i class="bi bi-bookmark-plus-fill"></i>
+                              </button>
+                            </div>
+                          </li>
+
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
             </div>
             <!---- ================ END CONTENT MUSIC BY SISWO ADI NUGROHO ================  --->
             <!--- ============= CONTENT TV SHOW - HAIKAL =============
@@ -768,6 +764,7 @@ HINTS: SELAMA KONTEN GAMBAR BISA DI GESER, BERARTI SUKSES
     <script type="text/javascript" src="assets/js/main.js"></script>
     <!--JS Febri-->
     <script type="text/javascript" src="assets/js/movie.js"></script>
+    <script type="text/javascript" src="assets/js/music.js"></script>
     <script type="text/javascript" src="assets/js/tv.js"></script>
     <script type="text/javascript" src="assets/js/searchbar.js"></script>
   </body>
