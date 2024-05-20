@@ -62,7 +62,7 @@ const swiper = new Swiper(".mySwiper", {
 
 // Haikal Ihza bertanggung jawab untuk bagian TV Show
 // Branch: TV
-/*
+
 var TrandingSlider = new Swiper('.tranding-slider', {
   effect: 'coverflow',
   grabCursor: true,
@@ -89,7 +89,7 @@ var TrandingSlider = new Swiper('.tranding-slider', {
   }
 });
 
-*/
+
 
 
 // Jarwo bertanggung jawab untuk bagian Trending Banner
