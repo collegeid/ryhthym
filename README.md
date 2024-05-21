@@ -21,19 +21,19 @@ Preview: <a href="https://rhytym.gigalixirapp.com">v0.0.1 (Elixir & Phoenix)</a>
 <ul>
   <li>
     <strong>GET /api/album/musics</strong> - Displays music albums (Spotify)
-    <br>Example: <a href="https://rhytym.gigalixirapp.com/api/album/musics">GET /api/album/musics</a>
+    <br>Example: <a href="https://rhytym.gigalixirapp.com/album/musics">GET /album/musics</a>
   </li>
   <li>
     <strong>GET /api/check/album/:id</strong> - Displays album details
-    <br>Example: <a href="https://rhytym.gigalixirapp.com/api/check/album/2lZzryqflrZLO9YDjnlkMz">GET /api/check/album/2lZzryqflrZLO9YDjnlkMz (Juicy Luicy)</a>
+    <br>Example: <a href="https://rhytym.gigalixirapp.com/check/album/2lZzryqflrZLO9YDjnlkMz">GET /check/album/2lZzryqflrZLO9YDjnlkMz (Juicy Luicy)</a>
   </li>
   <li>
     <strong>GET /api/tracks/album/:id</strong> - Displays tracks from an album
-    <br>Example: <a href="https://rhytym.gigalixirapp.com/api/tracks/album/2lZzryqflrZLO9YDjnlkMz">GET /api/tracks/album/2lZzryqflrZLO9YDjnlkMz (Juicy Luicy)</a>
+    <br>Example: <a href="https://rhytym.gigalixirapp.com/tracks/album/2lZzryqflrZLO9YDjnlkMz">GET /tracks/album/2lZzryqflrZLO9YDjnlkMz (Juicy Luicy)</a>
   </li>
   <li>
     <strong>GET /api/tracks/find/:query</strong> - Searches for tracks based on a query
-    <br>Example: <a href="https://rhytym.gigalixirapp.com/api/tracks/find/juicy luicy">GET /api/tracks/find/juicy luicy</a>
+    <br>Example: <a href="https://rhytym.gigalixirapp.com/tracks/find/juicy luicy">GET /tracks/find/juicy luicy</a>
   </li>
 </ul>
 
