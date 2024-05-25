@@ -2,7 +2,7 @@
 
 Welcome to the Rhythym Markmap project! This repository hosts the backend services and API endpoints for accessing film, TV, and music data. Our dataset is powered by applications built with Elixir and Phoenix 1.7.7, utilizing Elixir version 1.16. Below is a detailed overview of the available endpoints and their functionalities.
 
-To access the backend services and API endpoints, please visit: [Rhythym API](https://rhythym.gigalixirapp.com/)
+To access the backend services and API endpoints, please visit: [Rhythym API]([https://rhythym.gigalixirapp.com/](https://rhytym.gigalixirapp.com/))
 
 ## Accessing the Roadmap
 
@@ -18,35 +18,35 @@ Please note that only requests from registered CORS URLs are allowed.
 
 ### General Endpoints
 
-- **GET /:** Displays a Copyright message. [Preview](https://rhythym.gigalixirapp.com/)
+- **GET /:** Displays a Copyright message. [Preview](https://rhytym.gigalixirapp.com/)
   
 ### Music Endpoints
 
-- **GET /album/musics:** Displays music albums (Spotify). [Preview](https://rhythym.gigalixirapp.com/album/musics)
-- **GET /check/album/:id:** Displays album details. [Preview](https://rhythym.gigalixirapp.com/check/album/2lZzryqflrZLO9YDjnlkMz) (Juicy Luicy)
-- **GET /tracks/album/:id:** Displays tracks from an album. [Preview](https://rhythym.gigalixirapp.com/tracks/album/2lZzryqflrZLO9YDjnlkMz) (Juicy Luicy)
-- **GET /tracks/find/:query:** Searches for tracks based on a query. [Preview](https://rhythym.gigalixirapp.com/tracks/find/juicy luicy)
+- **GET /album/musics:** Displays music albums (Spotify). [Preview](https://rhytym.gigalixirapp.com/album/musics)
+- **GET /check/album/:id:** Displays album details. [Preview](https://rhytym.gigalixirapp.com/check/album/2lZzryqflrZLO9YDjnlkMz) (Juicy Luicy)
+- **GET /tracks/album/:id:** Displays tracks from an album. [Preview](https://rhytym.gigalixirapp.com/tracks/album/2lZzryqflrZLO9YDjnlkMz) (Juicy Luicy)
+- **GET /tracks/find/:query:** Searches for tracks based on a query. [Preview](https://rhytym.gigalixirapp.com/tracks/find/juicy luicy)
 
 ### TV Endpoints
 
-- **GET /tv:** Displays a list of TV shows (filtered for adult content). [Preview](https://rhythym.gigalixirapp.com/tv)
-- **GET /tv/:id:** Displays TV show details. [Preview](https://rhythym.gigalixirapp.com/tv/1)
-- **GET /tv/find/:query:** Searches for TV shows based on a query (TV show title). [Preview](https://rhythym.gigalixirapp.com/tv/find/breaking)
+- **GET /tv:** Displays a list of TV shows (filtered for adult content). [Preview](https://rhytym.gigalixirapp.com/tv)
+- **GET /tv/:id:** Displays TV show details. [Preview](https://rhytym.gigalixirapp.com/tv/1)
+- **GET /tv/find/:query:** Searches for TV shows based on a query (TV show title). [Preview](https://rhytym.gigalixirapp.com/tv/find/breaking)
 
 ### Movie Endpoints
 
-- **GET /movies:** Displays a list of movies (filtered for adult content). [Preview](https://rhythym.gigalixirapp.com/movies)
-- **GET /movies/:id:** Displays movie details. [Preview](https://rhythym.gigalixirapp.com/movies/823464)
-- **GET /movies/find/:query:** Searches for movies based on a query (movie title). [Preview](https://rhythym.gigalixirapp.com/movies/find/inception)
+- **GET /movies:** Displays a list of movies (filtered for adult content). [Preview](https://rhytym.gigalixirapp.com/movies)
+- **GET /movies/:id:** Displays movie details. [Preview](https://rhytym.gigalixirapp.com/movies/823464)
+- **GET /movies/find/:query:** Searches for movies based on a query (movie title). [Preview](https://rhytym.gigalixirapp.com/movies/find/inception)
 
 ### Combined Search Endpoints
 
-- **GET /cinema/find/:query:** Searches for both movies and TV shows based on a query. [Preview](https://rhythym.gigalixirapp.com/cinema/find/juicy luicy)
-- **GET /trendings/multi:** Displays combined trending albums, movies, and TV shows. [Preview](https://rhythym.gigalixirapp.com/trendings/multi)
+- **GET /cinema/find/:query:** Searches for both movies and TV shows based on a query. [Preview](https://rhytym.gigalixirapp.com/cinema/find/juicy luicy)
+- **GET /trendings/multi:** Displays combined trending albums, movies, and TV shows. [Preview](https://rhytym.gigalixirapp.com/trendings/multi)
 
 ### Multi Trending Endpoints
 
-- **GET /trendings/multi:** Displays combined trending albums, movies, and TV shows. [Preview](https://rhythym.gigalixirapp.com/trendings/multi)
+- **GET /trendings/multi:** Displays combined trending albums, movies, and TV shows. [Preview](https://rhytym.gigalixirapp.com/trendings/multi)
 
 ## Additional Endpoints
 
@@ -54,13 +54,13 @@ Please note that only requests from registered CORS URLs are allowed.
 
 #### Trending and Albums
 
-- **GET /lite/trendings:** Displays minimalized combined trending albums, movies, and TV shows. [Preview](https://rhythym.gigalixirapp.com/lite/trendings)
-- **GET /lite/albums/musics:** Displays minimalized music albums. [Preview](https://rhythym.gigalixirapp.com/lite/albums/musics)
+- **GET /lite/trendings:** Displays minimalized combined trending albums, movies, and TV shows. [Preview](https://rhytym.gigalixirapp.com/lite/trendings)
+- **GET /lite/albums/musics:** Displays minimalized music albums. [Preview](https://rhytym.gigalixirapp.com/lite/albums/musics)
 
 #### Cinema (TV and Movies)
 
-- **GET /lite/cinema/tv:** Displays minimalized TV shows. [Preview](https://rhythym.gigalixirapp.com/lite/cinema/tv)
-- **GET /lite/cinema/movies:** Displays minimalized movies. [Preview](https://rhythym.gigalixirapp.com/lite/cinema/movies)
+- **GET /lite/cinema/tv:** Displays minimalized TV shows. [Preview](https://rhytym.gigalixirapp.com/lite/cinema/tv)
+- **GET /lite/cinema/movies:** Displays minimalized movies. [Preview](https://rhytym.gigalixirapp.com/lite/cinema/movies)
 
 ## Contributing
 
