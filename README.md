@@ -41,7 +41,7 @@ Please note that only requests from registered CORS URLs are allowed.
 
 ### Combined Search Endpoints
 
-- **GET /cinema/find/:query:** Searches for both movies and TV shows based on a query. [Preview](https://rhytym.gigalixirapp.com/cinema/find/juicy luicy)
+- **GET /cinema/find/:query:** Searches for both movies and TV shows based on a query. [Preview](https://rhytym.gigalixirapp.com/cinema/find/spiderman%202)
 - **GET /trendings/multi:** Displays combined trending albums, movies, and TV shows. [Preview](https://rhytym.gigalixirapp.com/trendings/multi)
 
 ### Multi Trending Endpoints
