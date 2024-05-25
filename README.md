@@ -23,9 +23,9 @@ Please note that only requests from registered CORS URLs are allowed.
 ### Music Endpoints
 
 - **GET /album/musics:** Displays music albums (Spotify). [Preview](https://rhytym.gigalixirapp.com/album/musics)
-- **GET /check/album/:id:** Displays album details. [Preview](https://rhytym.gigalixirapp.com/check/album/2lZzryqflrZLO9YDjnlkMz) (Juicy Luicy)
-- **GET /tracks/album/:id:** Displays tracks from an album. [Preview](https://rhytym.gigalixirapp.com/tracks/album/2lZzryqflrZLO9YDjnlkMz) (Juicy Luicy)
-- **GET /tracks/find/:query:** Searches for tracks based on a query. [Preview](https://rhytym.gigalixirapp.com/tracks/find/juicy luicy)
+- **GET /check/album/:id:** Displays album details. [Preview](https://rhytym.gigalixirapp.com/check/album/2lZzryqflrZLO9YDjnlkMz) (Sentimental- Juicy Luicy)
+- **GET /tracks/album/:id:** Displays tracks from an album. [Preview](https://rhytym.gigalixirapp.com/tracks/album/2lZzryqflrZLO9YDjnlkMz) (Sentimental - Juicy Luicy)
+- **GET /tracks/find/:query:** Searches for tracks based on a query. [Preview](https://rhytym.gigalixirapp.com/tracks/find/juicy%20luicy). (Juicy Luicy)
 
 ### TV Endpoints
 
