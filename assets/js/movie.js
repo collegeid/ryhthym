@@ -7,37 +7,37 @@ fetch('https://rhytym.gigalixirapp.com/lite/cinema/movies')
 
     // Mengambil array hasil dari data
     const results = data.movies;
-    
+
     // Membuat variabel untuk menampung markup HTML untuk daftar film
     let html = '';
     const modalPromises = [];
 
     // Perulangan melalui setiap objek hasil
-    results.forEach(show => {
+    results.forEach(movie => {
       // Membuat markup untuk setiap film
       html += `
-      <div class="swiper-slide" onclick="openModal('myModal${show.id}', '${show.title}', '${show.overview}', '${show.popularity}', '${show.vote_count}')"><img src="${show.poster_path}" alt="${show.title}"></div>
+      <div class="swiper-slide" onclick="openModal('myModal${movie.id}', '${movie.title}', '${movie.overview}', '${movie.popularity}', '${movie.vote_count}')"><img src="${movie.poster_path}" alt="${movie.title}"></div>
       `;
 
       // Logging setiap film yang sedang diproses
-      console.log('Processing film:', show);
+      console.log('Processing film:', movie);
 
       // Mengambil detail film dari API kedua menggunakan ID film
-      const modalPromise = fetch(`https://rhytym.gigalixirapp.com/movies/${show.id}`)
+      const modalPromise = fetch(`https://rhytym.gigalixirapp.com/movies/${movie.id}`)
         .then(response => response.json())
         .then(detail => {
           // Logging data detail film yang diterima dari API kedua
-          console.log(`Detail untuk film ID ${show.id}:`, detail);
+          console.log(`Detail untuk film ID ${movie.id}:`, detail);
           const video = detail.videos.results.find(video => video.site === "YouTube");
           const videoUrl = video ? `https://www.youtube.com/embed/${video.key}` : '';
 
           // Mengembalikan modal HTML untuk setiap film
           return `
-          <div id="myModal${show.id}" class="modal-film" onclick="closeModal(event)">
+          <div id="myModal${movie.id}" class="modal-film" onclick="closeModal(event)">
             <span class="close">&times;</span>
             <div class="modal-content-film">
               <div class="posisi-kiri">
-                <img id="myposter-film" src="${show.poster_path}" alt="${detail.title}">
+                <img id="myposter-film" src="${movie.poster_path}" alt="${detail.title}">
                 ${videoUrl ? `
                 <div class="play-btn" onclick="openVideoPopup('${videoUrl}')">
                   <i class="fa fa-play-circle"></i>
@@ -59,7 +59,7 @@ fetch('https://rhytym.gigalixirapp.com/lite/cinema/movies')
           </div>`;
         })
         .catch(error => {
-          console.error(`Error fetching movie details for movie ID ${show.id}:`, error);
+          console.error(`Error fetching movie details for movie ID ${movie.id}:`, error);
         });
 
       modalPromises.push(modalPromise);
