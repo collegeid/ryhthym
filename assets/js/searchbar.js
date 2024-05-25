@@ -152,60 +152,71 @@ document.addEventListener('DOMContentLoaded', function() {
         notFoundMessage.style.textAlign = 'center'; // Menengahkan pesan
         suggestions.appendChild(notFoundMessage);
     }
-    
 
+    
     function addSuggestionItem(item) {
         const suggestionItem = document.createElement('div');
         suggestionItem.classList.add('suggestion-item');
         suggestionItem.style.display = 'flex';
-
+        suggestionItem.style.marginBottom = '10px';
+    
         const thumbnail = document.createElement('img');
         thumbnail.style.width = '100px';
         thumbnail.style.height = 'auto';
         thumbnail.style.marginRight = '10px';
         thumbnail.classList.add('thumbnail');
-
+    
         const textContainer = document.createElement('div');
         textContainer.style.flex = '1';
         textContainer.style.color = 'white';
-
+    
         const title = document.createElement('h5');
         const overview = document.createElement('h6');
-
+    
+        // Determine if item is a movie or a TV show and set attributes accordingly
         if (item.poster_path) {
             thumbnail.src = `https://image.tmdb.org/t/p/w500${item.poster_path}`;
-            thumbnail.alt = item.title;
-
-            title.textContent = item.title;
-            overview.textContent = item.overview;
-
+            thumbnail.alt = item.title || item.name;
+            
+            title.textContent = item.title || item.name;
+            overview.textContent = item.overview || '';
+    
+            if (item.category === "Movies") {
+                suggestionItem.setAttribute('onclick', `openModal('myModal${item.id}', '${item.title}', '${item.overview}', '${item.popularity}', '${item.vote_count}')`);
+            } else {
+                suggestionItem.setAttribute('data-bs-toggle', 'modal');
+                suggestionItem.setAttribute('data-bs-target', `#staticBackdrop${item.id}`);
+                suggestionItem.setAttribute('data-image-src', item.poster_path);
+                suggestionItem.setAttribute('data-title', item.title || item.name);
+            }
         } else if (item.album && item.album.images && item.album.images.length > 0) {
             thumbnail.src = item.album.images[0].url;
             thumbnail.alt = item.name;
-
+    
             title.textContent = item.name;
             overview.textContent = item.artists.map(artist => artist.name).join(', ');
         } else {
             return;
         }
-
+    
         suggestionItem.appendChild(thumbnail);
         textContainer.appendChild(title);
         textContainer.appendChild(overview);
         suggestionItem.appendChild(textContainer);
-
+    
         const dismissButton = document.createElement('button');
         dismissButton.textContent = 'Dismiss';
         dismissButton.classList.add('dismiss-button');
-        dismissButton.addEventListener('click', function() {
+        dismissButton.style.marginLeft = '10px';
+        dismissButton.addEventListener('click', function(event) {
             suggestionItem.remove();
             event.stopPropagation();
         });
         suggestionItem.appendChild(dismissButton);
-
-        suggestions.appendChild(suggestionItem);
+    
+        document.getElementById('suggestions').appendChild(suggestionItem);
     }
-
+    
      // Fungsi untuk menampilkan suggestion
      function displaySuggestions(suggestionData) {
         suggestionData.forEach(item => {
