@@ -2,7 +2,7 @@
 
 Welcome to the Rhythym Markmap project! This repository hosts the backend services and API endpoints for accessing film, TV, and music data. Our dataset is powered by applications built with Elixir and Phoenix 1.7.7, utilizing Elixir version 1.16. Below is a detailed overview of the available endpoints and their functionalities.
 
-To access the backend services and API endpoints, please visit: [Rhythym API]([https://rhythym.gigalixirapp.com/](https://rhytym.gigalixirapp.com/))
+To access the backend services and API endpoints, please visit: [Rhythym API](https://rhytym.gigalixirapp.com/)
 
 ## Accessing the Roadmap
 
