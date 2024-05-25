@@ -15,7 +15,8 @@ To access the roadmap for this project, please visit the following link:
 Please note that only requests from registered CORS URLs are allowed.
 
 ## Dataset (Film, TV, Music)
-
+- **Main** : [Preview](https://rhytym.gigalixirapp.com/) (rhytym.gigalixir.com/)
+- **Mirror** : [Preview](https://rhytym2.gigalixirapp.com/) (rhytym2.gigalixir.com/)
 ### General Endpoints
 
 - **GET /:** Displays a Copyright message. [Preview](https://rhytym.gigalixirapp.com/)
