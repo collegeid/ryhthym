@@ -9,7 +9,7 @@ please visit:
 - [Rhythym 1 API](https://stellar.gigalixirapp.com/) (TV SHOW)
 - [Rhythym 2 API ](https://antares.gigalixirapp.com/) (MOVIES)
 - [Rhythym 3 API ](https://vega.gigalixirapp.com/) (MUSIC)
-- [Rhythym 4 API ](COMING-SOON) (TRENDING)
+- [Rhythym 4 API ](COMING-SOON) (TRENDING - COMING SOON)
 
 ## Accessing the Roadmap
 
@@ -25,7 +25,7 @@ Please note that only requests from registered CORS URLs are allowed.
 - **TV SHOW** : [Preview](https://stellar.gigalixirapp.com/) (stellar.gigalixir.com/)
 - **MOVIES** : [Preview](https://antares.gigalixirapp.com/) (antares.gigalixir.com/)
 - **MUSIC** : [Preview](https://vega.gigalixirapp.com/) (vega.gigalixir.com/)
-- **TRENDING** : [Preview](COMING SOON) (COMING SOON)
+- **TRENDING** : [Preview](COMINGSOON) (COMING SOON)
 
 ### General Endpoints
 
