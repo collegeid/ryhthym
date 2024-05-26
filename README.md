@@ -16,7 +16,7 @@ To access the roadmap for this project, please visit the following link:
 Please note that only requests from registered CORS URLs are allowed.
 
 ## Dataset (Film, TV, Music)
-- **TV SHOW** : [Preview](https://stellar.febrian.id/) (Stellar)
+- **Main** : [Preview](https://stellar.febrian.id/) (Stellar)
 
 ### General Endpoints
 
