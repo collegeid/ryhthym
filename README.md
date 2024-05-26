@@ -9,7 +9,7 @@ please visit:
 - [Rhythym 1 API](https://stellar.gigalixirapp.com/) (TV SHOW)
 - [Rhythym 2 API ](https://antares.gigalixirapp.com/) (MOVIES)
 - [Rhythym 3 API ](https://vega.gigalixirapp.com/) (MUSIC)
-- [Rhythym 4 API ](COMING SOON) (TRENDING)
+- [Rhythym 4 API ](COMING-SOON) (TRENDING)
 
 ## Accessing the Roadmap
 
