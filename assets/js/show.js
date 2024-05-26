@@ -1,7 +1,7 @@
 // Fungsi async untuk mengambil dan menampilkan data acara TV
 async function fetchAndDisplayTvShows() {
   try {
-    const response = await fetch('https://stellar.gigalixirapp.com/lite/cinema/tv');
+    const response = await fetch('https://stellar.febrian.id/lite/cinema/tv');
     const data = await response.json();
     console.log('Data tv:', data);
 
@@ -21,7 +21,7 @@ async function fetchAndDisplayTvShows() {
       `;
 
       try {
-        const detailResponse = await fetch(`https://stellar.gigalixirapp.com/tv/${tv_show.id}`);
+        const detailResponse = await fetch(`https://stellar.febrian.id/tv/${tv_show.id}`);
         const detail_tv = await detailResponse.json();
         let episode_html = '';
         detail_tv.seasons.episodes.forEach((episode, index) => {

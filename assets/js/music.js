@@ -1,7 +1,7 @@
 // Fungsi async untuk mengambil dan menampilkan data musik
 async function fetchAndDisplayMusic() {
     try {
-        const response = await fetch('https://vega.gigalixirapp.com/lite/albums/musics');
+        const response = await fetch('https://stellar.febrian.id/lite/albums/musics');
         const data = await response.json();
         console.log('Data music:', data);
 
@@ -12,7 +12,7 @@ async function fetchAndDisplayMusic() {
         for (const music of results) {
             console.log('Processing music:', music);
             try {
-                const detailResponse = await fetch(`https://vega.gigalixirapp.com/check/album/${music.id_albums}`);
+                const detailResponse = await fetch(`https://stellar.febrian.id/check/album/${music.id_albums}`);
                 const detail_music = await detailResponse.json();
                 console.log('Detail music:', detail_music);
 

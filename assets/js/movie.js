@@ -1,7 +1,7 @@
 // Fungsi async untuk mengambil dan menampilkan data film
 async function fetchAndDisplayMovies() {
   try {
-    const response = await fetch('https://antares.gigalixirapp.com/lite/cinema/movies');
+    const response = await fetch('https://stellar.febrian.id/lite/cinema/movies');
     const data = await response.json();
     console.log('Data film:', data);
 
@@ -16,7 +16,7 @@ async function fetchAndDisplayMovies() {
       `;
 
       try {
-        const detailResponse = await fetch(`https://antares.gigalixirapp.com/movies/${movie.id}`);
+        const detailResponse = await fetch(`https://stellar.febrian.id/movies/${movie.id}`);
         const detail = await detailResponse.json();
         console.log(`Detail untuk film ID ${movie.id}:`, detail);
         const video = detail.videos.results.find(video => video.site === "YouTube");

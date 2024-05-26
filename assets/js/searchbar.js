@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function searchInEndpoint(endpoint, category) {
         console.log('Fetching data from endpoint:', endpoint, 'for category:', category);
 
-        fetch('https://vega.gigalixirapp.com' + endpoint)
+        fetch('https://stellar.febrian.id' + endpoint)
             .then(response => {
                 console.log('Response status:', response.status);
                 return response.json();
