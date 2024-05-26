@@ -5,7 +5,8 @@ Welcome to the Stellar Movie TV project! This repository hosts the frontend serv
 To access the backend services and API endpoints, please visit: 
 - [Stellar API](https://stellar.febrian.id/) (Stellar)
 
-## Accessing the Roadmap
+## Roadmap
+![Roadmap](roadmap.png)
 
 To access the roadmap for this project, please visit the following link:
 
