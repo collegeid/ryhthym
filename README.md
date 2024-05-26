@@ -8,7 +8,7 @@ To access the backend services and API endpoints,
 please visit: 
 - [Rhythym API](https://stellar.gigalixirapp.com/) (Main)
 - [Rhythym 2 API ](https://antares.gigalixirapp.com/) (Mirror)
-
+- [Rhythym 3 API ](https://vega.gigalixirapp.com/) (Mirror)
 
 ## Accessing the Roadmap
 
@@ -23,6 +23,7 @@ Please note that only requests from registered CORS URLs are allowed.
 ## Dataset (Film, TV, Music)
 - **Main** : [Preview](https://stellar.gigalixirapp.com/) (stellar.gigalixir.com/)
 - **Mirror** : [Preview](https://antares.gigalixirapp.com/) (antares.gigalixir.com/)
+- **Mirror** : [Preview](https://vega.gigalixirapp.com/) (vega.gigalixir.com/)
 
 ### General Endpoints
 
