@@ -6,9 +6,9 @@ Below is a detailed overview of the available endpoints and their functionalitie
 
 To access the backend services and API endpoints, 
 please visit: 
-- [Rhythym API](https://rhytym.gigalixirapp.com/) (Main)
-- [Rhythym 2 API ](https://rhytym2.gigalixirapp.com/) (Mirror)
-- [Rhythym 3 API ](https://stellar.gigalixirapp.com/) (Mirror)
+- [Rhythym API](https://stellar.gigalixirapp.com/) (Main)
+- [Rhythym 2 API ](https://antares.gigalixirapp.com/) (Mirror)
+
 
 ## Accessing the Roadmap
 
@@ -21,9 +21,9 @@ To access the roadmap for this project, please visit the following link:
 Please note that only requests from registered CORS URLs are allowed.
 
 ## Dataset (Film, TV, Music)
-- **Main** : [Preview](https://rhytym.gigalixirapp.com/) (rhytym.gigalixir.com/)
-- **Mirror** : [Preview](https://rhytym2.gigalixirapp.com/) (rhytym2.gigalixir.com/)
-- **Mirror** : [Preview](https://stellar.gigalixirapp.com/) (stellar.gigalixir.com/)
+- **Main** : [Preview](https://stellar.gigalixirapp.com/) (stellar.gigalixir.com/)
+- **Mirror** : [Preview](https://antares.gigalixirapp.com/) (antares.gigalixir.com/)
+
 ### General Endpoints
 
 - **GET /:** Displays a Copyright message. [Preview](https://rhytym.gigalixirapp.com/)
