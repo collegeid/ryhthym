@@ -1,5 +1,5 @@
 // Mengambil data dari API
-fetch('https://rhytym2.gigalixirapp.com/lite/cinema/tv')
+fetch('https://stellar.gigalixirapp.com/lite/cinema/tv')
   .then(response => response.json())
   .then(data => {
     // Logging data yang diterima dari API pertama
@@ -28,7 +28,7 @@ fetch('https://rhytym2.gigalixirapp.com/lite/cinema/tv')
       console.log('Processing tv:', tv_show);
 
       // Mengambil detail film dari API kedua menggunakan ID film
-      const modalPromise = fetch(`https://rhytym2.gigalixirapp.com/tv/${tv_show.id}`)
+      const modalPromise = fetch(`https://stellar.gigalixirapp.com/tv/${tv_show.id}`)
         .then(response => response.json())
         .then(detail_tv => {
           // Membuat markup untuk episode
