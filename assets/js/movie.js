@@ -1,5 +1,5 @@
 // Mengambil data dari API
-fetch('https://rhytym.gigalixirapp.com/lite/cinema/movies')
+fetch('https://antares.gigalixirapp.com/lite/cinema/movies')
   .then(response => response.json())
   .then(data => {
     // Logging data yang diterima dari API pertama
@@ -23,7 +23,7 @@ fetch('https://rhytym.gigalixirapp.com/lite/cinema/movies')
       console.log('Processing film:', movie);
 
       // Mengambil detail film dari API kedua menggunakan ID film
-      const modalPromise = fetch(`https://rhytym.gigalixirapp.com/movies/${movie.id}`)
+      const modalPromise = fetch(`https://antares.gigalixirapp.com/movies/${movie.id}`)
         .then(response => response.json())
         .then(detail => {
           // Logging data detail film yang diterima dari API kedua
