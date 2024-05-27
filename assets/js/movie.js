@@ -42,7 +42,7 @@ async function fetchAndDisplayMovies() {
                 <i id="like-icon-film" class="far fa-heart"></i>
                 <span id="like-count-film">${detail.vote_count}</span>
               </div>
-              <i class="rating-film"><span class="star"></span> ${detail.vote_average} </i>
+              <i class="rating-film"><span class="star"></span> ${movie.vote_average} </i>
             </div>
           </div>  
         </div>

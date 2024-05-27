@@ -17,6 +17,17 @@
 .sidebar.touch {
   background-color: rgba(0, 0, 0, 0.8); /* Warna hitam saat disentuh */
 }
+/* Gaya untuk tautan sidebar yang tidak aktif */
+.nav-link {
+  color: white; /* Warna teks putih */
+}
+
+/* Gaya untuk tautan sidebar yang aktif */
+.nav-link.active {
+  background-color: #007bff; /* Warna latar belakang biru untuk keadaan aktif */
+  color: blue; /* Warna teks biru */
+}
+
 
 
 @media (min-width: 768px) {
@@ -31,6 +42,10 @@
       display: none;
  }
 }
+
+
+
+
 /* footer */
 .footer {
   background-color: rgba(0, 0, 0, 0.6);
