@@ -1,7 +1,7 @@
 
      // js popup haikal */
 
-     var myModal = document.getElementById('myModal')
+     var myModal = document.getElementById('myModal1')
      var myInput = document.getElementById('myInput')
      
      myModal.addEventListener('shown.bs.modal', function () {
