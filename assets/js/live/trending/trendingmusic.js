@@ -5,7 +5,7 @@ async function fetchAndDisplayMusicTrending() {
       const data = await response.json();
       console.log('Data music:', data);
   
-      const album = data.albums[0]; // Ambil data album
+      const album = data.albums[1]; // Ambil data album
       let html = '';
       const modalHtmlArray = [];
   
