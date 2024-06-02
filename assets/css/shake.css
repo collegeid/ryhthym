@@ -1,0 +1,19 @@
+/* Animasi goyang */
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+  }
+  
+  /* Terapkan animasi ke kontainer ketika aktif */
+  .active-container .slider-card,
+  .active-container .hover-card,
+  .active-container .card-body, 
+  .active-container .card-body-tv,
+  .active-container .card-body-film {
+    animation: shake 0.5s; /* Durasi animasi 0.5 detik */
+    animation-iteration-count: infinite; /* Animasi berulang */
+  }
+  
