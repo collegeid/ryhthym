@@ -122,7 +122,7 @@ document.addEventListener('click', function(event) {
   const closeBtn = event.target.closest('.close-btn');
   const modalDialog = event.target.closest('.modal-dialog');
   const videoPopup = document.querySelector('.modal');
-  const videoIframe = document.querySelector('.modal iframe');
+  const videoContainer = document.querySelector('.video-content');
   const judulTrending = document.querySelector('.judul-trending h2');
   const infoTahun = document.querySelector('.info-kiri span');
   const bintangPop = document.querySelector('.bintang');
@@ -134,82 +134,101 @@ document.addEventListener('click', function(event) {
 
   // Membuka Popup
   if (sliderCardOverlay) {
-    event.preventDefault();
-    const videoUrl = sliderCardOverlay.getAttribute('href');
-    const videoId = getYouTubeVideoId(videoUrl);
-    const embedUrl = `https://www.youtube.com/embed/${videoId}`;
-    videoPopup.style.display = 'flex';
-    videoIframe.src = embedUrl;
+      event.preventDefault();
+      const sliderCard = sliderCardOverlay.closest('.slider-card');
+      const movieName = sliderCard.querySelector('.movie-name strong').textContent;
+      const movieYear = sliderCard.querySelector('.movie-name span').textContent;
+      const ratingPopup = sliderCard.querySelector('.rating a').textContent;
+      const sinopsis = sliderCard.querySelector('.sinopsis-film-trending p');
 
-    // Mengambil data banner
-    const sliderCard = sliderCardOverlay.closest('.slider-card');
-    const movieName = sliderCard.querySelector('.movie-name strong').textContent;
-    const movieYear = sliderCard.querySelector('.movie-name span').textContent;
-    const ratingPopup = sliderCard.querySelector('.rating a').textContent;
-    const sinopsis = sliderCard.querySelector('.sinopsis-film-trending p');
+      // Mengambil data banner di Popup
+      judulTrending.textContent = movieName;
+      infoTahun.textContent = movieYear;
+      ratingBanner.textContent = ratingPopup;
 
-    // Merubah data banner di Popup
-    judulTrending.textContent = movieName;
-    infoTahun.textContent = movieYear;
-    ratingBanner.textContent = ratingPopup;
+      // Hapus konten video atau gambar sebelumnya jika ada
+      videoContainer.innerHTML = '';
 
-    // Kondisi setiap banner
-    if (sliderCard.id === 'trending-card-movie') {
-      sinopsisTitle.textContent = 'Sinopsis:';
-      sinopsisContainer.textContent = sinopsis.textContent;
-      sinopsisContainer.style.display = 'block';
-      sinopsisContainer.style.overflowY = 'visible';
-      sinopsisContainer.style.maxHeight = 'none';
-      bintangPop.style.display = 'block';
-      ratingBanner.style.display = 'block';
-      ratingumur.style.display = 'block';
-    } else if (sliderCard.id === 'trending-card-tv') {
-      bintangPop.style.display = 'none';
-      ratingBanner.style.display = 'none';
-      ratingumur.style.display = 'none';
-      sinopsisTitle.textContent = 'Episode Series:';
-      sinopsisContainer.innerHTML = '';
-      for (let i = 1; i <= 5; i++) {
-          let episodeElement = document.createElement('div');
-          episodeElement.textContent = 'Episode ' + i;
-          episodeElement.classList.add('episode-box');
-          sinopsisContainer.appendChild(episodeElement);
+      // Kondisi setiap banner
+      if (sliderCard.id === 'trending-card-movie') {
+          const videoUrl = sliderCardOverlay.getAttribute('href');
+          const videoId = getYouTubeVideoId(videoUrl);
+          const embedUrl = `https://www.youtube.com/embed/${videoId}`;
+          const videoIframe = document.createElement('iframe');
+          videoIframe.width = '100%';
+          videoIframe.src = embedUrl;
+          videoIframe.allowFullscreen = true;
+          videoContainer.appendChild(videoIframe);
+
+          bintangPop.style.display = 'block';
+          ratingBanner.style.display = 'block';
+          ratingumur.style.display = 'block';
+          sinopsisTitle.textContent = 'Sinopsis:';
+          sinopsisContainer.textContent = sinopsis.textContent;
+          sinopsisContainer.style.display = 'block';
+          sinopsisContainer.style.overflowY = 'visible';
+          sinopsisContainer.style.maxHeight = 'none';
+      } else if (sliderCard.id === 'trending-card-tv') {
+          const tvImageSrc = sliderCard.querySelector('.image img').src;
+          const tvImage = document.createElement('img');
+          tvImage.src = tvImageSrc;
+          tvImage.style.width = '100%'; 
+          videoContainer.appendChild(tvImage);
+
+          bintangPop.style.display = 'none';
+          ratingBanner.style.display = 'none';
+          ratingumur.style.display = 'none';
+          sinopsisTitle.textContent = 'Episode Series:';
+          sinopsisContainer.innerHTML = '';
+          const episodeContainer = document.getElementById('episode-container');
+          const episodeElements = episodeContainer.children;
+          for (let episodeElement of episodeElements) {
+              sinopsisContainer.appendChild(episodeElement.cloneNode(true));
+          }
+          sinopsisContainer.style.overflowY = 'scroll';
+          sinopsisContainer.style.maxHeight = '270px';
+          sinopsisContainer.style.paddingRight = '30px';
+          sinopsisContainer.style.paddingTop = '20px';
+      } else if (sliderCard.id === 'trending-card-music') {
+          const videoUrl = sliderCardOverlay.getAttribute('href');
+          const videoId = getYouTubeVideoId(videoUrl);
+          const embedUrl = `https://www.youtube.com/embed/${videoId}`;
+          const videoIframe = document.createElement('iframe');
+          videoIframe.width = '100%';
+          videoIframe.src = embedUrl;
+          videoIframe.allowFullscreen = true;
+          videoContainer.appendChild(videoIframe);
+
+          bintangPop.style.display = 'none';
+          ratingBanner.style.display = 'none';
+          ratingumur.style.display = 'none';
+          sinopsisTitle.textContent = 'Song List:';
+          sinopsisContainer.innerHTML = listMusicContent.innerHTML;
+          sinopsisContainer.style.overflowY = 'scroll';
+          sinopsisContainer.style.maxHeight = '270px';
+          sinopsisContainer.style.paddingRight = '30px';
+          sinopsisContainer.style.paddingTop = '20px';
       }
-      sinopsisContainer.style.overflowY = 'scroll';
-      sinopsisContainer.style.maxHeight = '170px';
-      sinopsisContainer.style.paddingRight = '30px';
-      sinopsisContainer.style.paddingTop = '20px';
-    } else if (sliderCard.id === 'trending-card-music') {
-      bintangPop.style.display = 'none';
-      ratingBanner.style.display = 'none';
-      ratingumur.style.display = 'none';
-      sinopsisTitle.textContent = 'Song List:';
-      sinopsisContainer.innerHTML = listMusicContent.innerHTML;
-      sinopsisContainer.style.overflowY = 'scroll';
-      sinopsisContainer.style.maxHeight = '150px';
-      sinopsisContainer.style.paddingRight = '30px';
-      sinopsisContainer.style.paddingTop = '20px';
-    }
-  } 
+
+      videoPopup.style.display = 'flex';
+  }
   // Menutup Popup
   else if (closeBtn || !modalDialog) {
-    videoPopup.style.display = 'none';
-    videoIframe.src = '';
-    sinopsisTitle.textContent = 'Sinopsis:'; // Reset title
-  }
+      videoPopup.style.display = 'none';
+      // Hapus konten video atau gambar saat menutup
+      videoContainer.innerHTML = '';
+      sinopsisTitle.textContent= 'Sinopsis:'; // Reset title
+    }
 });
+
 
 // Fungsi untuk mendapatkan ID video YouTube dari URL
 function getYouTubeVideoId(url) {
-  const pattern = /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
+  const pattern = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=|\/v=)([^#\&\?]*).*/;
   const match = url.match(pattern);
 
   // Jika ada kecocokan, kembalikan ID video
-  if (match && match[1]) {
-    return match[1];
-  } else {
-    return null;
-  }
+  return (match && match[2].length == 11) ? match[2] : null;
 }
 
 // Like
