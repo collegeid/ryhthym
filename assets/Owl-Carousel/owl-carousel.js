@@ -10,7 +10,7 @@ $(document).ready(function () {
     ],
     loop: true,
     autoplay: true,
-    autoplayTimeout: 5000,
+    autoplayTimeout: 4000,
     autoplayHoverPause: true,
     center: true,
     dots: false,
@@ -32,20 +32,5 @@ $(document).ready(function () {
         items: 3,
       },
     },
-  });
-
-  // Event click pada slider-card
-  $(".slider-card").click(function () {
-    var clickedIndex = $(this).parent().index();
-    var centerIndex = owl.find(".owl-item.center").index();
-
-    // Menggeser slider jika slider-card yang diklik bukan berada di tengah
-    if (clickedIndex < centerIndex) {
-      // Jika slider-card diklik berada sebelum center, majukan posisi center
-      owl.trigger("prev.owl.carousel");
-    } else if (clickedIndex > centerIndex) {
-      // Jika slider-card diklik berada setelah center, mundurkan posisi center
-      owl.trigger("next.owl.carousel");
-    }
   });
 });
