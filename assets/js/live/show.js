@@ -15,7 +15,7 @@ async function fetchAndDisplayTvShows() {
         <div class="swiper-slide">
           <img src="${tv_show.poster_path}" class="thumbnail">
           <div class="btn-tv">
-            <button type="button" class="btntv btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop${tv_show.id}" data-image-src="${tv_show.poster_path}" data-title="${tv_show.title}" id="btn2">WATCH</button>
+            <button type="button" class="btntv btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop${tv_show.id}" data-image-src="${tv_show.poster_path}" data-title="${tv_show.title}" id="btn2">WATCH</button>
           </div>
         </div>
       `;
@@ -25,7 +25,7 @@ async function fetchAndDisplayTvShows() {
         const detail_tv = await detailResponse.json();
         let episode_html = '';
         detail_tv.seasons.episodes.forEach((episode, index) => {
-          episode_html += `<li><button type="button" class="btn btn-secondary">EPISODE ${index + 1}: ${episode.name}</button></li>`;
+          episode_html += `<li><button type="button" class="btn btn-secondary"><!---EPISODE ${index + 1}:--> ${episode.name}</button></li>`;
         });
 
         modalHtmlArray.push(`
@@ -34,12 +34,19 @@ async function fetchAndDisplayTvShows() {
           <div class="modal-content">
             <div class="modal-header">
               <div class="embed-responsive-tv">
-                <iframe class="embed-responsive-item" src="https://image.tmdb.org/t/p/w500${detail_tv.poster_path}" allowfullscreen width="470px" height="300"></iframe>
+              <div style="text-align: center;">
+              <img src="https://image.tmdb.org/t/p/w500${detail_tv.poster_path}" 
+                   alt="Poster Image" 
+                   width="470" 
+                   height="300" 
+                   style="display: block; margin: auto;">
+              </div>
+            
               </div>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-              <h2 class="text-episode">Episode Series</h2>
+              <h2 class="text-episode">Total Episode: ${detail_tv.seasons.episodes.length} </h2>
               <ul class="episode-list">
                 ${episode_html}
               </ul>

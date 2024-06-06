@@ -27,9 +27,11 @@ async function fetchAndDisplayMusic() {
                                     <button>
                                         <i class="bi bi-play-fill"></i>
                                     </button>
+                                   <!--
                                     <button>
                                         <i class="bi bi-bookmark-plus-fill"></i>
                                     </button>
+                                    -->
                                 </div>
                             </div>
                             <div class="hover-card-body">
