@@ -58,7 +58,7 @@ async function fetchAndDisplayMovies() {
       </div>
         `);
       } catch (error) {
-        // memperbaiki jika ada eror dari film
+        // menangkap jika ada eror dari dataset
         console.error(`Error fetching movie details for movie ID ${movie.id}:`, error);
       }
     }
@@ -74,7 +74,7 @@ async function fetchAndDisplayMovies() {
     document.getElementById('modal-film').remove();
     console.log('Modal HTML untuk semua film:', modal_html);
   } catch (error) {
-    // memperbaiki jika ada eror di bagian data film
+        // menangkap jika ada eror dari dataset
     console.error('Error fetching data:', error);
   }
 }
