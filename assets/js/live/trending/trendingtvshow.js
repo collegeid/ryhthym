@@ -22,7 +22,7 @@ async function fetchAndDisplayTVTrending() {
     const data = await response.json();
     console.log('Data TV:', data);
 
-    const tvShow = data.tv[2]; // Ambil id data TV
+    const tvShow = data.tv[3]; // Ambil id data TV
 
     const detailResponse = await fetch(`https://stellar.febrian.id/tv/${tvShow.id}`);
     const detail_tv = await detailResponse.json();
