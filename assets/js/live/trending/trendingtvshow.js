@@ -27,7 +27,7 @@ async function fetchAndDisplayTVTrending() {
     const detailResponse = await fetch(`https://stellar.febrian.id/tv/${tvShow.id}`);
     const detail_tv = await detailResponse.json();
 
-    // Menympian data episode secara lokal
+    // Menyimpan data episode secara lokal
     episodesData = detail_tv.seasons.episodes; 
 
     // Penambahan data episode
@@ -65,7 +65,6 @@ async function fetchAndDisplayTVTrending() {
         </div>
       </div>
     `;
-
 
     document.getElementById('trending-tv-data').insertAdjacentHTML('afterend', modalHtml);
     document.getElementById('trending-tv-data').remove();
