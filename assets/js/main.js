@@ -186,7 +186,7 @@ document.addEventListener('click', function(event) {
               sinopsisContainer.appendChild(episodeElement.cloneNode(true));
           }
           sinopsisContainer.style.overflowY = 'scroll';
-          sinopsisContainer.style.maxHeight = '270px';
+          sinopsisContainer.style.maxHeight = '220px';
           sinopsisContainer.style.paddingRight = '30px';
           sinopsisContainer.style.paddingTop = '20px';
       } else if (sliderCard.id === 'trending-card-music') {
@@ -205,7 +205,7 @@ document.addEventListener('click', function(event) {
           sinopsisTitle.textContent = 'Song List:';
           sinopsisContainer.innerHTML = listMusicContent.innerHTML;
           sinopsisContainer.style.overflowY = 'scroll';
-          sinopsisContainer.style.maxHeight = '270px';
+          sinopsisContainer.style.maxHeight = '220px';
           sinopsisContainer.style.paddingRight = '30px';
           sinopsisContainer.style.paddingTop = '20px';
       }
