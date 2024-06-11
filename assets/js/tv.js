@@ -1,5 +1,5 @@
-
-     // js popup haikal */
+// Haikal Ihza bertanggung jawab untuk bagian TV
+// Branch: TV
 
      var myModal = document.getElementById('myModal1')
      var myInput = document.getElementById('myInput')

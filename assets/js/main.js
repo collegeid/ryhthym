@@ -1,36 +1,3 @@
-// JavaScript file untuk proyek Rhythm Movie TV
-
-
-// Ahmad Faiz bertanggung jawab untuk bagian Film
-// Branch: FILM
-
-// var TrandingSlider = new Swiper('.tranding-slider', {
-//   effect: 'coverflow',
-//   grabCursor: true,
-//   centeredSlides: true,
-//   loop: true,
-//   slidesPerView: 'auto',
-//   speed: 1200,
-//   // autoplay: 
-//   // {
-//   //   delay: 2000,
-//   // },
-//   loop: true,
-//   zoom: true,
-//   coverflowEffect: {
-//     rotate: 0,
-//     stretch: 0,
-//     depth: 100,
-//     modifier: 2.5,
-//   },
-
-//   navigation: {
-//     nextEl: '.swiper-button-next',
-//     prevEl: '.swiper-button-prev',
-//   }
-// });
-
-
 // Siswo Adi Nugroho bertanggung jawab untuk bagian Music
 // Branch: MUSIC
 const swiper = new Swiper(".mySwiper", {
@@ -81,41 +48,9 @@ document.addEventListener("click",function (event){
     }
   })
 
-// Haikal Ihza bertanggung jawab untuk bagian TV Show
-// Branch: TV
-
-// var TrandingSlider = new Swiper('.tranding-slider', {
-//   effect: 'coverflow',
-//   grabCursor: true,
-//   centeredSlides: true,
-//   loop: true,
-//   slidesPerView: 'auto',
-//   speed: 1200,
-//   // autoplay: 
-//   // {
-//   //   delay: 2000,
-//   // },
-//   loop: true,
-//   zoom: true,
-//   coverflowEffect: {
-//     rotate: 0,
-//     stretch: 0,
-//     depth: 100,
-//     modifier: 2.5,
-//   },
-
-//   navigation: {
-//     nextEl: '.swiper-button-next',
-//     prevEl: '.swiper-button-prev',
-//   }
-// });
-
-
-
 
 // Jarwo bertanggung jawab untuk bagian Trending Banner
 // Branch: TRENDING
-// Owlcarousel
 // Video Popup
 document.addEventListener('click', function(event) {
   const sliderCardOverlay = event.target.closest('.slider-card-overlay');
@@ -205,7 +140,7 @@ document.addEventListener('click', function(event) {
           sinopsisTitle.textContent = 'Song List:';
           sinopsisContainer.innerHTML = listMusicContent.innerHTML;
           sinopsisContainer.style.overflowY = 'scroll';
-          sinopsisContainer.style.maxHeight = '220px';
+          sinopsisContainer.style.maxHeight = '215px';
           sinopsisContainer.style.paddingRight = '30px';
           sinopsisContainer.style.paddingTop = '20px';
       }
@@ -220,7 +155,6 @@ document.addEventListener('click', function(event) {
       sinopsisTitle.textContent= 'Sinopsis:'; // Reset title
     }
 });
-
 
 // Fungsi untuk mendapatkan ID video YouTube dari URL
 function getYouTubeVideoId(url) {
@@ -249,11 +183,8 @@ function toggleLike() {
 }
 
 
-
-
 // Febri bertanggung jawab untuk bagian Base Layout dan Sidebar
 // Branch: BASE, SIDEBAR, FOOTER
-
 
 //SIDEBAR
   const sidebarToggleBtn = document.getElementById('sidebarToggle');

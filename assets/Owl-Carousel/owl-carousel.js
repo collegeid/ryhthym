@@ -1,4 +1,5 @@
-/* JS Jarwo */
+// Jarwo bertanggung jawab untuk bagian Trending Banner
+// Branch: TRENDING
 
 $(document).ready(function () {
   // Inisialisasi Owl Carousel

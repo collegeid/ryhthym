@@ -1,3 +1,4 @@
+// Penanggung Jawab Branch: Febri
 // JavaScript untuk membuat sidebar dinamis
 document.addEventListener('DOMContentLoaded', (event) => {
     // Dapatkan semua elemen nav-link

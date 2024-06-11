@@ -1,3 +1,4 @@
+// Jarwo dataset untuk bagian Trending Banner
 // Fungsi async untuk mengambil dan menampilkan data TV Shows
 async function fetchAndDisplayTVTrending() {
   let episodesData = []; // Untuk menyimpan data episode
