@@ -1,3 +1,4 @@
+// Penanggung Jawab Branch: Febri
 // JavaScript untuk menambahkan animasi ke kontainer
 document.addEventListener('DOMContentLoaded', (event) => {
     // Dapatkan semua tombol navigasi

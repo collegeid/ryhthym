@@ -1,3 +1,4 @@
+// Jarwo dataset untuk bagian Trending Banner
 // Fungsi async untuk mengambil dan menampilkan data album
 async function fetchAndDisplayMusicTrending() {
     try {

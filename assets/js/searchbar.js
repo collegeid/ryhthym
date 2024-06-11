@@ -1,3 +1,4 @@
+// Penanggung Jawab Branch: Febri
 document.addEventListener('DOMContentLoaded', function() {
     $("#suggestions").hide()
     const searchInput = document.getElementById('searchInput');

@@ -1,7 +1,5 @@
-
 // Ahmad Faiz bertanggung jawab untuk bagian Film
 // Branch: FILM
-
 var TrandingSlider = new Swiper('.tranding-slider', {
     effect: 'coverflow',
     grabCursor: true,
@@ -27,8 +25,6 @@ var TrandingSlider = new Swiper('.tranding-slider', {
       prevEl: '.swiper-button-prev',
     }
   });
-  
-  
   
   var images = document.querySelectorAll('.card--img');
   // Ambil elemen modal
@@ -122,10 +118,6 @@ var TrandingSlider = new Swiper('.tranding-slider', {
       // Toggle status like
       isFilmLiked = !isFilmLiked;
   }
-  
-  
-  
-  
   
   function openVideoPopup(videoURL) {
     var popupWindow = window.open(videoURL, 'popupWindow', 'width=640,height=360');
