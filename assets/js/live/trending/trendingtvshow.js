@@ -26,7 +26,7 @@ async function fetchAndDisplayTVTrending() {
 
     const detailResponse = await fetch(`https://stellar.febrian.id/tv/${tvShow.id}`);
     const detail_tv = await detailResponse.json();
-
+    console.log('Detail TV:', detail_tv);
     // Menyimpan data episode secara lokal
     episodesData = detail_tv.seasons.episodes; 
 
@@ -51,7 +51,7 @@ async function fetchAndDisplayTVTrending() {
           </div>
           <div class="kategori-rating flex-column flex-md-row">
             <div class="kategori d-flex align-items-center text-decoration-none mx-1">
-              <a class="me-1 py-2 text-decoration-none text-white">Lang: ${tvShow.original_language}</a>
+              <a class="me-1 py-2 text-decoration-none text-white">Sub: ${tvShow.original_language}</a>
             </div>
             <div class="rating d-inline-flex" style="margin-left: 320px;">
               <a class="me-2 py-2 text-decoration-none text-white">${tvShow.vote_average}</a>

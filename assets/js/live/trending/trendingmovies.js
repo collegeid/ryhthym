@@ -34,7 +34,7 @@ async function fetchAndDisplayMoviesTrending() {
             <!--Kategori dan Rating-->
             <div class="kategori-rating flex-column flex-md-row">
               <div class="kategori d-flex align-items-center text-decoration-none mx-1">
-                <a class="me-1 py-2 text-decoration-none text-white">Lang: ${movie.original_language}</a>
+                <a class="me-1 py-2 text-decoration-none text-white">Sub: ${movie.original_language}</a>
               </div>
               <div class="rating d-inline-flex" style="margin-left: 340px;">
                 <a class="me-2 py-2 text-decoration-none text-white">${movie.vote_average}</a>
